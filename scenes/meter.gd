@@ -16,6 +16,14 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_left"):
 		add_points(-5)  # Example: good action, towards Moon
 
+func _process(delta: float) -> void:
+	if (current_value > 0):
+		$Label2.text = "You have progressed along the path of destruction."
+	elif (current_value < 0):
+		$Label2.text = "You have progressed along the path of restoration."
+	else:
+		$Label2.text = ""
+
 func add_points(points: int) -> void:
 	current_value = clamp(current_value + points, min_value, max_value)
 	update_meter()
