@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4ila3ryr8ahm"]
+
+[ext_resource type="Texture2D" uid="uid://clhrjitsyx7lc" path="res://background.png" id="1_rrpi6"]
+[ext_resource type="Texture2D" uid="uid://b25h35snucva2" path="res://floor.png" id="2_b5lsr"]
+[ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
+[ext_resource type="Script" path="res://scenes/npc.gd" id="4_f2nlw"]
+[ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://NPC.png" id="4_yb2hg"]
+[ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="5_wjlit"]
+[ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="7_damk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcxa2"]
+size = Vector2(937, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jkrw"]
+size = Vector2(20, 56)
+
+[node name="World" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rrpi6")
+
+[node name="BasePlatform" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BasePlatform"]
+position = Vector2(595.25, 555.5)
+scale = Vector2(2.93925, 0.214286)
+texture = ExtResource("2_b5lsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasePlatform"]
+position = Vector2(592.5, 556)
+shape = SubResource("RectangleShape2D_bcxa2")
+
+[node name="Judge" parent="." instance=ExtResource("3_0e3y6")]
+position = Vector2(168, 493)
+
+[node name="NPC" type="Area2D" parent="."]
+script = ExtResource("4_f2nlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+position = Vector2(913, 490)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_yb2hg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2(912, 492)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_8jkrw")
+
+[node name="Meter" parent="." instance=ExtResource("5_wjlit")]
+offset_left = 146.0
+offset_top = 39.0
+offset_right = 186.0
+offset_bottom = 79.0
+
+[node name="DialogueBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 887.0
+offset_top = 384.0
+offset_right = 927.0
+offset_bottom = 424.0
+script = ExtResource("7_damk1")
+
+[node name="Label" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -11.0
+offset_right = -28.0
+offset_bottom = 12.0
+
+[node name="ButtonMoon" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = -136.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 49.0
+text = "Advance Moon Path"
+
+[node name="ButtonSun" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 180.0
+offset_bottom = 50.0
+text = "Advance Sun Path"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 956.0
+offset_top = 375.0
+offset_right = 996.0
+offset_bottom = 398.0
+
+[connection signal="body_entered" from="NPC" to="NPC" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
+[connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
+[connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]

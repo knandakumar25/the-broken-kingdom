@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl3nkjo2s7idh"]
+
+[ext_resource type="Script" path="res://scenes/judge.gd" id="1_niqck"]
+[ext_resource type="Texture2D" uid="uid://b8mnsoahy2tbp" path="res://judge.png" id="1_s828n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38pbf"]
+size = Vector2(185, 225)
+
+[node name="Judge" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_niqck")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s828n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -1.5)
+shape = SubResource("RectangleShape2D_38pbf")
