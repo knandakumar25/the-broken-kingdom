@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://b4ila3ryr8ahm"]
 
-[ext_resource type="Texture2D" uid="uid://clhrjitsyx7lc" path="res://background.png" id="1_rrpi6"]
-[ext_resource type="Texture2D" uid="uid://b25h35snucva2" path="res://floor.png" id="2_b5lsr"]
+[ext_resource type="Texture2D" uid="uid://clhrjitsyx7lc" path="res://assets/images/background.png" id="1_rrpi6"]
+[ext_resource type="Texture2D" uid="uid://b25h35snucva2" path="res://assets/images/floor.png" id="2_b5lsr"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
 [ext_resource type="Script" path="res://scenes/npc.gd" id="4_f2nlw"]
-[ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://NPC.png" id="4_yb2hg"]
+[ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="4_yb2hg"]
 [ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="5_wjlit"]
 [ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="7_damk1"]
 
