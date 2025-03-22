@@ -72,6 +72,7 @@ offset_left = -68.0
 offset_top = -11.0
 offset_right = -28.0
 offset_bottom = 12.0
+theme_override_font_sizes/font_size = 20
 
 [node name="ButtonMoon" type="Button" parent="DialogueBox"]
 visible = false
@@ -97,6 +98,7 @@ offset_left = 956.0
 offset_top = 375.0
 offset_right = 996.0
 offset_bottom = 398.0
+theme_override_font_sizes/font_size = 20
 
 [connection signal="body_entered" from="NPC" to="NPC" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
