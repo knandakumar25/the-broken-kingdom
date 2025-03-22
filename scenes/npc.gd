@@ -11,9 +11,6 @@ func _process(delta: float) -> void:
 		label.text = "[Tab] to continue"
 		dialogue_started = true
 		show_dialogue()
-	elif player_in_range and not dialogue_started:
-		label.show()
-		label.text = "[E] to interact"
 	elif dialogue_started and Input.is_action_just_pressed("advance_dialogue"):
 		show_dialogue()
 
@@ -28,7 +25,11 @@ func show_dialogue() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = true
+		label.show()
+		label.text = "[E] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = false
+		label.text = ""
+		label.hide()

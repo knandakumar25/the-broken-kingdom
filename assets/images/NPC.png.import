@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8xloe0yq2026"
-path="res://.godot/imported/meter_bar.png-cd50158b9b30c7ee01b5ee57d4e49a2f.ctex"
+uid="uid://dc1ctl6sjl4ol"
+path="res://.godot/imported/NPC.png-767d021ca1f7bf3e006d4e78b5b0bc6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://meter_bar.png"
-dest_files=["res://.godot/imported/meter_bar.png-cd50158b9b30c7ee01b5ee57d4e49a2f.ctex"]
+source_file="res://assets/images/NPC.png"
+dest_files=["res://.godot/imported/NPC.png-767d021ca1f7bf3e006d4e78b5b0bc6d.ctex"]
 
 [params]
 
