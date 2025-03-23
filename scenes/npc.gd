@@ -1,5 +1,7 @@
 extends Area2D
 
+# Used ChatGPT to generate key functions and mechanics
+
 @export var dialogues = ["Dialogue 1", "Dialogue 2", "Dialogue 3"]
 var current_dialogue = 0
 var player_in_range = false
