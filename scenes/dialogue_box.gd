@@ -1,5 +1,7 @@
 extends Control
 
+# Used ChatGPT to generate key functions and mechanics
+
 @onready var meter: Control = $"../Meter"
 @onready var label: Label = $Label
 @onready var button_moon: Button = $ButtonMoon

@@ -1,5 +1,7 @@
 extends Control
 
+# Used ChatGPT to generate key functions and mechanics
+
 @export var min_value: int = -100
 @export var max_value: int = 100
 var current_value: int = 0
