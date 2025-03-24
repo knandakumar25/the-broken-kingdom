@@ -2,7 +2,7 @@ extends Control
 
 # Used ChatGPT to generate key functions and mechanics
 
-@onready var meter: Control = $"../Meter"
+@onready var meter: Control = $"../CanvasLayer/Meter"
 @onready var label: Label = $Label
 @onready var button_moon: Button = $ButtonMoon
 @onready var button_sun: Button = $ButtonSun

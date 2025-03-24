@@ -1,7 +1,5 @@
 extends Area2D
 
-# Used ChatGPT to generate key functions and mechanics
-
 @export var dialogues = ["Dialogue 1", "Dialogue 2", "Dialogue 3"]
 var current_dialogue = 0
 var player_in_range = false
@@ -25,7 +23,7 @@ func show_dialogue() -> void:
 		get_node("../DialogueBox").show_choice()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Judge":
+	if body.name == "Judge":  # Ensure your Player node is named 'Judge'
 		player_in_range = true
 		label.show()
 		label.text = "[E] to interact"
@@ -33,5 +31,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = false
+		dialogue_started = false  # Optional: Reset dialogue if leaving
+		current_dialogue = 0      # Optional: Reset dialogue index if leaving
 		label.text = ""
 		label.hide()
