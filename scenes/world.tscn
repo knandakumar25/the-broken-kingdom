@@ -51,12 +51,6 @@ position = Vector2(912, 492)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_8jkrw")
 
-[node name="Meter" parent="." instance=ExtResource("5_wjlit")]
-offset_left = 146.0
-offset_top = 39.0
-offset_right = 186.0
-offset_bottom = 79.0
-
 [node name="DialogueBox" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -99,6 +93,19 @@ offset_top = 375.0
 offset_right = 996.0
 offset_bottom = 398.0
 theme_override_font_sizes/font_size = 20
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Meter" parent="CanvasLayer" instance=ExtResource("5_wjlit")]
+offset_left = 146.0
+offset_top = 39.0
+offset_right = 186.0
+offset_bottom = 79.0
 
 [connection signal="body_entered" from="NPC" to="NPC" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
