@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dialogues = ["Dialogue 1", "Dialogue 2", "Dialogue 3"]
+@export var dialogues = ["Dialogue 1"]
 var current_dialogue = 0
 var player_in_range = false
 var dialogue_started = false
@@ -16,10 +16,7 @@ func _process(delta: float) -> void:
 		show_dialogue()
 
 func show_dialogue() -> void:
-	if current_dialogue < dialogues.size():
-		get_node("../DialogueBox").show_text(dialogues[current_dialogue])
-		current_dialogue += 1
-	else:
+
 		label.hide()
 		get_node("../DialogueBox").show_choice()
 

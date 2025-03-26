@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl3nkjo2s7idh"]
 
 [ext_resource type="Script" uid="uid://7mvqp533d8lw" path="res://scenes/judge.gd" id="1_niqck"]
-[ext_resource type="Texture2D" uid="uid://b8mnsoahy2tbp" path="res://assets/images/judge.png" id="1_s828n"]
+[ext_resource type="Texture2D" uid="uid://bl41025dw6clo" path="res://assets/images/JudgeSprite.png" id="2_6qmai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38pbf"]
 size = Vector2(185, 225)
@@ -11,11 +11,12 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_niqck")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_s828n")
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_6qmai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)
 shape = SubResource("RectangleShape2D_38pbf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.3, 2.3)
+zoom = Vector2(2.5, 2.5)
