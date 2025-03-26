@@ -21,8 +21,7 @@ func _ready():
 
 func _process(delta):
 
-	if Input.is_action_just_pressed("interact"):
-		print("chatting with NPC")
+	if Input.is_action_just_pressed("interact") && player_in_range == true:
 		$DialogueUI.start()
 		is_roaming = false
 		is_chatting = true
@@ -30,14 +29,13 @@ func _process(delta):
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	if body.has_method("Judge"):
-		player = body
+	if body.name == "Judge":
 		player_in_range = true
 
 
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	if body.has_method("Judge"):
+	if body.name == "Judge":
 		player_in_range = false
 
 
