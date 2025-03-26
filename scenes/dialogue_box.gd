@@ -7,13 +7,18 @@ extends Control
 @onready var button_moon: Button = $ButtonMoon
 @onready var button_sun: Button = $ButtonSun
 
+
 var typing_speed = 0.05
 var full_text = ""
 var is_typing = false
 
+
+
 func show_text(text: String) -> void:
+
 	full_text = text
 	label.text = ""
+
 	button_moon.hide()
 	button_sun.hide()
 	show()

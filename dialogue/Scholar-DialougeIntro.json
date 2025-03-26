@@ -1,0 +1,20 @@
+{
+	"intro": [
+		{"name": "Scholar:", "text": "That scythe… Could it be? No--"},
+		{"name": "Scholar:", "text": "Hello traveler, welcome to Solunaris. It’s been a while since anybody has passed through here."},
+		{"name": "Scholar:", "text": "I apologize for the sorry state of this place but... you’re welcome to take a look around."}	
+	],
+	"destruction": [
+		{"name": "Scholar:", "text": "You have progressed along the path of destruction."},
+		{"name": "Scholar:", "text": "Is this truly the path you chose to follow? Tread carefully."},
+		{"name": "Scholar:", "text": "Perhaps some things are best left forgotten."},
+	],
+	"restoration": [
+		{"name": "Scholar:", "text": "You have progressed along the path of restoration."},
+		{"name": "Scholar:", "text": "Is this truly the path you chose to follow? Tread carefully."},
+		{"name": "Scholar:", "text": "Perhaps there is hope for this kingdom yet."}
+	],
+	"neutral": [
+		{"name": "Scholar:", "text": "You walk a delicate balance traveller."},
+	]
+}

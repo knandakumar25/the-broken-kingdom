@@ -31,6 +31,9 @@ func add_points(points: int) -> void:
 	# Clamp to min and max morality range
 	current_value = clamp(current_value + points, min_value, max_value)
 	update_meter()
+	
+func getScore() -> int:
+	return current_value
 
 func update_meter() -> void:
 	var half_width = background.size.x / 2

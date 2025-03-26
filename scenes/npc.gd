@@ -4,6 +4,7 @@ extends Area2D
 var current_dialogue = 0
 var player_in_range = false
 var dialogue_started = false
+var black = Color(0,0,0,1.0)
 @onready var label: Label = $"../Label"
 
 func _process(delta: float) -> void:
