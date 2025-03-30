@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgqm4h06ul2fp"]
+
+[ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_gs4ni"]
+[ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_klqb1"]
+[ext_resource type="Texture2D" uid="uid://dofrofnn21su8" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="3_ivfuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klqb1"]
+size = Vector2(323, 131)
+
+[node name="Theatre" type="Area2D"]
+script = ExtResource("1_gs4ni")
+destroyed_texture = ExtResource("1_klqb1")
+rebuilt_texture = ExtResource("3_ivfuj")
+about = "Here lies a theatre. The people of this kingdom loved the arts."
+rebuilt_text = "The Eclipse Theater was the main attraction in Solunaris. Travelers from all over would come to watch their acclaimed performances and all were welcome. Now that it has been rebuilt, I would love to see a show again sometime. "
+destroyed_text = "People went to the theater to escape reality but when things went dark and the palace shut its doors, all their shows turned to tragedies. It was a very bleak affair.  The theater was no longer an escape… only a mirror."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_klqb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 65.5)
+shape = SubResource("RectangleShape2D_klqb1")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -6.0
+offset_right = 40.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ButtonRebuild" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 130.0
+offset_right = 61.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rebuild"
+
+[node name="ButtonDestroy" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 130.0
+offset_right = 152.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Destroy"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
+[connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]

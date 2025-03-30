@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b37dipm70niyf"]
+
+[ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_0cqvf"]
+[ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_m4m2s"]
+[ext_resource type="Texture2D" uid="uid://bi4s84fvuykk1" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Purple.png" id="3_n61aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6qe"]
+size = Vector2(322, 136)
+
+[node name="Library" type="Area2D"]
+script = ExtResource("1_m4m2s")
+destroyed_texture = ExtResource("1_0cqvf")
+rebuilt_texture = ExtResource("3_n61aj")
+about = "Ah, the library. Holds all the knowledge of Solunaris."
+rebuilt_text = "Centuries of knowledge has been restored."
+destroyed_text = "Rest in peace, knowledge."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0cqvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 58)
+shape = SubResource("RectangleShape2D_1n6qe")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -6.0
+offset_right = 40.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ButtonRebuild" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 130.0
+offset_right = 61.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rebuild"
+
+[node name="ButtonDestroy" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 130.0
+offset_right = 152.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Destroy"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
+[connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]

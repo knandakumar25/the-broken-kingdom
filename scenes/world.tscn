@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=29 format=4 uid="uid://b4ila3ryr8ahm"]
 
-[ext_resource type="Texture2D" uid="uid://clhrjitsyx7lc" path="res://assets/images/background.png" id="1_rrpi6"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
 [ext_resource type="Script" uid="uid://pgpej06hiiaw" path="res://scenes/npc.gd" id="4_f2nlw"]
 [ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="4_yb2hg"]
@@ -13,6 +12,12 @@
 [ext_resource type="Script" uid="uid://corbpjhd7bctt" path="res://scenes/scholar.gd" id="12_jhx03"]
 [ext_resource type="Texture2D" uid="uid://ddasjdopwx2f1" path="res://assets/x-mark-32.png" id="12_q5onr"]
 [ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="13_jhx03"]
+[ext_resource type="PackedScene" uid="uid://bbcuflbeb10vs" path="res://scenes/church.tscn" id="14_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://b26dfv2qo5iaa" path="res://scenes/castle.tscn" id="15_xo05s"]
+[ext_resource type="PackedScene" uid="uid://dscyo6no378tp" path="res://scenes/prison.tscn" id="17_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://bgqm4h06ul2fp" path="res://scenes/theatre.tscn" id="18_lakw3"]
+[ext_resource type="PackedScene" uid="uid://ln6pj4ou6h0v" path="res://scenes/cookhouse.tscn" id="18_pm21f"]
+[ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jkrw"]
 size = Vector2(20, 56)
@@ -480,33 +485,10 @@ radius = 176.071
 
 [node name="World" type="Node"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_rrpi6")
-
 [node name="Judge" parent="." instance=ExtResource("3_0e3y6")]
 z_index = 99
 position = Vector2(1949, 7382)
 scale = Vector2(0.33, 0.33)
-
-[node name="NPC" type="Area2D" parent="."]
-z_index = 90
-position = Vector2(985, 6140)
-script = ExtResource("4_f2nlw")
-
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
-position = Vector2(913, 490)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("4_yb2hg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
-position = Vector2(912, 492)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_8jkrw")
 
 [node name="DialogueBox" type="Control" parent="."]
 z_index = 99
@@ -558,6 +540,32 @@ offset_left = 683.0
 offset_top = 34.0
 offset_right = 723.0
 offset_bottom = 74.0
+
+[node name="Scholar2" type="Area2D" parent="CanvasLayer"]
+visible = false
+z_index = 90
+position = Vector2(150, 153)
+script = ExtResource("4_f2nlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Scholar2"]
+position = Vector2(9, 12)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_yb2hg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Scholar2"]
+position = Vector2(9, 15)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_8jkrw")
+
+[node name="Label" type="Label" parent="CanvasLayer/Scholar2"]
+offset_left = 72.0
+offset_top = -5.0
+offset_right = 1072.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -639,10 +647,50 @@ scale = Vector2(0.8, 0.8)
 [node name="Timer" type="Timer" parent="Scholar"]
 autostart = true
 
-[connection signal="body_entered" from="NPC" to="NPC" method="_on_body_entered"]
-[connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
+[node name="Church" parent="." instance=ExtResource("14_o8fc1")]
+z_index = 99
+position = Vector2(2173, 7059)
+
+[node name="Castle" parent="." instance=ExtResource("15_xo05s")]
+z_index = 99
+position = Vector2(2529, 6965)
+
+[node name="Prison" parent="." instance=ExtResource("17_7t5mc")]
+z_index = 99
+position = Vector2(4023, 6428)
+
+[node name="Church2" parent="." instance=ExtResource("14_o8fc1")]
+z_index = 99
+position = Vector2(3138, 5656)
+
+[node name="Theatre" parent="." instance=ExtResource("18_lakw3")]
+z_index = 99
+position = Vector2(2080, 6183)
+
+[node name="Library" parent="." instance=ExtResource("19_pm21f")]
+z_index = 99
+position = Vector2(2263, 5813)
+
+[node name="Church3" parent="." instance=ExtResource("14_o8fc1")]
+z_index = 99
+position = Vector2(4010, 5704)
+
+[node name="Church4" parent="." instance=ExtResource("14_o8fc1")]
+z_index = 99
+position = Vector2(5324, 5662)
+
+[node name="Library2" parent="." instance=ExtResource("19_pm21f")]
+z_index = 99
+position = Vector2(5133, 7465)
+
+[node name="Cookhouse" parent="." instance=ExtResource("18_pm21f")]
+z_index = 99
+position = Vector2(5180, 6394)
+
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
+[connection signal="body_entered" from="CanvasLayer/Scholar2" to="CanvasLayer/Scholar2" method="_on_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/Scholar2" to="CanvasLayer/Scholar2" method="_on_body_exited"]
 [connection signal="body_entered" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_exited"]
 [connection signal="dialogue_finished" from="Scholar/DialogueUI" to="Scholar" method="_on_dialogue_ui_dialogue_finished"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbcuflbeb10vs"]
+
+[ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_20jv8"]
+[ext_resource type="Texture2D" uid="uid://bbh5ttkrcq00v" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Destroyed.png" id="1_ua547"]
+[ext_resource type="Texture2D" uid="uid://2duomuiwyomp" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Yellow.png" id="3_yh3iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3iq"]
+size = Vector2(79, 76)
+
+[node name="Church" type="Area2D"]
+script = ExtResource("1_20jv8")
+destroyed_texture = ExtResource("1_ua547")
+rebuilt_texture = ExtResource("3_yh3iq")
+about = "The ruins of an old church lies before you. The people were very religious, always going to church asking for salvation."
+rebuilt_text = "I never was religious myself, but I admired those who were. They worshiped a deity who would one day pass judgment on Solunaris’s people. Come to think of it…  the depiction in the stained glass looked a bit familiar."
+destroyed_text = "The people of Solunaris were never quite religious, but the few who were were all crazed fanatics. They worshipped a deity that would bring ruin to this kingdom. Now I think maybe they had a point. "
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ua547")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 28)
+shape = SubResource("RectangleShape2D_yh3iq")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ButtonRebuild" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 78.0
+offset_right = 78.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rebuild"
+
+[node name="ButtonDestroy" type="Button" parent="."]
+offset_left = 125.0
+offset_top = 78.0
+offset_right = 194.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Destroy"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
+[connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]
