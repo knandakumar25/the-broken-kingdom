@@ -1,3 +1,4 @@
+# Used ChatGPT to create the code for a Ruin
 extends Area2D
 class_name Ruin
 @export var destroyed_texture: Texture  # Set in Inspector
