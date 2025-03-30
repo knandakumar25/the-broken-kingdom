@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 		show_dialogue()
 
 func show_dialogue() -> void:
-
 		label.hide()
 		get_node("../DialogueBox").show_choice()
 
