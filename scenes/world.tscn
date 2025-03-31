@@ -616,6 +616,7 @@ tile_map_data = PackedByteArray("AABkANABAAAAAAAAAABkAM8BAAAAAAAAAABkAM4BAAAAAAA
 tile_set = SubResource("TileSet_lakw3")
 
 [node name="Scholar" type="CharacterBody2D" parent="."]
+position = Vector2(-16, -22)
 script = ExtResource("12_jhx03")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scholar"]
@@ -649,7 +650,7 @@ autostart = true
 
 [node name="Church" parent="." instance=ExtResource("14_o8fc1")]
 z_index = 99
-position = Vector2(2173, 7059)
+position = Vector2(-968, 6950)
 
 [node name="Castle" parent="." instance=ExtResource("15_xo05s")]
 z_index = 99
@@ -664,8 +665,8 @@ z_index = 99
 position = Vector2(3138, 5656)
 
 [node name="Theatre" parent="." instance=ExtResource("18_lakw3")]
-z_index = 99
-position = Vector2(2080, 6183)
+z_index = 100
+position = Vector2(5387, 4521)
 
 [node name="Library" parent="." instance=ExtResource("19_pm21f")]
 z_index = 99
