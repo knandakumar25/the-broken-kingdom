@@ -16,5 +16,9 @@
 	],
 	"neutral": [
 		{"name": "Scholar:", "text": "You walk a delicate balance traveller."},
+	],
+	"church-destroyed": [
+		{"name": "Scholar:", "text": "The people of Solunaris were never quite religious, but the few who were were all crazed fanatics."},
+		{"name": "Scholar:", "text": "They worshipped a deity that would bring ruin to this kingdom. Now I think maybe they had a point."},
 	]
 }

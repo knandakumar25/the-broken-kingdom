@@ -24,11 +24,17 @@ func start():
 	next_script()
 
 func load_dialogue():
-	var file = FileAccess.open("res://dialogue/Scholar-DialougeIntro.json", FileAccess.READ)
+	var file = FileAccess.open("res://dialogue/Scholar-Dialouge.json", FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	
 	if !scholarMet:
 		return content["intro"]
+		
+	#if churchInteracted:
+	#	if churchDestroyed:
+	#		return content["church-destroyed"]
+	#	else:
+	#		return content["church-rebuilt"]
 	
 	var score = meter.getScore()
 	if score > 0:
