@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=27 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
-[ext_resource type="Script" uid="uid://pgpej06hiiaw" path="res://scenes/npc.gd" id="4_f2nlw"]
 [ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="4_yb2hg"]
 [ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="5_wjlit"]
 [ext_resource type="Script" uid="uid://jcw2fx8pwxhj" path="res://scenes/dialogue_box.gd" id="7_damk1"]
@@ -18,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://bgqm4h06ul2fp" path="res://scenes/theatre.tscn" id="18_lakw3"]
 [ext_resource type="PackedScene" uid="uid://ln6pj4ou6h0v" path="res://scenes/cookhouse.tscn" id="18_pm21f"]
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jkrw"]
-size = Vector2(20, 56)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
 texture = ExtResource("8_w7kh3")
@@ -541,32 +537,6 @@ offset_top = 34.0
 offset_right = 723.0
 offset_bottom = 74.0
 
-[node name="Scholar2" type="Area2D" parent="CanvasLayer"]
-visible = false
-z_index = 90
-position = Vector2(150, 153)
-script = ExtResource("4_f2nlw")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Scholar2"]
-position = Vector2(9, 12)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("4_yb2hg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Scholar2"]
-position = Vector2(9, 15)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_8jkrw")
-
-[node name="Label" type="Label" parent="CanvasLayer/Scholar2"]
-offset_left = 72.0
-offset_top = -5.0
-offset_right = 1072.0
-offset_bottom = 35.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Cliff Grass" type="TileMapLayer" parent="Map"]
@@ -616,33 +586,33 @@ tile_map_data = PackedByteArray("AABkANABAAAAAAAAAABkAM8BAAAAAAAAAABkAM4BAAAAAAA
 tile_set = SubResource("TileSet_lakw3")
 
 [node name="Scholar" type="CharacterBody2D" parent="."]
-position = Vector2(-16, -22)
+position = Vector2(2552, 6683)
 script = ExtResource("12_jhx03")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scholar"]
 z_index = 99
-position = Vector2(2573, 6666)
+position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("4_yb2hg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scholar"]
 z_index = 99
-position = Vector2(2574, 6664)
+position = Vector2(-1.08008, 0.919922)
 shape = SubResource("CircleShape2D_e3hyu")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Scholar"]
 z_index = 100
-position = Vector2(2574, 6665)
+position = Vector2(-1.08008, 1.91992)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scholar/ScholarDetectionArea"]
 z_index = 100
 shape = SubResource("CircleShape2D_q5onr")
 
 [node name="DialogueUI" parent="Scholar" instance=ExtResource("13_jhx03")]
-offset_left = 2571.0
-offset_top = 6623.0
-offset_right = 2611.0
-offset_bottom = 6663.0
+offset_left = -4.07996
+offset_top = -40.0798
+offset_right = 35.92
+offset_bottom = -0.079834
 scale = Vector2(0.8, 0.8)
 
 [node name="Timer" type="Timer" parent="Scholar"]
@@ -650,19 +620,15 @@ autostart = true
 
 [node name="Church" parent="." instance=ExtResource("14_o8fc1")]
 z_index = 99
-position = Vector2(-968, 6950)
+position = Vector2(5367, 5689)
 
 [node name="Castle" parent="." instance=ExtResource("15_xo05s")]
 z_index = 99
-position = Vector2(2529, 6965)
+position = Vector2(4092, 4194)
 
 [node name="Prison" parent="." instance=ExtResource("17_7t5mc")]
 z_index = 99
-position = Vector2(4023, 6428)
-
-[node name="Church2" parent="." instance=ExtResource("14_o8fc1")]
-z_index = 99
-position = Vector2(3138, 5656)
+position = Vector2(6169, 8215)
 
 [node name="Theatre" parent="." instance=ExtResource("18_lakw3")]
 z_index = 100
@@ -670,19 +636,7 @@ position = Vector2(5387, 4521)
 
 [node name="Library" parent="." instance=ExtResource("19_pm21f")]
 z_index = 99
-position = Vector2(2263, 5813)
-
-[node name="Church3" parent="." instance=ExtResource("14_o8fc1")]
-z_index = 99
-position = Vector2(4010, 5704)
-
-[node name="Church4" parent="." instance=ExtResource("14_o8fc1")]
-z_index = 99
-position = Vector2(5324, 5662)
-
-[node name="Library2" parent="." instance=ExtResource("19_pm21f")]
-z_index = 99
-position = Vector2(5133, 7465)
+position = Vector2(4884, 7264)
 
 [node name="Cookhouse" parent="." instance=ExtResource("18_pm21f")]
 z_index = 99
@@ -690,8 +644,6 @@ position = Vector2(5180, 6394)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
-[connection signal="body_entered" from="CanvasLayer/Scholar2" to="CanvasLayer/Scholar2" method="_on_body_entered"]
-[connection signal="body_exited" from="CanvasLayer/Scholar2" to="CanvasLayer/Scholar2" method="_on_body_exited"]
 [connection signal="body_entered" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_exited"]
 [connection signal="dialogue_finished" from="Scholar/DialogueUI" to="Scholar" method="_on_dialogue_ui_dialogue_finished"]
