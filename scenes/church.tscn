@@ -12,8 +12,6 @@ script = ExtResource("1_20jv8")
 destroyed_texture = ExtResource("1_ua547")
 rebuilt_texture = ExtResource("3_yh3iq")
 about = "The ruins of an old church lies before you. The people were very religious, always going to church asking for salvation."
-rebuilt_text = "I never was religious myself, but I admired those who were. They worshiped a deity who would one day pass judgment on Solunaris’s people. Come to think of it…  the depiction in the stained glass looked a bit familiar."
-destroyed_text = "The people of Solunaris were never quite religious, but the few who were were all crazed fanatics. They worshipped a deity that would bring ruin to this kingdom. Now I think maybe they had a point. "
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ua547")
