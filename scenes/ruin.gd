@@ -43,7 +43,9 @@ func cleanup_ui() -> void:
 
 func _on_destroy_pressed() -> void:
 	meter.add_points(10)  # Sun path
-	queue_free()  # Remove ruin after destroying
+	scholar.position = self.position + Vector2(160, 0)
+	ruin_image.texture = null
+	cleanup_ui()  # Remove ruin after destroying
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge" and !rebuilt:
