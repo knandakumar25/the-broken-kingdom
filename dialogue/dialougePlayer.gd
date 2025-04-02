@@ -41,52 +41,58 @@ func load_dialogue():
 	if !scholarMet:
 		return content["intro"]
 	
-	if !church.interacted and church.player_in_range:
+	if is_instance_valid(church) and !church.interacted and church.player_in_range:
 		if church.rebuilt:
 			church.interacted = true
 			return content["church-rebuilt"]
 		else:
 			church.interacted = true
+			church.queue_free()
 			return content["church-destroyed"]
 	
-	if !castle.interacted and castle.player_in_range:
+	if is_instance_valid(castle) and !castle.interacted and castle.player_in_range:
 		if castle.rebuilt:
 			castle.interacted = true
 			return content["castle-rebuilt"]
 		else:
 			castle.interacted = true
+			castle.queue_free()
 			return content["castle-destroyed"]
 	
-	if !prison.interacted and prison.player_in_range:
+	if is_instance_valid(prison) and !prison.interacted and prison.player_in_range:
 		if prison.rebuilt:
 			prison.interacted = true
 			return content["prison-rebuilt"]
 		else:
 			prison.interacted = true
+			prison.queue_free()
 			return content["prison-destroyed"]
 	
-	if !theatre.interacted and theatre.player_in_range:
+	if is_instance_valid(theatre) and !theatre.interacted and theatre.player_in_range:
 		if theatre.rebuilt:
 			theatre.interacted = true
 			return content["theatre-rebuilt"]
 		else:
 			theatre.interacted = true
+			theatre.queue_free()
 			return content["theatre-destroyed"]
 	
-	if !library.interacted and library.player_in_range:
+	if is_instance_valid(library) and !library.interacted and library.player_in_range:
 		if library.rebuilt:
 			library.interacted = true
 			return content["library-rebuilt"]
 		else:
 			library.interacted = true
+			library.queue_free()
 			return content["library-destroyed"]
 	
-	if !cookhouse.interacted and cookhouse.player_in_range:
+	if is_instance_valid(cookhouse) and !cookhouse.interacted and cookhouse.player_in_range:
 		if cookhouse.rebuilt:
 			cookhouse.interacted = true
 			return content["cookhouse-rebuilt"]
 		else:
 			cookhouse.interacted = true
+			cookhouse.queue_free()
 			return content["cookhouse-destroyed"]
 	
 	var score = meter.getScore()
