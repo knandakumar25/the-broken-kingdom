@@ -12,8 +12,6 @@ script = ExtResource("1_meoqt")
 destroyed_texture = ExtResource("1_jrogc")
 rebuilt_texture = ExtResource("3_6boh4")
 about = "Bewaaaaaare. This prison contains some of the kingdom's most dangerous criminals, some of whom led to the kingdom's collapse. Restore this prison to reimprison these criminals."
-rebuilt_text = "Order restored!"
-destroyed_text = "Looks like we will remain a crime-ridden place."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jrogc")

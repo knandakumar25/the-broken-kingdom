@@ -12,8 +12,6 @@ script = ExtResource("1_m4m2s")
 destroyed_texture = ExtResource("1_0cqvf")
 rebuilt_texture = ExtResource("3_n61aj")
 about = "Ah, the library. Holds all the knowledge of Solunaris."
-rebuilt_text = "Centuries of knowledge has been restored."
-destroyed_text = "Rest in peace, knowledge."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0cqvf")

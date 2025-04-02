@@ -12,8 +12,6 @@ script = ExtResource("1_1ej5r")
 destroyed_texture = ExtResource("1_epbwu")
 rebuilt_texture = ExtResource("3_xk2uh")
 about = "An outdoor kitchen"
-rebuilt_text = "In the Kingdom’s prime, the Solunaris Cookhouse served food to all her people, commoners and nobles alike. Maybe those days will come again soon."
-destroyed_text = "Good to see the cookhouse in a pile of rubble. I remember so many blurred faces waiting in line with nothing but a faint hope for food in their hearts… only to get none in return."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_epbwu")

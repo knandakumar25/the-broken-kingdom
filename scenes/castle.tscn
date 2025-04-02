@@ -12,8 +12,6 @@ script = ExtResource("1_0ysgy")
 destroyed_texture = ExtResource("2_rjj26")
 rebuilt_texture = ExtResource("3_rjj26")
 about = "The former home of the king."
-rebuilt_text = "May the glory return."
-destroyed_text = "Looks like we will be living forever in hell."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rjj26")
