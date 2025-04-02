@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=29 format=4 uid="uid://b4ila3ryr8ahm"]
 
+[ext_resource type="Script" uid="uid://dktq0i0pikswl" path="res://scripts/global.gd" id="1_pm21f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
 [ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="4_yb2hg"]
 [ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="5_wjlit"]
@@ -471,7 +472,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_lakw3"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/2 = SubResource("TileSetAtlasSource_7t5mc")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3hyu"]
@@ -481,6 +482,7 @@ radius = 39.2046
 radius = 176.071
 
 [node name="World" type="Node"]
+script = ExtResource("1_pm21f")
 
 [node name="Judge" parent="." instance=ExtResource("3_0e3y6")]
 z_index = 99
@@ -645,8 +647,10 @@ position = Vector2(5180, 6394)
 
 [node name="CorruptedSpirit" parent="." instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(1885, 6776)
-scale = Vector2(3, 3)
+position = Vector2(1902, 6762)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
