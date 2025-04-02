@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bh5ff3bsmlu85"]
+[gd_scene load_steps=27 format=3 uid="uid://bh5ff3bsmlu85"]
 
 [ext_resource type="Texture2D" uid="uid://4lw1bgeblfas" path="res://assets/Images/slime.png" id="1_3ay1a"]
+[ext_resource type="Script" uid="uid://cpke1weq8cqlv" path="res://enemies/corrupted_spirit.gd" id="1_uehel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uehel"]
 atlas = ExtResource("1_3ay1a")
@@ -168,17 +169,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e4dxe"]
-radius = 49.0102
+radius = 65.123
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ay1a"]
-radius = 13.0
+radius = 6.0
 
 [node name="CorruptedSpirit" type="CharacterBody2D"]
+script = ExtResource("1_uehel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t16ba")
 animation = &"Idle"
-frame_progress = 0.700378
+frame_progress = 0.980154
 offset = Vector2(0, -8)
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -189,5 +191,8 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_e4dxe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_3ay1a")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

@@ -14,34 +14,31 @@ script = ExtResource("1_1ifwm")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 z_index = 150
 layout_mode = 0
-offset_left = -143.0
-offset_top = -97.0
-offset_right = 144.0
-offset_bottom = -6.0
+offset_left = -184.0
+offset_top = -119.0
+offset_right = 184.0
+offset_bottom = -2.0
 texture = ExtResource("2_i60qt")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-metadata/_edit_group_ = true
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
 z_index = 150
 layout_mode = 0
-offset_left = 15.0
-offset_top = 61.0
-offset_right = 62.0
-offset_bottom = 84.0
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = 18.0
+offset_top = 79.0
+offset_right = 81.0
+offset_bottom = 102.0
+scale = Vector2(1.05, 1.05)
+theme_override_colors/font_shadow_color = Color(0.956115, 0.696165, 0.549572, 1)
 text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
 z_index = 150
 layout_mode = 0
-offset_left = 56.0
-offset_top = 6.0
-offset_right = 289.0
+offset_left = 82.0
+offset_top = 8.0
+offset_right = 284.0
 offset_bottom = 79.0
-scale = Vector2(0.75, 0.75)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.788499, 0.87787, 1, 1)
 theme_override_font_sizes/normal_font_size = 0
 text = "Chatting..."
