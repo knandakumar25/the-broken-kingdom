@@ -10,6 +10,8 @@ signal dialogue_finished
 @onready var theatre: Ruin = $"../../Theatre"
 @onready var library: Ruin = $"../../Library"
 @onready var cookhouse: Ruin = $"../../Cookhouse"
+@onready var farm: Ruin = $"../../Farm"
+@onready var academy: Ruin = $"../../Academy"
 
 var dialogue = []
 var current_dialogue_id = 0
@@ -94,6 +96,24 @@ func load_dialogue():
 			cookhouse.interacted = true
 			cookhouse.queue_free()
 			return content["cookhouse-destroyed"]
+	
+	if is_instance_valid(farm) and !farm.interacted and farm.player_in_range:
+		if farm.rebuilt:
+			farm.interacted = true
+			return content["farm-rebuilt"]
+		else:
+			farm.interacted = true
+			farm.queue_free()
+			return content["farm-destroyed"]
+	
+	if is_instance_valid(academy) and !academy.interacted and academy.player_in_range:
+		if academy.rebuilt:
+			academy.interacted = true
+			return content["academy-rebuilt"]
+		else:
+			academy.interacted = true
+			academy.queue_free()
+			return content["academy-destroyed"]
 	
 	var score = meter.getScore()
 	if score > 0:

@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2akrlui8jfy5"]
+
+[ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_ja32m"]
+[ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_hqvtb"]
+[ext_resource type="Texture2D" uid="uid://cj2kyvxbpdutg" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Yellow.png" id="3_637k3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ej5r"]
+size = Vector2(481.5, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk2uh"]
+size = Vector2(153, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcn1a"]
+size = Vector2(154, 185)
+
+[node name="Academy" type="Area2D"]
+script = ExtResource("1_ja32m")
+destroyed_texture = ExtResource("2_hqvtb")
+rebuilt_texture = ExtResource("3_637k3")
+about = "A world-renowned academy."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -26)
+texture = ExtResource("2_hqvtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_1ej5r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -126.0
+offset_top = 84.0
+offset_right = 158.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ButtonRebuild" type="Button" parent="."]
+offset_left = -127.0
+offset_top = 127.0
+offset_right = -77.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rebuild"
+
+[node name="ButtonDestroy" type="Button" parent="."]
+offset_left = -62.0
+offset_top = 127.0
+offset_right = -10.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Destroy"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -9.5)
+shape = SubResource("RectangleShape2D_xk2uh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_jcn1a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
+[connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]

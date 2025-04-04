@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=32 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://bgqm4h06ul2fp" path="res://scenes/theatre.tscn" id="18_lakw3"]
 [ext_resource type="PackedScene" uid="uid://ln6pj4ou6h0v" path="res://scenes/cookhouse.tscn" id="18_pm21f"]
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
+[ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
+[ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
 texture = ExtResource("8_w7kh3")
@@ -668,6 +670,14 @@ position = Vector2(1902, 6762)
 scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
+
+[node name="Farm" parent="." instance=ExtResource("21_7iits")]
+z_index = 99
+position = Vector2(2117, 5800)
+
+[node name="Academy" parent="." instance=ExtResource("22_oo54l")]
+z_index = 99
+position = Vector2(3716, 7650)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
