@@ -56,7 +56,7 @@ func processDamage():
 		if canTakeDamage:
 			health -= 25
 			$takeDamageCD.start()
-			position.y -= 40
+			position.y -= 20
 			canTakeDamage = false
 			print("enemy health = ", health )
 			if ( health <= 0 ):
