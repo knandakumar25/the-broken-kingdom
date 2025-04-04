@@ -1,43 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbcuflbeb10vs"]
+[gd_scene load_steps=7 format=3 uid="uid://bbcuflbeb10vs"]
 
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_20jv8"]
 [ext_resource type="Texture2D" uid="uid://bbh5ttkrcq00v" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Destroyed.png" id="1_ua547"]
 [ext_resource type="Texture2D" uid="uid://2duomuiwyomp" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Yellow.png" id="3_yh3iq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2eii"]
+size = Vector2(145, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br6of"]
+size = Vector2(143, 124.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3iq"]
-size = Vector2(79, 76)
+size = Vector2(215.714, 194.643)
 
 [node name="Church" type="Area2D"]
 script = ExtResource("1_20jv8")
 destroyed_texture = ExtResource("1_ua547")
 rebuilt_texture = ExtResource("3_yh3iq")
-about = "The ruins of an old church lies before you. The people were very religious, always going to church asking for salvation."
+about = "The ruins of an old church lie before you..."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -81)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_ua547")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 28)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -44.5)
+shape = SubResource("RectangleShape2D_g2eii")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -45)
+shape = SubResource("RectangleShape2D_br6of")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.999994, -36.25)
+scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_yh3iq")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -72.0
+offset_top = 20.0
+offset_right = 65.0
+offset_bottom = 55.0
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="ButtonRebuild" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 78.0
-offset_right = 78.0
-offset_bottom = 109.0
+offset_left = -73.0
+offset_top = 60.0
+offset_right = -6.0
+offset_bottom = 91.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rebuild"
 
 [node name="ButtonDestroy" type="Button" parent="."]
-offset_left = 125.0
-offset_top = 78.0
-offset_right = 194.0
-offset_bottom = 109.0
+offset_left = 6.0
+offset_top = 60.0
+offset_right = 75.0
+offset_bottom = 91.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
