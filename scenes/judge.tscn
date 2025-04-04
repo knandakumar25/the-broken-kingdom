@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl3nkjo2s7idh"]
+[gd_scene load_steps=6 format=3 uid="uid://dl3nkjo2s7idh"]
 
 [ext_resource type="Script" uid="uid://7mvqp533d8lw" path="res://scenes/judge.gd" id="1_niqck"]
 [ext_resource type="Texture2D" uid="uid://bl41025dw6clo" path="res://assets/images/JudgeSprite.png" id="2_6qmai"]
@@ -6,8 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38pbf"]
 size = Vector2(185, 225)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qmai"]
+radius = 146.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuegn"]
+radius = 372.005
+
 [node name="Judge" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 3
 script = ExtResource("1_niqck")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +27,30 @@ shape = SubResource("RectangleShape2D_38pbf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
+
+[node name="playerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+shape = SubResource("CircleShape2D_6qmai")
+
+[node name="enemyAttackTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="playerAttackTimer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="purifyTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="purifyRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="purifyRange"]
+shape = SubResource("CircleShape2D_yuegn")
+
+[connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="enemyAttackTimer" to="." method="_on_attack_cd_timeout"]
+[connection signal="timeout" from="playerAttackTimer" to="." method="_on_player_attack_timer_timeout"]
+[connection signal="timeout" from="purifyTimer" to="." method="_on_purify_timer_timeout"]
+[connection signal="body_shape_entered" from="purifyRange" to="." method="_on_purify_range_body_shape_entered"]
+[connection signal="body_shape_exited" from="purifyRange" to="." method="_on_purify_range_body_shape_exited"]

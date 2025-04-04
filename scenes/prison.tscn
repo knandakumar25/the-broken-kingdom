@@ -1,46 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://dscyo6no378tp"]
+[gd_scene load_steps=7 format=3 uid="uid://dscyo6no378tp"]
 
 [ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_jrogc"]
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_meoqt"]
 [ext_resource type="Texture2D" uid="uid://bbhrbct171gn7" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Red.png" id="3_6boh4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6boh4"]
+size = Vector2(324, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njhgs"]
+size = Vector2(324, 133)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrogc"]
-size = Vector2(316, 132)
+size = Vector2(588.625, 341)
 
 [node name="Prison" type="Area2D"]
 script = ExtResource("1_meoqt")
 destroyed_texture = ExtResource("1_jrogc")
 rebuilt_texture = ExtResource("3_6boh4")
-about = "Bewaaaaaare. This prison contains some of the kingdom's most dangerous criminals, some of whom led to the kingdom's collapse. Restore this prison to reimprison these criminals."
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_jrogc")
+about = "The old prison lies in ruins before you."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 56)
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_6boh4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 24.5)
+shape = SubResource("RectangleShape2D_njhgs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -34)
+texture = ExtResource("1_jrogc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 27.5)
 shape = SubResource("RectangleShape2D_jrogc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -183.0
-offset_top = -69.0
-offset_right = 172.0
-offset_bottom = -47.0
+offset_left = -162.0
+offset_top = 95.0
+offset_right = 142.0
+offset_bottom = 146.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 autowrap_mode = 2
 
 [node name="ButtonRebuild" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 130.0
-offset_right = 61.0
-offset_bottom = 160.0
+offset_left = -161.0
+offset_top = 153.0
+offset_right = -111.0
+offset_bottom = 183.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rebuild"
 
 [node name="ButtonDestroy" type="Button" parent="."]
-offset_left = 100.0
-offset_top = 130.0
-offset_right = 152.0
-offset_bottom = 160.0
+offset_left = -102.0
+offset_top = 153.0
+offset_right = -50.0
+offset_bottom = 183.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
