@@ -69,15 +69,23 @@
 		{"name": "Scholar:", "text": "May the glory return."},
 	],
 	"prison-destroyed": [
-		{"name": "Scholar:", "text": "Looks like we will remain a crime-ridden place."},
+		{"name": "Scholar:", "text": "All those pour souls locked up in there..."},
+		{"name": "Scholar:", "text": "There were rumors that prisoners disapeared during Solunaris's decline"},
+		{"name": "Scholar:", "text": "Some said researchers experimented on the prisoners towards the end"},
+		{"name": "Scholar:", "text": "Only rumors though..."}
 	],
 	"prison-rebuilt": [
-		{"name": "Scholar:", "text": "Order restored!"},
+		{"name": "Scholar:", "text": "The heart of law and order in Solunaris."},
+		{"name": "Scholar:", "text": "The prisoners were often treated well."},
+		{"name": "Scholar:", "text": "Some prisoners were trained to serve in the king's army."}
 	],
 	"library-destroyed": [
-		{"name": "Scholar:", "text": "Rest in peace, knowledge."},
+		{"name": "Scholar:", "text": "Who knows what dark secrets those tomes held."},
+		{"name": "Scholar:", "text": "They will be of no concern to us anymore"}
 	],
 	"library-rebuilt": [
-		{"name": "Scholar:", "text": "Centuries of knowledge has been restored."},
+		{"name": "Scholar:", "text": "While the original knowledge may be lost, there is hope for more"},
+		{"name": "Scholar:", "text": "In fact... I may get to writing right away"},
+		{"name": "Scholar:", "text": "About the arrival of the Judge..."},
 	],
 }

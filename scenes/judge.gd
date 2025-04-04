@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-const SPEED = 225.0
+const SPEED = 500.0
 var nearby_ruin: Area2D = null
+
+@onready var world = get_parent()
 
 var enemyInAttackRange = false
 var enemyInPurifyRange = false
 var enemyAttackCD = true
-var health = 99
+var maxHealth = 6
+var currentHealth: int = maxHealth
 var playerAlive = true
 
 var attacking = false
@@ -18,9 +21,9 @@ func _physics_process(delta: float) -> void:
 	playerAttack()
 	playerFocus()
 	
-	if health <= 0:
+	if currentHealth <= 0:
 		playerAlive = false
-		health = 0
+		currentHealth = 0
 		print("Player Killed")
 		self.queue_free()
 		## Add End Screen
@@ -68,10 +71,12 @@ func _on_purify_range_body_shape_exited(body_rid: RID, body: Node2D, body_shape_
 
 func enemyAttack():
 	if enemyInAttackRange && enemyAttackCD:
-		health -= 33
+		currentHealth -= 1
 		enemyAttackCD = false
 		$enemyAttackTimer.start()
-		print(health)
+		print(currentHealth)
+		
+		world.heartsContainer.updateHearts(currentHealth)
 		
 		if focusing:
 			interruptFocus()
