@@ -15,10 +15,7 @@ var playerMaxHP: int = 6
 var playerCurrentHP: int = 6
 
 func _process(delta: float) -> void:
-	print(score)
 	pass
 
 func finishSceneChange():
 	transitionScene = false
-			
-			
