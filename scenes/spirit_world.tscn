@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cpcskvmajc07l"]
+[gd_scene load_steps=31 format=4 uid="uid://cpcskvmajc07l"]
 
 [ext_resource type="Script" uid="uid://cvuowfkl6qx6j" path="res://scenes/spirit_world.gd" id="1_duhyv"]
 [ext_resource type="Texture2D" uid="uid://dhiafljh6kq7o" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Flat.png" id="1_lxtos"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://ddasjdopwx2f1" path="res://assets/x-mark-32.png" id="5_tdnjl"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="6_ffv1d"]
 [ext_resource type="Script" uid="uid://dhac8d421w6ch" path="res://scenes/spiritWorldExitPortal.gd" id="8_rgxta"]
+[ext_resource type="Script" uid="uid://yue4g1q8mq0x" path="res://scenes/genericNPC.gd" id="9_7fsud"]
+[ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="10_81bf4"]
+[ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="11_7fsud"]
+[ext_resource type="Script" uid="uid://rt0bmeddwu37" path="res://dialogue/dialougeFountainSpirit1.gd" id="12_81bf4"]
+[ext_resource type="Script" uid="uid://beoqkcdhilrqa" path="res://dialogue/dialogueFountainSpirit2.gd" id="13_7fsud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgxta"]
 texture = ExtResource("1_lxtos")
@@ -488,6 +493,12 @@ size = Vector2(85.625, 85.75)
 [sub_resource type="CircleShape2D" id="CircleShape2D_81bf4"]
 radius = 86.209
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5t4w"]
+radius = 39.2046
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxg0f"]
+radius = 101.253
+
 [node name="spiritWorld" type="Node2D"]
 script = ExtResource("1_duhyv")
 
@@ -609,6 +620,76 @@ z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_81bf4")
 
+[node name="Spirits" type="Node2D" parent="."]
+
+[node name="Fountain 1" type="CharacterBody2D" parent="Spirits"]
+position = Vector2(2896, 2727)
+script = ExtResource("9_7fsud")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spirits/Fountain 1"]
+z_index = 99
+position = Vector2(-2.08008, 2.91992)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_81bf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 1"]
+z_index = 99
+position = Vector2(-1.08008, 0.919922)
+shape = SubResource("CircleShape2D_l5t4w")
+
+[node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Fountain 1"]
+z_index = 100
+position = Vector2(-1.08008, 1.91992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 1/ScholarDetectionArea"]
+z_index = 100
+shape = SubResource("CircleShape2D_sxg0f")
+
+[node name="DialogueUI" parent="Spirits/Fountain 1" instance=ExtResource("11_7fsud")]
+offset_left = -3.99988
+offset_top = -41.0
+offset_right = 36.0001
+offset_bottom = -1.0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("12_81bf4")
+
+[node name="Timer" type="Timer" parent="Spirits/Fountain 1"]
+autostart = true
+
+[node name="Fountain 2" type="CharacterBody2D" parent="Spirits"]
+position = Vector2(3259, 2813)
+script = ExtResource("9_7fsud")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spirits/Fountain 2"]
+z_index = 99
+position = Vector2(-2.08008, 2.91992)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_81bf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 2"]
+z_index = 99
+position = Vector2(-1.08008, 0.919922)
+shape = SubResource("CircleShape2D_l5t4w")
+
+[node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Fountain 2"]
+z_index = 100
+position = Vector2(-1.08008, 1.91992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 2/ScholarDetectionArea"]
+z_index = 100
+shape = SubResource("CircleShape2D_sxg0f")
+
+[node name="DialogueUI" parent="Spirits/Fountain 2" instance=ExtResource("11_7fsud")]
+offset_left = -3.99988
+offset_top = -41.0
+offset_right = 36.0001
+offset_bottom = -1.0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("13_7fsud")
+
+[node name="Timer" type="Timer" parent="Spirits/Fountain 2"]
+autostart = true
+
 [connection signal="body_entered" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_entered"]
 [connection signal="body_exited" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_exited"]
 [connection signal="body_entered" from="StatuePortal/StatuePortalArea" to="StatuePortal" method="_on_statue_portal_area_body_entered"]
@@ -617,3 +698,9 @@ shape = SubResource("CircleShape2D_81bf4")
 [connection signal="body_exited" from="MarketPortal/MarketPortalArea" to="MarketPortal" method="_on_market_portal_area_body_exited"]
 [connection signal="body_entered" from="FestivalPortal/FestivalPortalArea" to="FestivalPortal" method="_on_festival_portal_area_body_entered"]
 [connection signal="body_exited" from="FestivalPortal/FestivalPortalArea" to="FestivalPortal" method="_on_festival_portal_area_body_exited"]
+[connection signal="body_entered" from="Spirits/Fountain 1/ScholarDetectionArea" to="Spirits/Fountain 1" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Spirits/Fountain 1/ScholarDetectionArea" to="Spirits/Fountain 1" method="_on_detection_area_body_exited"]
+[connection signal="dialogue_finished" from="Spirits/Fountain 1/DialogueUI" to="Spirits/Fountain 1" method="_on_dialogue_ui_dialogue_finished"]
+[connection signal="body_entered" from="Spirits/Fountain 2/ScholarDetectionArea" to="Spirits/Fountain 2" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Spirits/Fountain 2/ScholarDetectionArea" to="Spirits/Fountain 2" method="_on_detection_area_body_exited"]
+[connection signal="dialogue_finished" from="Spirits/Fountain 2/DialogueUI" to="Spirits/Fountain 2" method="_on_dialogue_ui_dialogue_finished"]

@@ -10,8 +10,12 @@ var playerSavedPos := Vector2.ZERO
 var started := false
 var startingTile := Vector2(957.5, 3900)
 
+var score: int = 0
+var playerMaxHP: int = 6
+var playerCurrentHP: int = 6
+
 func _process(delta: float) -> void:
-	# print(currentScene)
+	print(score)
 	pass
 
 func finishSceneChange():
