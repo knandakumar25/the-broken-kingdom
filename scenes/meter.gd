@@ -20,7 +20,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	print(Global.score)
 	var score = Global.score
 	# Optional flavor text based on morality position
 	if score > 0:

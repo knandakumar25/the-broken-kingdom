@@ -1,0 +1,24 @@
+{
+	"M1": [
+		{"name": "Spirit:", "text": "Mom! Can I go dance with the other kids?"},
+	],
+	"M2": [
+		{"name": "Spirit:", "text": "The whole community is here and united, thanks to the king. Such a wonderful and joyous day!"},
+	],
+	"M3": [
+		{"name": "Spirit:", "text": "Another great harvest festival. The king has done it again! Long live the king! Hip hip!"},
+	],
+	"S1": [
+		{"name": "Spirit:", "text": "This years harvest is so thin...."},
+	],
+	"S2": [
+		{"name": "Spirit:", "text": "Not only are there barely any crops, but most of them are spoiled!"},
+		{"name": "Spirit:", "text": "How can we eat this? How can we survive?"},
+	],
+	"S3": [
+		{"name": "Spirit:", "text": "Mom…I’m hungry."},
+	],
+	"neutral": [
+		{"name": "Spirit:", "text": "It is quite lively here!"},
+	],
+}
