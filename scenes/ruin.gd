@@ -28,6 +28,21 @@ func _process(delta: float) -> void:
 		label.text = about
 		rebuild_button.show()
 		destroy_button.show()
+	var scene_name = get_scene_file_path().get_file().get_basename()
+	scene_name = capitalize_first_letter(scene_name)
+	if player_in_range and rebuilt:
+		label.show()
+		label.text = "Press [L-SHIFT] to enter: " + scene_name
+	if player_in_range and Input.is_action_just_pressed("enter_building") and rebuilt:
+		if (scene_name == "Castle"):
+			get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
+		elif (scene_name == "Academy"):
+			get_tree().change_scene_to_file("res://scenes/academy_inside.tscn")
+
+func capitalize_first_letter(text: String) -> String:
+	if text.length() == 0:
+		return text
+	return text[0].to_upper() + text.substr(1, text.length() - 1)
 
 func _on_rebuild_pressed() -> void:
 	meter.add_points(-10)  # Moon path
@@ -35,6 +50,7 @@ func _on_rebuild_pressed() -> void:
 	scholar.position = self.position + Vector2(160, 0)
 	rebuilt = true
 	cleanup_ui()
+	label.position = label.position + Vector2(50, -100)
 
 func cleanup_ui() -> void:
 	label.hide()
