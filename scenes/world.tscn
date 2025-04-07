@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=35 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -22,8 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
+[ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/fountain_portal.gd" id="23_kpybi"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo54l"]
 texture = ExtResource("8_w7kh3")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -229,7 +230,7 @@ texture_region_size = Vector2i(64, 64)
 8:3/0/terrain_set = 0
 8:3/0/terrain = 3
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8fc1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpybi"]
 texture = ExtResource("9_e3hyu")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -405,14 +406,14 @@ texture_region_size = Vector2i(64, 64)
 3:7/0/terrain_set = 0
 3:7/0/terrain = 2
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xo05s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctatt"]
 texture = ExtResource("10_q5onr")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 3
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dss4m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgqkh"]
 texture = ExtResource("11_q5onr")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -462,12 +463,12 @@ terrain_set_0/terrain_4/name = "Ocean 3"
 terrain_set_0/terrain_4/color = Color(0.0784314, 0.607843, 0.784314, 1)
 terrain_set_0/terrain_5/name = "Bridge 5"
 terrain_set_0/terrain_5/color = Color(0.708027, 0.290153, 5.95859e-05, 1)
-sources/1 = SubResource("TileSetAtlasSource_jhx03")
-sources/2 = SubResource("TileSetAtlasSource_o8fc1")
-sources/3 = SubResource("TileSetAtlasSource_xo05s")
-sources/4 = SubResource("TileSetAtlasSource_dss4m")
+sources/1 = SubResource("TileSetAtlasSource_oo54l")
+sources/2 = SubResource("TileSetAtlasSource_kpybi")
+sources/3 = SubResource("TileSetAtlasSource_ctatt")
+sources/4 = SubResource("TileSetAtlasSource_xgqkh")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7t5mc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_munwf"]
 texture = ExtResource("12_q5onr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -476,7 +477,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_lakw3"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
-sources/2 = SubResource("TileSetAtlasSource_7t5mc")
+sources/2 = SubResource("TileSetAtlasSource_munwf")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3hyu"]
 radius = 39.2046
@@ -484,23 +485,29 @@ radius = 39.2046
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5onr"]
 radius = 176.071
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo54l"]
+size = Vector2(85.625, 85.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oo54l"]
+radius = 86.209
+
 [node name="World" type="Node"]
 script = ExtResource("1_2lf6f")
 
 [node name="Judge" parent="." instance=ExtResource("3_0e3y6")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(1949, 7382)
+position = Vector2(954, 3878)
 scale = Vector2(0.28, 0.28)
 
 [node name="DialogueBox" type="Control" parent="."]
 z_index = 99
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1767.0
-offset_top = 6582.0
-offset_right = 1807.0
-offset_bottom = 6622.0
+offset_left = 772.0
+offset_top = 3078.0
+offset_right = 812.0
+offset_bottom = 3118.0
 script = ExtResource("7_damk1")
 
 [node name="Label" type="Label" parent="DialogueBox"]
@@ -549,6 +556,7 @@ offset_bottom = 74.0
 scale = Vector2(1.2, 1.2)
 
 [node name="Map" type="Node2D" parent="."]
+position = Vector2(-995, -3504)
 
 [node name="Cliff Grass" type="TileMapLayer" parent="Map"]
 z_index = 6
@@ -597,7 +605,7 @@ tile_map_data = PackedByteArray("AABkANABAAAAAAAAAABkAM8BAAAAAAAAAABkAM4BAAAAAAA
 tile_set = SubResource("TileSet_lakw3")
 
 [node name="Scholar" type="CharacterBody2D" parent="."]
-position = Vector2(2552, 6683)
+position = Vector2(1557, 3179)
 script = ExtResource("12_jhx03")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scholar"]
@@ -631,7 +639,7 @@ autostart = true
 
 [node name="Church" parent="." instance=ExtResource("14_o8fc1")]
 z_index = 99
-position = Vector2(5367, 5707)
+position = Vector2(4372, 2203)
 disable_mode = 1
 collision_layer = 3
 collision_mask = 3
@@ -639,48 +647,65 @@ collision_mask = 3
 [node name="Castle" parent="." instance=ExtResource("15_xo05s")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(4092, 4194)
+position = Vector2(3097, 690)
 
 [node name="Prison" parent="." instance=ExtResource("17_7t5mc")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(6454, 8242)
+position = Vector2(5459, 4738)
 
 [node name="Theatre" parent="." instance=ExtResource("18_lakw3")]
 z_index = 100
 y_sort_enabled = true
-position = Vector2(5355, 4466)
+position = Vector2(4360, 962)
 
 [node name="Library" parent="." instance=ExtResource("19_pm21f")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(5090, 7237)
+position = Vector2(4095, 3733)
 about = "Perhaps some of the Library's knowledge lies in the ruins..."
 
 [node name="Cookhouse" parent="." instance=ExtResource("18_pm21f")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(1999, 6102)
+position = Vector2(1051, 2658)
 about = "Pots and pans can be found among the rubble"
 
 [node name="CorruptedSpirit" parent="." instance=ExtResource("18_2lf6f")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(1902, 6762)
+position = Vector2(907, 3258)
 scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Farm" parent="." instance=ExtResource("21_7iits")]
 z_index = 99
-position = Vector2(2117, 5800)
+position = Vector2(1122, 2296)
 
 [node name="Academy" parent="." instance=ExtResource("22_oo54l")]
 z_index = 99
-position = Vector2(3716, 7650)
+position = Vector2(2721, 4146)
+
+[node name="FountainPortal" type="StaticBody2D" parent="."]
+position = Vector2(129, 1)
+script = ExtResource("23_kpybi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FountainPortal"]
+z_index = 99
+position = Vector2(2969.19, 2952)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="FountainPortalArea" type="Area2D" parent="FountainPortal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FountainPortal/FountainPortalArea"]
+z_index = 99
+position = Vector2(2969, 2952)
+shape = SubResource("CircleShape2D_oo54l")
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
 [connection signal="body_entered" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_exited"]
 [connection signal="dialogue_finished" from="Scholar/DialogueUI" to="Scholar" method="_on_dialogue_ui_dialogue_finished"]
+[connection signal="body_entered" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_entered"]
