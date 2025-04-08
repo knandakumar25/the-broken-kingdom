@@ -117,3 +117,12 @@ func interruptFocus():
 	print("Focus Interrupted!")
 	focusing = false
 	$purifyTimer.stop()
+	
+func currentCamera():
+	if Global.currentScene == "world":
+		$Camera2D.enabled = true
+		$SpiritWorldCamera.enabled = false
+	elif Global.currentScene == "spirit_world":
+		$Camera2D.enabled = false
+		$SpiritWorldCamera.enabled = true
+		

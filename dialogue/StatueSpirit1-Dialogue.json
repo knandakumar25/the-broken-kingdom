@@ -1,0 +1,23 @@
+{
+	"M1": [
+		{"name": "Spirit:", "text": "I look forward to our next meeting!"},
+	],
+	"M2": [
+		{"name": "Spirit:", "text": "The subsidy you provided my business is a great gift, thank you, my king."},
+	],
+	"M3": [
+		{"name": "Spirit:", "text": "Great king! I hope you will visit our home again soon, we loved feeding you."},
+	],
+	"S1": [
+		{"name": "Spirit:", "text": "Help us, great king."},
+	],
+	"S2": [
+		{"name": "Spirit:", "text": "Hear us, please… Don’t shut yourself out."},
+	],
+	"S3": [
+		{"name": "Spirit:", "text": "Great king, please don’t take my little boy away… It’s all we have."},
+	],
+	"neutral": [
+		{"name": "Spirit:", "text": "Do you think this statue actually looks like him?"},
+	],
+}
