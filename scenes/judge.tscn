@@ -28,6 +28,9 @@ shape = SubResource("RectangleShape2D_38pbf")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 
+[node name="SpiritWorldCamera" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
 [node name="playerHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]

@@ -1,0 +1,25 @@
+{
+	"M1": [
+		{"name": "Spirit:", "text": "This market is bustling with activity!"},
+	],
+	"M2": [
+		{"name": "Spirit:", "text": "Ooh, some carrots and celery? Our family will eat well tonight, thanks to the king."},
+	],
+	"M3": [
+		{"name": "Spirit:", "text": "This market would not be here if it were not for the king."},
+		{"name": "Spirit:", "text": "His generosity has allowed all these vendors to thrive!"},
+	],
+	"S1": [
+		{"name": "Spirit:", "text": "Another week with barely any food and items."},
+	],
+	"S2": [
+		{"name": "Spirit:", "text": "Ever since the kingdom shut it's ports there have been less and less vendors."},
+		{"name": "Spirit:", "text": "Or maybe the king scared them all away..."},
+	],
+	"S3": [
+		{"name": "Spirit:", "text": "The stalls are practically empty, how will our family eat tonight!?"},
+	],
+	"neutral": [
+		{"name": "Spirit:", "text": "What should I check out first?"},
+	],
+}
