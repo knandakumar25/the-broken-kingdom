@@ -16,6 +16,7 @@ var player_in_range = false
 var rebuilt = false  # Track if the ruin has been rebuilt
 var interacted = false
 var player_ref: CharacterBody2D = null
+var scholar_in_range = false
 
 
 func _ready() -> void:
@@ -118,3 +119,17 @@ func _on_body_exited(body: Node2D) -> void:
 		
 	if body.name == "Judge":
 		player_in_range = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("c")
+	if body.name == "Judge":
+		print("d")
+		scholar_in_range = true
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	print("e")
+	if body.name == "Judge":
+		print("f")
+		scholar_in_range = false

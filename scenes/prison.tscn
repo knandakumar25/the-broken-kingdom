@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dscyo6no378tp"]
+[gd_scene load_steps=8 format=3 uid="uid://dscyo6no378tp"]
 
 [ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_jrogc"]
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_meoqt"]
@@ -12,6 +12,9 @@ size = Vector2(324, 133)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrogc"]
 size = Vector2(360, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hw44n"]
+size = Vector2(321, 278)
 
 [node name="Prison" type="Area2D"]
 script = ExtResource("1_meoqt")
@@ -63,7 +66,16 @@ offset_bottom = 183.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-252, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-76.5, 85)
+shape = SubResource("RectangleShape2D_hw44n")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
 [connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_body_exited"]

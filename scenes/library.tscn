@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b37dipm70niyf"]
+[gd_scene load_steps=8 format=3 uid="uid://b37dipm70niyf"]
 
 [ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_0cqvf"]
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_m4m2s"]
@@ -12,6 +12,9 @@ size = Vector2(355, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igipr"]
 size = Vector2(329, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6frsu"]
+size = Vector2(369, 294)
 
 [node name="Library" type="Area2D"]
 script = ExtResource("1_m4m2s")
@@ -59,7 +62,16 @@ shape = SubResource("RectangleShape2D_n61aj")
 position = Vector2(3.5, 63.5)
 shape = SubResource("RectangleShape2D_igipr")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-284, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-68.5, 107)
+shape = SubResource("RectangleShape2D_6frsu")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
 [connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
