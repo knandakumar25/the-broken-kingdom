@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="6_ffv1d"]
 [ext_resource type="Script" uid="uid://dhac8d421w6ch" path="res://scenes/spiritWorldExitPortal.gd" id="8_rgxta"]
 [ext_resource type="Script" uid="uid://yue4g1q8mq0x" path="res://scenes/genericNPC.gd" id="9_7fsud"]
-[ext_resource type="Texture2D" uid="uid://dc1ctl6sjl4ol" path="res://assets/images/NPC.png" id="10_81bf4"]
+[ext_resource type="Texture2D" uid="uid://cravk55m4wseo" path="res://assets/images/scholar.PNG" id="10_81bf4"]
 [ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="11_7fsud"]
 [ext_resource type="Script" uid="uid://rt0bmeddwu37" path="res://dialogue/dialogueFountainSpirit1.gd" id="12_81bf4"]
 [ext_resource type="Script" uid="uid://beoqkcdhilrqa" path="res://dialogue/dialogueFountainSpirit2.gd" id="13_7fsud"]

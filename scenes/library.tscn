@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bi4s84fvuykk1" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Purple.png" id="3_n61aj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6qe"]
-size = Vector2(604.5, 341.5)
+size = Vector2(223, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n61aj"]
 size = Vector2(336, 158)
@@ -23,7 +23,7 @@ about = "Ah, the library. Holds all the knowledge of Solunaris."
 texture = ExtResource("1_0cqvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 54)
+position = Vector2(10.5, 62)
 shape = SubResource("RectangleShape2D_1n6qe")
 
 [node name="Label" type="Label" parent="."]

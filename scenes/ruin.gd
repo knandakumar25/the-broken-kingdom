@@ -15,6 +15,8 @@ class_name Ruin
 var player_in_range = false
 var rebuilt = false  # Track if the ruin has been rebuilt
 var interacted = false
+var player_ref: CharacterBody2D = null
+
 
 func _ready() -> void:
 	rebuild_button.hide()
@@ -28,16 +30,29 @@ func _process(delta: float) -> void:
 		label.text = about
 		rebuild_button.show()
 		destroy_button.show()
+
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
+
 	if player_in_range and rebuilt:
 		label.show()
-		label.text = "Press [L-SHIFT] to enter: " + scene_name
+		label.text = "Press [E] to enter: " + scene_name
+
 	if player_in_range and Input.is_action_just_pressed("enter_building") and rebuilt:
-		if (scene_name == "Castle"):
-			get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
-		elif (scene_name == "Academy"):
-			get_tree().change_scene_to_file("res://scenes/academy_inside.tscn")
+		if player_ref and not Global.transitionScene:
+			Global.playerSavedPos = player_ref.global_position
+			Global.transitionScene = true  # Prevent multiple transitions
+			scene_name = capitalize_first_letter(get_scene_file_path().get_file().get_basename())
+
+			if scene_name == "Castle":
+				Global.currentScene = "castle_inside"
+				await get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
+				Global.finishSceneChange()
+			elif scene_name == "Academy":
+				Global.currentScene = "academy_inside"
+				await get_tree().change_scene_to_file("res://scenes/academy_inside.tscn")
+				Global.finishSceneChange()
+
 
 func capitalize_first_letter(text: String) -> String:
 	if text.length() == 0:
@@ -66,8 +81,9 @@ func _on_destroy_pressed() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge" and !rebuilt:
 		player_in_range = true
+		player_ref = body
 		label.show()
-		label.text = "[E] to interact"
+		label.text = "[I] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge" and !rebuilt:

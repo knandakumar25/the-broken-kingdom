@@ -1,7 +1,101 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl3nkjo2s7idh"]
+[gd_scene load_steps=22 format=3 uid="uid://dl3nkjo2s7idh"]
 
 [ext_resource type="Script" uid="uid://7mvqp533d8lw" path="res://scenes/judge.gd" id="1_niqck"]
-[ext_resource type="Texture2D" uid="uid://bl41025dw6clo" path="res://assets/images/JudgeSprite.png" id="2_6qmai"]
+[ext_resource type="Texture2D" uid="uid://crny85b21uk3s" path="res://assets/images/Updated Back 1.png" id="2_cskas"]
+[ext_resource type="Texture2D" uid="uid://cewwvhojmdbvw" path="res://assets/images/Updated Back 2.png" id="3_vyf83"]
+[ext_resource type="Texture2D" uid="uid://dnsq5nyvuhtv7" path="res://assets/images/Updated Back 3.png" id="4_aifhk"]
+[ext_resource type="Texture2D" uid="uid://b4bgm8khygojv" path="res://assets/images/Updated Back 4.png" id="5_s4qhy"]
+[ext_resource type="Texture2D" uid="uid://gnrp8q0ix5ws" path="res://assets/images/Updated Front 1.PNG" id="6_tr4af"]
+[ext_resource type="Texture2D" uid="uid://b0vhlx8q13dep" path="res://assets/images/Updated Front 2.PNG" id="7_budhr"]
+[ext_resource type="Texture2D" uid="uid://d0xh4m63xude6" path="res://assets/images/Updated Front 3.PNG" id="8_xen72"]
+[ext_resource type="Texture2D" uid="uid://dgactbhhrd7px" path="res://assets/images/Updated Front 4.PNG" id="9_j5u8d"]
+[ext_resource type="Texture2D" uid="uid://desj18l2oqnbv" path="res://assets/images/Updated Left 1.PNG" id="10_fohl3"]
+[ext_resource type="Texture2D" uid="uid://c2wflye0ndpvf" path="res://assets/images/Updated Left 2.PNG" id="11_1od4p"]
+[ext_resource type="Texture2D" uid="uid://csyevisvwtbyj" path="res://assets/images/Updated Left 3.PNG" id="12_5xc2v"]
+[ext_resource type="Texture2D" uid="uid://cbx6oa8r44ns6" path="res://assets/images/Updated Left 4.PNG" id="13_fce4e"]
+[ext_resource type="Texture2D" uid="uid://chm4iyb16ergx" path="res://assets/images/Updated Right 1.PNG" id="14_ni3bw"]
+[ext_resource type="Texture2D" uid="uid://dxo1wx1gxrpgc" path="res://assets/images/Updated Right 2.PNG" id="15_hbx43"]
+[ext_resource type="Texture2D" uid="uid://dkt5bdsalxmrr" path="res://assets/images/Updated Right 3.PNG" id="16_1xfsy"]
+[ext_resource type="Texture2D" uid="uid://b3cyvy6tegfgy" path="res://assets/images/Updated Right 4.PNG" id="17_yio6r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lhj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ni3bw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cskas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vyf83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aifhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s4qhy")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tr4af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_budhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xen72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j5u8d")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fohl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1od4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5xc2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fce4e")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ni3bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hbx43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1xfsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yio6r")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38pbf"]
 size = Vector2(185, 225)
@@ -17,9 +111,9 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 3
 script = ExtResource("1_niqck")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("2_6qmai")
+sprite_frames = SubResource("SpriteFrames_3lhj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)

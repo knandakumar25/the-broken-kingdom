@@ -1,3 +1,84 @@
-[gd_scene format=3 uid="uid://b0hygw5k3ied5"]
+[gd_scene load_steps=11 format=3 uid="uid://b0hygw5k3ied5"]
+
+[ext_resource type="Texture2D" uid="uid://b25h35snucva2" path="res://assets/images/floor.png" id="1_0jyiw"]
+[ext_resource type="Script" uid="uid://bkl30p3qvscos" path="res://scenes/inside.gd" id="1_qofpn"]
+[ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="2_qofpn"]
+[ext_resource type="Texture2D" uid="uid://c4o7ybeeui5ji" path="res://assets/images/castle.png" id="2_uxnqq"]
+[ext_resource type="Texture2D" uid="uid://ci5gvg3f6lkjy" path="res://assets/images/king.PNG" id="5_ox243"]
+[ext_resource type="Texture2D" uid="uid://c1cv2xj8714w0" path="res://assets/images/pedestal.PNG" id="6_28e6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxnqq"]
+size = Vector2(299, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jyiw"]
+size = Vector2(26.75, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28e6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox243"]
 
 [node name="CastleInside" type="Node2D"]
+script = ExtResource("1_qofpn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3035.0
+offset_top = 684.0
+offset_right = 3316.0
+offset_bottom = 872.0
+texture = ExtResource("2_uxnqq")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_0jyiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 6.5)
+shape = SubResource("RectangleShape2D_uxnqq")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3090, 789)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.129283, 1.77143)
+texture = ExtResource("1_0jyiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0jyiw")
+
+[node name="ExitLabel" type="Label" parent="Area2D"]
+offset_left = -21.0
+offset_top = -91.0
+offset_right = 69.0
+offset_bottom = -67.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Judge" parent="." instance=ExtResource("2_qofpn")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(0, -100)
+scale = Vector2(0.28, 0.28)
+
+[node name="King" type="StaticBody2D" parent="."]
+position = Vector2(3212, 831)
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="King"]
+texture = ExtResource("5_ox243")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="King"]
+shape = SubResource("RectangleShape2D_28e6q")
+
+[node name="Pedestal" type="StaticBody2D" parent="."]
+position = Vector2(3169, 834)
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pedestal"]
+texture = ExtResource("6_28e6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pedestal"]
+shape = SubResource("RectangleShape2D_ox243")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

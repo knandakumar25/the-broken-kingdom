@@ -4,6 +4,7 @@ const SPEED = 500.0
 var nearby_ruin: Area2D = null
 
 @onready var world = get_parent()
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var enemyInAttackRange = false
 var enemyInPurifyRange = false
@@ -14,30 +15,46 @@ var playerAlive = true
 
 var attacking = false
 var focusing = false
+var current_direction: String = "down"
+
 
 func _physics_process(delta: float) -> void:
-	
 	enemyAttack() 
 	playerAttack()
 	playerFocus()
-	
+
 	if currentHealth <= 0:
 		playerAlive = false
 		currentHealth = 0
 		print("Player Killed")
 		self.queue_free()
 		## Add End Screen
-	
+
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	
-	# Normalize to prevent faster diagonal movement
+
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
-	
-	velocity = input_vector * SPEED
-	move_and_slide()
+		velocity = input_vector * SPEED
+		move_and_slide()
+
+		# Animation direction logic
+		if abs(input_vector.x) > abs(input_vector.y):
+			if input_vector.x > 0:
+				current_direction = "right"
+			else:
+				current_direction = "left"
+		else:
+			if input_vector.y > 0:
+				current_direction = "front"
+			else:
+				current_direction = "back"
+
+		anim_sprite.play("walk_" + current_direction)
+	else:
+		velocity = Vector2.ZERO
+		anim_sprite.play("default")  # Make sure you have these too
 
 func _process(delta: float) -> void:
 	if nearby_ruin and Input.is_action_just_pressed("interact"):

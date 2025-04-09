@@ -23,7 +23,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":  # Ensure your Player node is named 'Judge'
 		player_in_range = true
 		label.show()
-		label.text = "[E] to interact"
+		label.text = "[I] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge":
