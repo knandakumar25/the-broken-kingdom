@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
-[ext_resource type="Script" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
+[ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
 [ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="24_ctatt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpybi"]
@@ -638,11 +638,6 @@ scale = Vector2(0.8, 0.8)
 [node name="Timer" type="Timer" parent="Scholar"]
 autostart = true
 
-[node name="Castle" parent="." instance=ExtResource("15_xo05s")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(3097, 690)
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CorruptedSpirit" parent="Enemies" instance=ExtResource("18_2lf6f")]
@@ -856,6 +851,11 @@ disable_mode = 1
 collision_layer = 3
 collision_mask = 3
 
+[node name="Castle" parent="Ruins" instance=ExtResource("15_xo05s")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(3097, 690)
+
 [node name="Prison" parent="Ruins" instance=ExtResource("17_7t5mc")]
 z_index = 99
 y_sort_enabled = true
@@ -866,25 +866,25 @@ z_index = 100
 y_sort_enabled = true
 position = Vector2(4595, 1140)
 
+[node name="Library" parent="Ruins" instance=ExtResource("19_pm21f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(4095, 3733)
+about = "Perhaps some of the Library's knowledge lies in the ruins..."
+
 [node name="Cookhouse" parent="Ruins" instance=ExtResource("18_pm21f")]
 z_index = 99
 y_sort_enabled = true
 position = Vector2(1070, 2591)
 about = "Pots and pans can be found among the rubble"
 
-[node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
-z_index = 99
-position = Vector2(2747, 4041)
-
 [node name="Farm" parent="Ruins" instance=ExtResource("21_7iits")]
 z_index = 99
 position = Vector2(1284, 2290)
 
-[node name="Library" parent="Ruins" instance=ExtResource("19_pm21f")]
+[node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
 z_index = 99
-y_sort_enabled = true
-position = Vector2(4095, 3733)
-about = "Perhaps some of the Library's knowledge lies in the ruins..."
+position = Vector2(2747, 4041)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]

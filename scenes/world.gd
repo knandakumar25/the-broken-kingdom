@@ -18,33 +18,33 @@ func _ready():
 	print(3)
 	if (Global.church != null):
 		print(4)
-		$Church.ruin_image.texture = Global.church
-		$Church.rebuilt = true
+		$Ruins/Church.ruin_image.texture = Global.church
+		$Ruins/Church.rebuilt = true
 	if (Global.castle != null):
 		print(4)
-		$Castle.ruin_image.texture = Global.castle
-		$Castle.rebuilt = true
+		$Ruins/Castle.ruin_image.texture = Global.castle
+		$Ruins/Castle.rebuilt = true
 	if (Global.prison != null):
 		print(4)
-		$Prison.ruin_image.texture = Global.prison
-		$Prison.rebuilt = true
+		$Ruins/Prison.ruin_image.texture = Global.prison
+		$Ruins/Prison.rebuilt = true
 	if (Global.theatre != null):
 		print(4)
-		$Theatre.ruin_image.texture = Global.theatre
-		$Theatre.rebuilt = true
+		$Ruins/Theatre.ruin_image.texture = Global.theatre
+		$Ruins/Theatre.rebuilt = true
 	if (Global.library != null):
 		print(4)
-		$Library.ruin_image.texture = Global.library
-		$Library.rebuilt = true
+		$Ruins/Library.ruin_image.texture = Global.library
+		$Ruins/Library.rebuilt = true
 	if (Global.cookhouse != null):
 		print(4)
-		$Cookhouse.ruin_image.texture = Global.cookhouse
-		$Cookhouse.rebuilt = true
+		$Ruins/Cookhouse.ruin_image.texture = Global.cookhouse
+		$Ruins/Cookhouse.rebuilt = true
 	if (Global.farm != null):
 		print(4)
-		$Farm.ruin_image.texture = Global.farm
-		$Farm.rebuilt = true
+		$Ruins/Farm.ruin_image.texture = Global.farm
+		$Ruins/Farm.rebuilt = true
 	if (Global.academy != null):
 		print(4)
-		$Academy.ruin_image.texture = Global.academy
-		$Academy.rebuilt = true
+		$Ruins/Academy.ruin_image.texture = Global.academy
+		$Ruins/Academy.rebuilt = true
