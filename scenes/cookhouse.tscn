@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://2duomuiwyomp" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Yellow.png" id="3_xk2uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ej5r"]
-size = Vector2(92, 47)
+size = Vector2(224, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk2uh"]
-size = Vector2(153, 185)
+size = Vector2(223, 169)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcn1a"]
-size = Vector2(154, 185)
+size = Vector2(153, 135)
 
 [node name="Cookhouse" type="Area2D"]
 script = ExtResource("1_1ej5r")
@@ -25,7 +25,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_epbwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12.5)
+position = Vector2(0, 34)
 shape = SubResource("RectangleShape2D_1ej5r")
 
 [node name="Label" type="Label" parent="."]
@@ -52,13 +52,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -9.5)
+position = Vector2(-0.5, 33.5)
 shape = SubResource("RectangleShape2D_xk2uh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -8.5)
+position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_jcn1a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -24,7 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		savedPlayerHealth = player.currentHealth
 
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("exit_building"):
+	if player_in_range and Input.is_action_just_pressed("interact"):
 		exit_building()
 
 func exit_building():

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var meter: Control = $"../CanvasLayer/Meter"
+@onready var meter: Control = $"../../CanvasLayer/Meter"
 
 var speed = 50
 var chasingPlayer = false
@@ -62,11 +62,11 @@ func processDamage():
 			if ( health <= 0 ):
 				meter.add_points(10)
 				self.queue_free()
-	if Global.isFocusKill:
-		print("Enemy purified")
-		meter.add_points(-10)
-		self.queue_free()
-		Global.isFocusKill = false
+	#if Global.isFocusKill:
+	#	print("Enemy purified")
+	#	meter.add_points(-10)
+	#	self.queue_free()
+	#	Global.isFocusKill = false
 
 func _on_damage_taken_cd_timeout() -> void:
 	canTakeDamage = true

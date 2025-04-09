@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b26dfv2qo5iaa"]
+[gd_scene load_steps=6 format=3 uid="uid://b26dfv2qo5iaa"]
 
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_0ysgy"]
 [ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_rjj26"]
 [ext_resource type="Texture2D" uid="uid://cj2kyvxbpdutg" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Yellow.png" id="3_rjj26"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjj26"]
+size = Vector2(342, 130)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj81n"]
-size = Vector2(316, 124)
+size = Vector2(369, 153)
 
 [node name="Castle" type="Area2D"]
 script = ExtResource("1_0ysgy")
@@ -13,11 +16,17 @@ destroyed_texture = ExtResource("2_rjj26")
 rebuilt_texture = ExtResource("3_rjj26")
 about = "The former home of the king."
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 62)
+shape = SubResource("RectangleShape2D_rjj26")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rjj26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 61)
+position = Vector2(3.5, 63.5)
 shape = SubResource("RectangleShape2D_jj81n")
 
 [node name="Label" type="Label" parent="."]
