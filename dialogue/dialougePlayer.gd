@@ -43,7 +43,7 @@ func load_dialogue():
 	if !scholarMet:
 		return content["intro"]
 	
-	if is_instance_valid(church) and !church.interacted and church.player_in_range:
+	if is_instance_valid(church) and !church.interacted and church.scholar_in_range:
 		if church.rebuilt:
 			church.interacted = true
 			return content["church-rebuilt"]
@@ -51,23 +51,15 @@ func load_dialogue():
 			church.interacted = true
 			church.queue_free()
 			return content["church-destroyed"]
-	print("a")
-	print(is_instance_valid(castle))
-	print(!castle.interacted)
-	print(castle.player_in_range)
-	if is_instance_valid(castle) and !castle.interacted and castle.player_in_range:
+	if is_instance_valid(castle) and !castle.interacted and castle.scholar_in_range:
 		if castle.rebuilt:
-			print("b")
 			castle.interacted = true
 			return content["castle-rebuilt"]
 		else:
 			castle.interacted = true
 			castle.queue_free()
 			return content["castle-destroyed"]
-	print(is_instance_valid(prison))
-	print(!prison.interacted)
-	print(prison.player_in_range)
-	if is_instance_valid(prison) and !prison.interacted and prison.player_in_range:
+	if is_instance_valid(prison) and !prison.interacted and prison.scholar_in_range:
 		if prison.rebuilt:
 			prison.interacted = true
 			return content["prison-rebuilt"]
@@ -76,7 +68,7 @@ func load_dialogue():
 			prison.queue_free()
 			return content["prison-destroyed"]
 	
-	if is_instance_valid(theatre) and !theatre.interacted and theatre.player_in_range:
+	if is_instance_valid(theatre) and !theatre.interacted and theatre.scholar_in_range:
 		if theatre.rebuilt:
 			theatre.interacted = true
 			return content["theatre-rebuilt"]
@@ -85,7 +77,7 @@ func load_dialogue():
 			theatre.queue_free()
 			return content["theatre-destroyed"]
 	
-	if is_instance_valid(library) and !library.interacted and library.player_in_range:
+	if is_instance_valid(library) and !library.interacted and library.scholar_in_range:
 		if library.rebuilt:
 			library.interacted = true
 			return content["library-rebuilt"]
@@ -94,7 +86,7 @@ func load_dialogue():
 			library.queue_free()
 			return content["library-destroyed"]
 	
-	if is_instance_valid(cookhouse) and !cookhouse.interacted and cookhouse.player_in_range:
+	if is_instance_valid(cookhouse) and !cookhouse.interacted and cookhouse.scholar_in_range:
 		if cookhouse.rebuilt:
 			cookhouse.interacted = true
 			return content["cookhouse-rebuilt"]
@@ -103,7 +95,7 @@ func load_dialogue():
 			cookhouse.queue_free()
 			return content["cookhouse-destroyed"]
 	
-	if is_instance_valid(farm) and !farm.interacted and farm.player_in_range:
+	if is_instance_valid(farm) and !farm.interacted and farm.scholar_in_range:
 		if farm.rebuilt:
 			farm.interacted = true
 			return content["farm-rebuilt"]
@@ -112,7 +104,7 @@ func load_dialogue():
 			farm.queue_free()
 			return content["farm-destroyed"]
 	
-	if is_instance_valid(academy) and !academy.interacted and academy.player_in_range:
+	if is_instance_valid(academy) and !academy.interacted and academy.scholar_in_range:
 		if academy.rebuilt:
 			academy.interacted = true
 			return content["academy-rebuilt"]
