@@ -8,9 +8,9 @@ class_name Ruin
 @onready var label: Label = $Label
 @onready var rebuild_button: Button = $ButtonRebuild
 @onready var destroy_button: Button = $ButtonDestroy
-@onready var meter: Control = $"../CanvasLayer/Meter"
+@onready var meter: Control = $"../../CanvasLayer/Meter"
 @onready var ruin_image: Sprite2D = $Sprite2D
-@onready var scholar: CharacterBody2D = $"../Scholar"
+@onready var scholar: CharacterBody2D = $"../../Scholar"
 
 var player_in_range = false
 var rebuilt = false  # Track if the ruin has been rebuilt
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 		label.show()
 		label.text = "Press [E] to enter: " + scene_name
 
-	if player_in_range and Input.is_action_just_pressed("enter_building") and rebuilt:
+	if player_in_range and Input.is_action_just_pressed("interact") and rebuilt:
 		if player_ref and not Global.transitionScene:
 			Global.playerSavedPos = player_ref.global_position
 			Global.transitionScene = true  # Prevent multiple transitions
@@ -62,7 +62,7 @@ func capitalize_first_letter(text: String) -> String:
 func _on_rebuild_pressed() -> void:
 	meter.add_points(-10)  # Moon path
 	ruin_image.texture = rebuilt_texture  # Change the image
-	scholar.position = self.position + Vector2(160, 0)
+	scholar.position = self.position + Vector2(-300, 120)
 	rebuilt = true
 	cleanup_ui()
 	label.position = label.position + Vector2(50, -100)
@@ -100,11 +100,14 @@ func _on_destroy_pressed() -> void:
 	cleanup_ui()  # Remove ruin after destroying
 
 func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Judge":
+		player_in_range = true
+		
 	if body.name == "Judge" and !rebuilt:
 		player_in_range = true
 		player_ref = body
 		label.show()
-		label.text = "[I] to interact"
+		label.text = "[E] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge" and !rebuilt:
@@ -112,3 +115,6 @@ func _on_body_exited(body: Node2D) -> void:
 		label.hide()
 		rebuild_button.hide()
 		destroy_button.hide()
+		
+	if body.name == "Judge":
+		player_in_range = false

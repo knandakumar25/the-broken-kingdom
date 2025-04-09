@@ -11,7 +11,7 @@ size = Vector2(145, 125)
 size = Vector2(143, 124.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3iq"]
-size = Vector2(52.1429, 40)
+size = Vector2(111.429, 95.7143)
 
 [node name="Church" type="Area2D"]
 script = ExtResource("1_20jv8")
@@ -29,6 +29,7 @@ position = Vector2(-1.5, -44.5)
 shape = SubResource("RectangleShape2D_g2eii")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1, -45)
@@ -37,7 +38,7 @@ shape = SubResource("RectangleShape2D_br6of")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -44)
+position = Vector2(-0.999998, -44)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_yh3iq")
 

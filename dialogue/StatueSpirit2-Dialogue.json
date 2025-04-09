@@ -17,7 +17,7 @@
 	],
 	"S3": [
 		{"name": "Spirit:", "text": "You shut yourselves inside your walls while the rest of us stand here and starve."}, 
-		{"name": "Spirit:", "text": "Her future is very bright, and I hope she goes on to serve you!"},
+		{"name": "Spirit:", "text": "Do not make us break down those doors." },
 	],
 	"neutral": [
 		{"name": "Spirit:", "text": "This stonework is magnificent!"},

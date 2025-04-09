@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=36 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -22,7 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
-[ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
+[ext_resource type="Script" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
+[ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="24_ctatt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpybi"]
 texture = ExtResource("8_w7kh3")
@@ -637,41 +638,14 @@ scale = Vector2(0.8, 0.8)
 [node name="Timer" type="Timer" parent="Scholar"]
 autostart = true
 
-[node name="Church" parent="." instance=ExtResource("14_o8fc1")]
-z_index = 99
-position = Vector2(4372, 2203)
-disable_mode = 1
-collision_layer = 3
-collision_mask = 3
-
 [node name="Castle" parent="." instance=ExtResource("15_xo05s")]
 z_index = 99
 y_sort_enabled = true
 position = Vector2(3097, 690)
 
-[node name="Prison" parent="." instance=ExtResource("17_7t5mc")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(5459, 4738)
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Theatre" parent="." instance=ExtResource("18_lakw3")]
-z_index = 100
-y_sort_enabled = true
-position = Vector2(4595, 1140)
-
-[node name="Library" parent="." instance=ExtResource("19_pm21f")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(4095, 3733)
-about = "Perhaps some of the Library's knowledge lies in the ruins..."
-
-[node name="Cookhouse" parent="." instance=ExtResource("18_pm21f")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(1051, 2658)
-about = "Pots and pans can be found among the rubble"
-
-[node name="CorruptedSpirit" parent="." instance=ExtResource("18_2lf6f")]
+[node name="CorruptedSpirit" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
 y_sort_enabled = true
 position = Vector2(907, 3258)
@@ -679,88 +653,249 @@ scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Farm" parent="." instance=ExtResource("21_7iits")]
+[node name="CorruptedSpirit2" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(1122, 2296)
+y_sort_enabled = true
+position = Vector2(1611, 3581)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="Academy" parent="." instance=ExtResource("22_oo54l")]
+[node name="CorruptedSpirit3" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(2747, 4135)
+y_sort_enabled = true
+position = Vector2(3038, 4250)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="FountainPortal" type="StaticBody2D" parent="."]
-position = Vector2(129, 1)
-script = ExtResource("23_kpybi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FountainPortal"]
+[node name="CorruptedSpirit4" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(2969.19, 2952)
-shape = SubResource("RectangleShape2D_oo54l")
+y_sort_enabled = true
+position = Vector2(2132, 1784)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="FountainPortalArea" type="Area2D" parent="FountainPortal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FountainPortal/FountainPortalArea"]
+[node name="CorruptedSpirit5" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(2969, 2952)
-shape = SubResource("CircleShape2D_oo54l")
+y_sort_enabled = true
+position = Vector2(2982, 2763)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="StatuePortal" type="StaticBody2D" parent="."]
-position = Vector2(133, -762)
-script = ExtResource("23_kpybi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StatuePortal"]
+[node name="CorruptedSpirit6" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(2969.19, 2952)
-shape = SubResource("RectangleShape2D_oo54l")
+y_sort_enabled = true
+position = Vector2(4160, 2910)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="StatuePortalArea" type="Area2D" parent="StatuePortal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StatuePortal/StatuePortalArea"]
+[node name="CorruptedSpirit7" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
-position = Vector2(2969, 2952)
-shape = SubResource("CircleShape2D_oo54l")
+y_sort_enabled = true
+position = Vector2(3278, 3071)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
 
-[node name="MarketPortal" type="StaticBody2D" parent="."]
+[node name="CorruptedSpirit8" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(2440, 2016)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit9" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(1460, 1140)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit10" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(2859, 1222)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit11" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(1313, 2621)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit12" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(4250, 1140)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit13" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(3797, 3639)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CorruptedSpirit14" parent="Enemies" instance=ExtResource("18_2lf6f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(3844, 4077)
+scale = Vector2(2.5, 2.5)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="MarketPortal" type="StaticBody2D" parent="Portals"]
 position = Vector2(-705, -793)
 script = ExtResource("23_kpybi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketPortal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/MarketPortal"]
 z_index = 99
 position = Vector2(2969.19, 2952)
 shape = SubResource("RectangleShape2D_oo54l")
 
-[node name="MarketPortalArea" type="Area2D" parent="MarketPortal"]
+[node name="MarketPortalArea" type="Area2D" parent="Portals/MarketPortal"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketPortal/MarketPortalArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/MarketPortal/MarketPortalArea"]
 z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_oo54l")
 
-[node name="FestivalPortal" type="StaticBody2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Portals/MarketPortal"]
+z_index = 99
+position = Vector2(2969, 2952)
+scale = Vector2(0.11245, 0.11245)
+texture = ExtResource("24_ctatt")
+
+[node name="FountainPortal" type="StaticBody2D" parent="Portals"]
+position = Vector2(129, 1)
+script = ExtResource("23_kpybi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portals/FountainPortal"]
+z_index = 99
+position = Vector2(2969, 2952)
+scale = Vector2(0.11245, 0.11245)
+texture = ExtResource("24_ctatt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/FountainPortal"]
+z_index = 99
+position = Vector2(2969.19, 2952)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="FountainPortalArea" type="Area2D" parent="Portals/FountainPortal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/FountainPortal/FountainPortalArea"]
+z_index = 99
+position = Vector2(2969, 2952)
+shape = SubResource("CircleShape2D_oo54l")
+
+[node name="StatuePortal" type="StaticBody2D" parent="Portals"]
+position = Vector2(133, -762)
+script = ExtResource("23_kpybi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portals/StatuePortal"]
+z_index = 99
+position = Vector2(2969, 2952)
+scale = Vector2(0.11245, 0.11245)
+texture = ExtResource("24_ctatt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StatuePortal"]
+z_index = 99
+position = Vector2(2969.19, 2952)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="StatuePortalArea" type="Area2D" parent="Portals/StatuePortal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StatuePortal/StatuePortalArea"]
+z_index = 99
+position = Vector2(2969, 2952)
+shape = SubResource("CircleShape2D_oo54l")
+
+[node name="FestivalPortal" type="StaticBody2D" parent="Portals"]
 position = Vector2(-1750, -1666)
 script = ExtResource("23_kpybi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalPortal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/FestivalPortal"]
 z_index = 99
 position = Vector2(2969.19, 2952)
 shape = SubResource("RectangleShape2D_oo54l")
 
-[node name="FestivalPortalArea" type="Area2D" parent="FestivalPortal"]
+[node name="FestivalPortalArea" type="Area2D" parent="Portals/FestivalPortal"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalPortal/FestivalPortalArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/FestivalPortal/FestivalPortalArea"]
 z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_oo54l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portals/FestivalPortal"]
+z_index = 99
+position = Vector2(2969, 2952)
+scale = Vector2(0.11245, 0.11245)
+texture = ExtResource("24_ctatt")
+
+[node name="Ruins" type="Node2D" parent="."]
+
+[node name="Church" parent="Ruins" instance=ExtResource("14_o8fc1")]
+z_index = 99
+position = Vector2(4372, 2203)
+disable_mode = 1
+collision_layer = 3
+collision_mask = 3
+
+[node name="Prison" parent="Ruins" instance=ExtResource("17_7t5mc")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(5459, 4738)
+
+[node name="Theatre" parent="Ruins" instance=ExtResource("18_lakw3")]
+z_index = 100
+y_sort_enabled = true
+position = Vector2(4595, 1140)
+
+[node name="Cookhouse" parent="Ruins" instance=ExtResource("18_pm21f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(1070, 2591)
+about = "Pots and pans can be found among the rubble"
+
+[node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
+z_index = 99
+position = Vector2(2747, 4041)
+
+[node name="Farm" parent="Ruins" instance=ExtResource("21_7iits")]
+z_index = 99
+position = Vector2(1284, 2290)
+
+[node name="Library" parent="Ruins" instance=ExtResource("19_pm21f")]
+z_index = 99
+y_sort_enabled = true
+position = Vector2(4095, 3733)
+about = "Perhaps some of the Library's knowledge lies in the ruins..."
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
 [connection signal="body_entered" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_exited"]
 [connection signal="dialogue_finished" from="Scholar/DialogueUI" to="Scholar" method="_on_dialogue_ui_dialogue_finished"]
-[connection signal="body_entered" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_entered"]
-[connection signal="body_exited" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_exited"]
-[connection signal="body_entered" from="StatuePortal/StatuePortalArea" to="StatuePortal" method="_on_statue_portal_area_body_entered"]
-[connection signal="body_exited" from="StatuePortal/StatuePortalArea" to="StatuePortal" method="_on_statue_portal_area_body_exited"]
-[connection signal="body_entered" from="MarketPortal/MarketPortalArea" to="MarketPortal" method="_on_market_portal_area_body_entered"]
-[connection signal="body_exited" from="MarketPortal/MarketPortalArea" to="MarketPortal" method="_on_market_portal_area_body_exited"]
-[connection signal="body_entered" from="FestivalPortal/FestivalPortalArea" to="FestivalPortal" method="_on_festival_portal_area_body_entered"]
-[connection signal="body_exited" from="FestivalPortal/FestivalPortalArea" to="FestivalPortal" method="_on_festival_portal_area_body_exited"]
+[connection signal="body_entered" from="Portals/MarketPortal/MarketPortalArea" to="Portals/MarketPortal" method="_on_market_portal_area_body_entered"]
+[connection signal="body_exited" from="Portals/MarketPortal/MarketPortalArea" to="Portals/MarketPortal" method="_on_market_portal_area_body_exited"]
+[connection signal="body_entered" from="Portals/FountainPortal/FountainPortalArea" to="Portals/FountainPortal" method="_on_fountain_portal_area_body_entered"]
+[connection signal="body_exited" from="Portals/FountainPortal/FountainPortalArea" to="Portals/FountainPortal" method="_on_fountain_portal_area_body_exited"]
+[connection signal="body_entered" from="Portals/StatuePortal/StatuePortalArea" to="Portals/StatuePortal" method="_on_statue_portal_area_body_entered"]
+[connection signal="body_exited" from="Portals/StatuePortal/StatuePortalArea" to="Portals/StatuePortal" method="_on_statue_portal_area_body_exited"]
+[connection signal="body_entered" from="Portals/FestivalPortal/FestivalPortalArea" to="Portals/FestivalPortal" method="_on_festival_portal_area_body_entered"]
+[connection signal="body_exited" from="Portals/FestivalPortal/FestivalPortalArea" to="Portals/FestivalPortal" method="_on_festival_portal_area_body_exited"]

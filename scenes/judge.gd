@@ -4,6 +4,7 @@ const SPEED = 500.0
 var nearby_ruin: Area2D = null
 
 @onready var world = get_parent()
+@onready var meter: Control = $"../CanvasLayer/Meter"
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var enemyInAttackRange = false
@@ -12,6 +13,7 @@ var enemyAttackCD = true
 var maxHealth = 6
 var currentHealth: int = maxHealth
 var playerAlive = true
+var targetPurifyEnemy: Node2D = null
 
 var attacking = false
 var focusing = false
@@ -57,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		anim_sprite.play("default")  # Make sure you have these too
 
 func _process(delta: float) -> void:
+	Global.isFocusKill = false
 	if nearby_ruin and Input.is_action_just_pressed("interact"):
 		nearby_ruin.interact()
 
@@ -69,22 +72,23 @@ func _on_area_exited(area: Area2D) -> void:
 		nearby_ruin = null
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.name == "CorruptedSpirit":
+	if body.name.contains("CorruptedSpirit"):
 		enemyInAttackRange = true
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	if body.name == "CorruptedSpirit":
+	if body.name.contains("CorruptedSpirit"):
 		enemyInAttackRange = false
 		
 func _on_purify_range_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.name == "CorruptedSpirit":
+	if body.name.contains("CorruptedSpirit"):
 		enemyInPurifyRange = true
-
+		targetPurifyEnemy = body
 
 func _on_purify_range_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body != null:
-		if body.name == "CorruptedSpirit" :
-			enemyInPurifyRange = false
+	if body != null && body.name.contains("CorruptedSpirit"):
+		enemyInPurifyRange = false
+		if targetPurifyEnemy == body:
+			targetPurifyEnemy = null
 
 func enemyAttack():
 	if enemyInAttackRange && enemyAttackCD:
@@ -117,6 +121,7 @@ func _on_player_attack_timer_timeout() -> void:
 	
 func playerFocus():
 	if Input.is_action_pressed("purify") && enemyInPurifyRange:
+		print("Purifying...")
 		if !focusing:
 			focusing = true
 			$purifyTimer.start()
@@ -124,11 +129,14 @@ func playerFocus():
 			interruptFocus()
 
 func _on_purify_timer_timeout() -> void:
-	if enemyInPurifyRange:
+	if enemyInPurifyRange && targetPurifyEnemy != null && targetPurifyEnemy.is_inside_tree():
 		print("Enemy Purified")
-		enemyInPurifyRange = false
-		Global.isFocusKill = true
+		targetPurifyEnemy.queue_free()
+		meter.add_points(-10)
 		focusing = false
+		targetPurifyEnemy = null
+		enemyInPurifyRange = false
+		$purifyTimer.stop()
 
 func interruptFocus():
 	print("Focus Interrupted!")
