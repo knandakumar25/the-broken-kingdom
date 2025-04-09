@@ -4,14 +4,14 @@ signal dialogue_finished
 
 @export_file("*.json") var d_file
 @onready var meter: Control = $"../../CanvasLayer/Meter"
-@onready var church: Ruin = $"../../Church"
-@onready var castle: Ruin = $"../../Castle"
-@onready var prison: Ruin = $"../../Prison"
-@onready var theatre: Ruin = $"../../Theatre"
-@onready var library: Ruin = $"../../Library"
-@onready var cookhouse: Ruin = $"../../Cookhouse"
-@onready var farm: Ruin = $"../../Farm"
-@onready var academy: Ruin = $"../../Academy"
+@onready var church: Ruin = $"../../Ruins/Church"
+@onready var castle: Ruin = $"../../Ruins/Castle"
+@onready var prison: Ruin = $"../../Ruins/Prison"
+@onready var theatre: Ruin = $"../../Ruins/Theatre"
+@onready var library: Ruin = $"../../Ruins/Library"
+@onready var cookhouse: Ruin = $"../../Ruins/Cookhouse"
+@onready var farm: Ruin = $"../../Ruins/Farm"
+@onready var academy: Ruin = $"../../Ruins/Academy"
 
 var dialogue = []
 var current_dialogue_id = 0
@@ -51,16 +51,22 @@ func load_dialogue():
 			church.interacted = true
 			church.queue_free()
 			return content["church-destroyed"]
-	
+	print("a")
+	print(is_instance_valid(castle))
+	print(!castle.interacted)
+	print(castle.player_in_range)
 	if is_instance_valid(castle) and !castle.interacted and castle.player_in_range:
 		if castle.rebuilt:
+			print("b")
 			castle.interacted = true
 			return content["castle-rebuilt"]
 		else:
 			castle.interacted = true
 			castle.queue_free()
 			return content["castle-destroyed"]
-	
+	print(is_instance_valid(prison))
+	print(!prison.interacted)
+	print(prison.player_in_range)
 	if is_instance_valid(prison) and !prison.interacted and prison.player_in_range:
 		if prison.rebuilt:
 			prison.interacted = true
