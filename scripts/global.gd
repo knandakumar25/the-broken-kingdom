@@ -7,6 +7,7 @@ var currentScene = "world"
 var transitionScene = false
 
 var playerSavedPos := Vector2.ZERO
+var playerSavedHealth := 6  # Add this to save the player's health
 var started := false
 var startingTile := Vector2(957.5, 3900)
 
