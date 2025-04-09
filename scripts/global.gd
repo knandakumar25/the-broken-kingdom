@@ -15,6 +15,15 @@ var score: int = 0
 var playerMaxHP: int = 6
 var playerCurrentHP: int = 6
 
+var church: Texture = null
+var castle: Texture = null
+var prison: Texture = null
+var theatre: Texture = null
+var library: Texture = null
+var cookhouse: Texture = null
+var farm: Texture = null
+var academy: Texture = null
+
 func _process(delta: float) -> void:
 	pass
 

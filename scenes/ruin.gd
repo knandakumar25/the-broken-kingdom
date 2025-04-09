@@ -66,6 +66,27 @@ func _on_rebuild_pressed() -> void:
 	rebuilt = true
 	cleanup_ui()
 	label.position = label.position + Vector2(50, -100)
+	var scene_name = get_scene_file_path().get_file().get_basename()
+	scene_name = capitalize_first_letter(scene_name)
+	print(1)
+	if (scene_name == "Church"):
+		Global.church = rebuilt_texture
+	if (scene_name == "Castle"):
+		print(2)
+		Global.castle = rebuilt_texture
+	if (scene_name == "Prison"):
+		Global.prison = rebuilt_texture
+	if (scene_name == "Theatre"):
+		Global.theatre = rebuilt_texture
+	if (scene_name == "Library"):
+		Global.library = rebuilt_texture
+	if (scene_name == "Cookhouse"):
+		Global.cookhouse = rebuilt_texture
+	if (scene_name == "Farm"):
+		Global.farm = rebuilt_texture
+	if (scene_name == "Academy"):
+		Global.academy = rebuilt_texture
+	
 
 func cleanup_ui() -> void:
 	label.hide()
