@@ -6,6 +6,7 @@ var nearby_ruin: Area2D = null
 @onready var world = get_parent()
 @onready var meter: Control = $"../CanvasLayer/Meter"
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var score_label: Label = $ScoreLabel
 
 var enemyInAttackRange = false
 var enemyInPurifyRange = false
@@ -132,6 +133,7 @@ func _on_purify_timer_timeout() -> void:
 	if enemyInPurifyRange && targetPurifyEnemy != null && targetPurifyEnemy.is_inside_tree():
 		print("Enemy Purified")
 		targetPurifyEnemy.queue_free()
+		show_score_popup(10, Color.SKY_BLUE)
 		meter.add_points(-10)
 		focusing = false
 		targetPurifyEnemy = null
@@ -151,3 +153,20 @@ func currentCamera():
 		$Camera2D.enabled = false
 		$SpiritWorldCamera.enabled = true
 		
+func show_score_popup(value: int, color: Color) -> void:
+	if (value > 0):
+		score_label.text = "+" + str(value)
+	else:
+		score_label.text = str(value)
+	score_label.modulate = color
+	score_label.show()
+	
+	# Animate the label (move up and fade out)
+	var tween := get_tree().create_tween()
+	tween.tween_property(score_label, "position", score_label.position + Vector2(0, -40), 1.0)
+	tween.tween_property(score_label, "modulate:a", 0.0, 1.0)
+	tween.connect("finished", func():
+		score_label.hide()
+		score_label.modulate.a = 1.0
+		score_label.position.y += 40 # reset to original position
+	)

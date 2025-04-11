@@ -60,6 +60,7 @@ func processDamage():
 			canTakeDamage = false
 			print("enemy health = ", health )
 			if ( health <= 0 ):
+				$"../../Judge".show_score_popup(-10, Color.ORANGE)
 				meter.add_points(10)
 				self.queue_free()
 	#if Global.isFocusKill:
