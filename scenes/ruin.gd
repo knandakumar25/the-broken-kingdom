@@ -27,7 +27,7 @@ func _ready() -> void:
 	destroy_button.connect("pressed", _on_destroy_pressed)
 
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("interact") and !rebuilt:
+	if player_in_range and Input.is_action_just_pressed("interact") and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
 		label.text = about
 		rebuild_button.show()
 		destroy_button.show()
@@ -91,12 +91,12 @@ func _on_rebuild_pressed() -> void:
 
 func cleanup_ui() -> void:
 	label.hide()
-	rebuild_button.hide()
-	destroy_button.hide()
+	rebuild_button.queue_free()
+	destroy_button.queue_free()
 
 func _on_destroy_pressed() -> void:
 	meter.add_points(10)  # Sun path
-	scholar.position = self.position + Vector2(160, 0)
+	scholar.position = self.position + Vector2(-300, 120)
 	ruin_image.texture = null
 	cleanup_ui()  # Remove ruin after destroying
 
@@ -104,14 +104,14 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = true
 		
-	if body.name == "Judge" and !rebuilt:
+	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
 		player_in_range = true
 		player_ref = body
 		label.show()
 		label.text = "[E] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Judge" and !rebuilt:
+	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
 		player_in_range = false
 		label.hide()
 		rebuild_button.hide()
