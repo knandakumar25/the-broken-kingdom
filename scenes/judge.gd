@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+# Used ChatGPT to make the score appears above the judge either for destroying or purifying enemies
+
 const SPEED = 500.0
 var nearby_ruin: Area2D = null
 

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+# Used ChatGPT to generate a knockback effect
+
 @onready var meter: Control = $"../../CanvasLayer/Meter"
 
 var speed = 50
@@ -15,8 +17,9 @@ var canTakeDamage = true
 func _physics_process(delta: float) -> void:
 	
 	processDamage()
-	
-	if chasingPlayer:
+	if health <= 0:
+		$AnimatedSprite2D.play("Death")
+	elif chasingPlayer:
 		position += (player.position - position) / speed
 		$AnimatedSprite2D.play("Move")
 		
@@ -56,12 +59,21 @@ func processDamage():
 		if canTakeDamage:
 			health -= 25
 			$takeDamageCD.start()
-			position.y -= 20
+			#position.y -= 20
 			canTakeDamage = false
 			print("enemy health = ", health )
+			
+			var knockback_direction = (position - player.position).normalized()
+			var knockback_distance = 30.0
+			var knockback_target = position + knockback_direction * knockback_distance
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property(self, "position", knockback_target, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+			
 			if ( health <= 0 ):
 				$"../../Judge".show_score_popup(-10, Color.ORANGE)
 				meter.add_points(10)
+				await get_tree().create_timer(1).timeout
 				self.queue_free()
 	#if Global.isFocusKill:
 	#	print("Enemy purified")

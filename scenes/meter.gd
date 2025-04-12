@@ -1,6 +1,6 @@
 extends Control
 
-# Used ChatGPT to generate key functions and mechanics
+# Used ChatGPT to generate key functions and mechanics and making the fill bar glow
 
 @export var min_value: int = -100
 @export var max_value: int = 100
@@ -35,6 +35,7 @@ func add_points(points: int) -> void:
 	# Clamp to min and max morality range
 	# current_value = clamp(current_value + points, min_value, max_value)
 	update_meter()
+	glow_fill_bar(Color.ORANGE)
 	
 func getScore() -> int:
 	var score = Global.score
@@ -57,3 +58,22 @@ func update_meter() -> void:
 	
 	# Debug / UI update
 	$Label.text = "Current value: " + str(score)
+
+func glow_fill_bar(glow_color: Color) -> void:
+	# Remove any previous tweens
+	for child in get_children():
+		if child.get_class() == "Tween":
+			child.kill()
+			remove_child(child)
+			child.queue_free()
+
+	# Create a new Tween node
+	var tween = get_tree().create_tween()
+
+	# Set modulate to normal first
+	fill_bar.modulate = Color(1, 1, 1, 1)
+	
+	# Animate to glow color and back
+	tween.tween_property(fill_bar, "modulate", glow_color, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_interval(1.5)
+	tween.tween_property(fill_bar, "modulate", Color(1, 1, 1, 1), 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
