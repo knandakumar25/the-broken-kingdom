@@ -183,9 +183,9 @@ script = ExtResource("1_uehel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t16ba")
-animation = &"Move"
-frame = 4
-frame_progress = 0.925209
+animation = &"Death"
+frame = 3
+frame_progress = 0.759722
 offset = Vector2(0, -8)
 
 [node name="detection_area" type="Area2D" parent="."]
