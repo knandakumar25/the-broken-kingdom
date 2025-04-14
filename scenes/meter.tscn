@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8xloe0yq2026" path="res://assets/images/meter_bar.png" id="2_e8lc7"]
 [ext_resource type="Texture2D" uid="uid://bvi6gs77meo42" path="res://assets/images/fill_bar.png" id="3_3f0us"]
 [ext_resource type="Texture2D" uid="uid://ccy38lappgw8e" path="res://assets/images/moon.png" id="4_62pq3"]
-[ext_resource type="Texture2D" uid="uid://q6mjd8de3j20" path="res://assets/images/sun.png" id="5_xai2b"]
+[ext_resource type="Texture2D" uid="uid://ly80agj3ayua" path="res://assets/images/sun.png" id="5_xai2b"]
 
 [node name="Meter" type="Control"]
 layout_mode = 3
@@ -40,19 +40,21 @@ expand_mode = 1
 
 [node name="MoonIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -113.0
-offset_top = -28.0
-offset_right = 12.0
-offset_bottom = 97.0
+offset_left = -249.0
+offset_top = -158.0
+offset_right = -124.0
+offset_bottom = -33.0
+scale = Vector2(2.8, 2.8)
 texture = ExtResource("4_62pq3")
 expand_mode = 1
 
 [node name="SunIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 578.0
-offset_top = -2.0
-offset_right = 648.0
-offset_bottom = 68.0
+offset_left = 465.0
+offset_top = -122.0
+offset_right = 535.0
+offset_bottom = -52.0
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("5_xai2b")
 expand_mode = 1
 

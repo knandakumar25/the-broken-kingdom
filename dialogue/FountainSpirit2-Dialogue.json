@@ -1,20 +1,20 @@
 {
-	"M1": [
+	"S1": [
 		{"name": "Spirit:", "text": "Should I take a drink?"},
 	],
-	"M2": [
+	"S2": [
 		{"name": "Spirit:", "text": "The heart of our great kingdom! I wouldn’t want to be anywhere else."},
 	],
-	"M3": [
+	"S3": [
 		{"name": "Spirit:", "text": "My partner and I first met at this fountain! I wished to marry them and now here we are!!"},
 	],
-	"S1": [
+	"M1": [
 		{"name": "Spirit:", "text": "II wish for my crops to grow again..."},
 	],
-	"S2": [
+	"M2": [
 		{"name": "Spirit:", "text": "I wish for my child to recover from his illness… please…"},
 	],
-	"S3": [
+	"M3": [
 		{"name": "Spirit:", "text": "I met my partner at this fountain…. and now they’re gone."},
 		{"name": "Spirit:", "text": "I came here to remember them but those happy memories have all faded now."},
 	],

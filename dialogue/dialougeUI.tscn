@@ -23,12 +23,13 @@ texture = ExtResource("2_i60qt")
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
 z_index = 150
 layout_mode = 0
-offset_left = 18.0
-offset_top = 79.0
-offset_right = 81.0
-offset_bottom = 102.0
-scale = Vector2(1.05, 1.05)
-theme_override_colors/font_shadow_color = Color(0.956115, 0.696165, 0.549572, 1)
+offset_left = 19.0
+offset_top = 81.0
+offset_right = 179.0
+offset_bottom = 148.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_shadow_color = Color(0.788499, 0.87787, 1, 1)
+theme_override_font_sizes/normal_font_size = 50
 text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
@@ -36,9 +37,10 @@ z_index = 150
 layout_mode = 0
 offset_left = 82.0
 offset_top = 8.0
-offset_right = 284.0
-offset_bottom = 79.0
+offset_right = 538.0
+offset_bottom = 168.0
+scale = Vector2(0.45, 0.45)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.788499, 0.87787, 1, 1)
-theme_override_font_sizes/normal_font_size = 0
+theme_override_colors/font_shadow_color = Color(0.956115, 0.696165, 0.549572, 1)
+theme_override_font_sizes/normal_font_size = 30
 text = "Chatting..."

@@ -3,7 +3,6 @@ extends Control
 signal dialogue_finished 
 
 @export_file("*.json") var d_file
-@onready var meter: Control = $"../../CanvasLayer/Meter"
 
 var dialogue = []
 var current_dialogue_id = 0
