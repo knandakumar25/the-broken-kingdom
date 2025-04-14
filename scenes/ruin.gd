@@ -99,6 +99,14 @@ func cleanup_ui() -> void:
 func _on_destroy_pressed() -> void:
 	player.show_score_popup(+10, Color.ORANGE)
 	meter.add_points(10)  # Sun path
+	
+	## Play destroy animation
+	player.ruinDestroyed = true
+	player.anim_sprite.play("attack")
+	## Pause while animation plays
+	await get_tree().create_timer(1).timeout
+	player.ruinDestroyed = false
+	
 	scholar.position = self.position + Vector2(-300, 120)
 	ruin_image.texture = null
 	cleanup_ui()  # Remove ruin after destroying

@@ -17,6 +17,7 @@ var maxHealth = 6
 var currentHealth: int = maxHealth
 var playerAlive = true
 var targetPurifyEnemy: Node2D = null
+var ruinDestroyed = false
 
 var attacking = false
 var focusing = false
@@ -35,13 +36,13 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		## Add End Screen
 		
-	if attacking:
+	if attacking || ruinDestroyed:
 		return
 
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-
+		
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
 		velocity = input_vector * SPEED
