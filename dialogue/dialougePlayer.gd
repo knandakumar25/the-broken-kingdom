@@ -124,7 +124,7 @@ func load_dialogue():
 func _input(event):
 	if !d_active:
 		return
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("ui_accept"):
 		if typing:
 			$NinePatchRect/Text.text = full_text
 			typing = false
