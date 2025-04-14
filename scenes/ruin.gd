@@ -6,6 +6,7 @@ class_name Ruin
 @export var about: String
 
 @onready var label: Label = $Label
+@onready var player: CharacterBody2D = $"../../Judge"
 @onready var rebuild_button: Button = $ButtonRebuild
 @onready var destroy_button: Button = $ButtonDestroy
 @onready var meter: Control = $"../../CanvasLayer/Meter"
@@ -61,6 +62,7 @@ func capitalize_first_letter(text: String) -> String:
 	return text[0].to_upper() + text.substr(1, text.length() - 1)
 
 func _on_rebuild_pressed() -> void:
+	player.show_score_popup(+10, Color.SKY_BLUE)
 	meter.add_points(-10)  # Moon path
 	ruin_image.texture = rebuilt_texture  # Change the image
 	scholar.position = self.position + Vector2(-300, 120)
@@ -95,6 +97,7 @@ func cleanup_ui() -> void:
 	destroy_button.queue_free()
 
 func _on_destroy_pressed() -> void:
+	player.show_score_popup(+10, Color.ORANGE)
 	meter.add_points(10)  # Sun path
 	scholar.position = self.position + Vector2(-300, 120)
 	ruin_image.texture = null

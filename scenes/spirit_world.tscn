@@ -500,11 +500,12 @@ size = Vector2(85.625, 85.75)
 [sub_resource type="CircleShape2D" id="CircleShape2D_81bf4"]
 radius = 86.209
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l5t4w"]
-radius = 39.2046
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxg0f"]
 radius = 101.253
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ql0a1"]
+radius = 21.0801
+height = 62.0
 
 [node name="spiritWorld" type="Node2D"]
 script = ExtResource("1_duhyv")
@@ -663,11 +664,6 @@ position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 1"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
-
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Fountain 1"]
 z_index = 100
 position = Vector2(-1.08008, 1.91992)
@@ -687,6 +683,11 @@ script = ExtResource("12_81bf4")
 [node name="Timer" type="Timer" parent="Spirits/Fountain 1"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Fountain 1"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Fountain 2" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(3259, 2813)
 script = ExtResource("9_7fsud")
@@ -696,11 +697,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 2"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Fountain 2"]
 z_index = 100
@@ -721,6 +717,11 @@ script = ExtResource("13_7fsud")
 [node name="Timer" type="Timer" parent="Spirits/Fountain 2"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Fountain 2"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Statue 1" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(2960, 2229)
 script = ExtResource("9_7fsud")
@@ -730,11 +731,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Statue 1"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Statue 1"]
 z_index = 100
@@ -755,6 +751,11 @@ script = ExtResource("14_l5t4w")
 [node name="Timer" type="Timer" parent="Spirits/Statue 1"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Statue 1"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Statue 2" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(3243, 2010)
 script = ExtResource("9_7fsud")
@@ -764,11 +765,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Statue 2"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Statue 2"]
 z_index = 100
@@ -789,6 +785,11 @@ script = ExtResource("15_sxg0f")
 [node name="Timer" type="Timer" parent="Spirits/Statue 2"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Statue 2"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Market 1" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(2135, 1785)
 script = ExtResource("9_7fsud")
@@ -798,11 +799,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Market 1"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Market 1"]
 z_index = 100
@@ -823,6 +819,11 @@ script = ExtResource("16_la5sf")
 [node name="Timer" type="Timer" parent="Spirits/Market 1"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Market 1"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Market 2" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(2460, 2023)
 script = ExtResource("9_7fsud")
@@ -832,11 +833,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Market 2"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Market 2"]
 z_index = 100
@@ -857,6 +853,11 @@ script = ExtResource("17_dg3n4")
 [node name="Timer" type="Timer" parent="Spirits/Market 2"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Market 2"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Festival 1" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(1513, 1129)
 script = ExtResource("9_7fsud")
@@ -866,11 +867,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Festival 1"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Festival 1"]
 z_index = 100
@@ -891,6 +887,11 @@ script = ExtResource("18_ea1va")
 [node name="Timer" type="Timer" parent="Spirits/Festival 1"]
 autostart = true
 
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Festival 1"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
+
 [node name="Festival 2" type="CharacterBody2D" parent="Spirits"]
 position = Vector2(986, 1170)
 script = ExtResource("9_7fsud")
@@ -900,11 +901,6 @@ z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_81bf4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Festival 2"]
-z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_l5t4w")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Spirits/Festival 2"]
 z_index = 100
@@ -924,6 +920,11 @@ script = ExtResource("19_ql0a1")
 
 [node name="Timer" type="Timer" parent="Spirits/Festival 2"]
 autostart = true
+
+[node name="CollisionBox" type="CollisionShape2D" parent="Spirits/Festival 2"]
+z_index = 99
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ql0a1")
 
 [connection signal="body_entered" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_entered"]
 [connection signal="body_exited" from="FountainPortal/FountainPortalArea" to="FountainPortal" method="_on_fountain_portal_area_body_exited"]

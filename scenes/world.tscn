@@ -1,11 +1,15 @@
-[gd_scene load_steps=36 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=40 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
 [ext_resource type="PackedScene" uid="uid://dqat0kui06nwd" path="res://scenes/hearts_container.tscn" id="4_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="5_wjlit"]
+[ext_resource type="Script" uid="uid://bm1ar1p4nv04u" path="res://scenes/tutorial_panel.gd" id="6_munwf"]
 [ext_resource type="Script" uid="uid://jcw2fx8pwxhj" path="res://scenes/dialogue_box.gd" id="7_damk1"]
+[ext_resource type="Texture2D" uid="uid://bjgjrxadj4a1d" path="res://assets/images/Tutorial UI.png" id="7_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://ccy38lappgw8e" path="res://assets/images/moon.png" id="8_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://dhiafljh6kq7o" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Flat.png" id="8_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://ly80agj3ayua" path="res://assets/images/Sun.PNG" id="9_37qwj"]
 [ext_resource type="Texture2D" uid="uid://ceoiiletvua4k" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Elevation.png" id="9_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://qoml2mnv22bo" path="res://assets/Tiny Swords Modified/Terrain/Water/Water.png" id="10_q5onr"]
 [ext_resource type="Texture2D" uid="uid://wcjofcqj85ks" path="res://assets/Tiny Swords Modified/Terrain/Bridge/Bridge_All.png" id="11_q5onr"]
@@ -480,8 +484,9 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 sources/2 = SubResource("TileSetAtlasSource_ts3gi")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e3hyu"]
-radius = 39.2046
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctatt"]
+radius = 21.0801
+height = 62.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5onr"]
 radius = 45.2502
@@ -502,6 +507,7 @@ position = Vector2(954, 3878)
 scale = Vector2(0.28, 0.28)
 
 [node name="DialogueBox" type="Control" parent="."]
+visible = false
 z_index = 99
 layout_mode = 3
 anchors_preset = 0
@@ -555,6 +561,67 @@ offset_top = 34.0
 offset_right = 723.0
 offset_bottom = 74.0
 scale = Vector2(1.2, 1.2)
+
+[node name="TutorialPanel" type="Panel" parent="CanvasLayer"]
+offset_left = -40.0
+offset_bottom = 40.0
+script = ExtResource("6_munwf")
+
+[node name="TutorialBG" type="Sprite2D" parent="CanvasLayer/TutorialPanel"]
+position = Vector2(1042, 544)
+scale = Vector2(1.32241, 0.859185)
+texture = ExtResource("7_ts3gi")
+
+[node name="Tutorial" type="Label" parent="CanvasLayer/TutorialPanel/TutorialBG"]
+offset_left = -334.239
+offset_top = -428.313
+offset_right = 348.761
+offset_bottom = 228.687
+scale = Vector2(0.959731, 1.29596)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Arrow Keys = Move
+[ Z ] = Interact
+[ X ] = Attack
+[ Hold C ] = Purify
+
+"
+horizontal_alignment = 1
+
+[node name="Context" type="Label" parent="CanvasLayer/TutorialPanel/TutorialBG"]
+offset_left = -400.784
+offset_top = 27.9334
+offset_right = 894.216
+offset_bottom = 334.933
+scale = Vector2(0.750758, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "[ Purify ] Enemies and Rebuild Ruined Structures to Restore the Kingdom
+
+[ Attack ] Enemies and Destroy Ruined Structures to Destroy the Kingdom
+
+[ Interact ] with Spirit World Portals to Restore HP "
+vertical_alignment = 1
+
+[node name="Moon" type="Sprite2D" parent="CanvasLayer/TutorialPanel/TutorialBG"]
+position = Vector2(-426.495, 46.5557)
+scale = Vector2(0.170233, 0.267988)
+texture = ExtResource("8_0nbtd")
+
+[node name="Sun" type="Sprite2D" parent="CanvasLayer/TutorialPanel/TutorialBG"]
+position = Vector2(-425.739, 181.567)
+scale = Vector2(0.18, 0.225)
+texture = ExtResource("9_37qwj")
+
+[node name="Label" type="Label" parent="CanvasLayer/TutorialPanel/TutorialBG"]
+offset_left = -176.95
+offset_top = 363.135
+offset_right = 120.05
+offset_bottom = 416.135
+scale = Vector2(1.13552, 1.64318)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "[ Press Z to Continue ]"
 
 [node name="Map" type="Node2D" parent="."]
 position = Vector2(-995, -3504)
@@ -617,8 +684,8 @@ texture = ExtResource("12_kpybi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scholar"]
 z_index = 99
-position = Vector2(-1.08008, 0.919922)
-shape = SubResource("CircleShape2D_e3hyu")
+position = Vector2(-1.90735e-06, 5)
+shape = SubResource("CapsuleShape2D_ctatt")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Scholar"]
 z_index = 100
