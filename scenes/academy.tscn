@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cj2kyvxbpdutg" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Yellow.png" id="3_637k3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ej5r"]
-size = Vector2(402, 152)
+size = Vector2(336, 155)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk2uh"]
-size = Vector2(402, 153)
+size = Vector2(336, 156)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcn1a"]
 size = Vector2(333, 124)
@@ -27,7 +27,7 @@ position = Vector2(-2, -26)
 texture = ExtResource("2_hqvtb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 49)
+position = Vector2(0, 50.5)
 shape = SubResource("RectangleShape2D_1ej5r")
 
 [node name="Label" type="Label" parent="."]
@@ -54,7 +54,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(1, 48.5)
+position = Vector2(0, 50)
 shape = SubResource("RectangleShape2D_xk2uh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
