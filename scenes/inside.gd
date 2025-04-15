@@ -17,7 +17,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = true
 		label.show()
-		label.text = "Press [E] to exit"
+		label.text = "Press [Z] to exit"
 
 		# Save the player's position and health state
 		savedPlayerPos = Global.playerSavedPos
