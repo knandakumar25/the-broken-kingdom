@@ -65,7 +65,7 @@ func _on_rebuild_pressed() -> void:
 	player.show_score_popup(+10, Color.SKY_BLUE)
 	meter.add_points(-10)  # Moon path
 	ruin_image.texture = rebuilt_texture  # Change the image
-	scholar.position = self.position + Vector2(-300, 120)
+	scholar.position = self.position + Vector2(-195, 90)
 	rebuilt = true
 	cleanup_ui()
 	label.position = label.position + Vector2(50, -100)
@@ -107,7 +107,7 @@ func _on_destroy_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	player.ruinDestroyed = false
 	
-	scholar.position = self.position + Vector2(-300, 120)
+	scholar.position = self.position + Vector2(-195, 90)
 	ruin_image.texture = null
 	cleanup_ui()  # Remove ruin after destroying
 
