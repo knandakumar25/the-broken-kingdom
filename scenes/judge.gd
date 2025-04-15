@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 # Used ChatGPT to make the score appears above the judge either for destroying or purifying enemies
 
-const SPEED = 500.0
+const SPEED = 330.0
 var nearby_ruin: Area2D = null
 
-@onready var world = get_parent()
+@onready var world: = get_parent()
 @onready var meter: Control = $"../CanvasLayer/Meter"
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var score_label: Label = $ScoreLabel
@@ -17,6 +17,7 @@ var maxHealth = 6
 var currentHealth: int = maxHealth
 var playerAlive = true
 var targetPurifyEnemy: Node2D = null
+var ruinDestroyed = false
 
 var attacking = false
 var focusing = false
@@ -32,13 +33,16 @@ func _physics_process(delta: float) -> void:
 		playerAlive = false
 		currentHealth = 0
 		print("Player Killed")
-		self.queue_free()
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		## Add End Screen
+		
+	if attacking || ruinDestroyed:
+		return
 
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-
+		
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
 		velocity = input_vector * SPEED
@@ -59,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		anim_sprite.play("walk_" + current_direction)
 	else:
 		velocity = Vector2.ZERO
-		anim_sprite.play("default")  # Make sure you have these too
+		anim_sprite.play("default") 
 
 func _process(delta: float) -> void:
 	Global.isFocusKill = false
@@ -73,6 +77,16 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_area_exited(area: Area2D) -> void:
 	if area == nearby_ruin:
 		nearby_ruin = null
+
+func _on_attack_range_body_entered(body: Node2D) -> void:
+	if body.name.contains("CorruptedSpirit"):
+		enemyInAttackRange = true
+
+
+func _on_attack_range_body_exited(body: Node2D) -> void:
+	if body.name.contains("CorruptedSpirit"):
+		enemyInAttackRange = false
+
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if body.name.contains("CorruptedSpirit"):
@@ -109,18 +123,31 @@ func _on_attack_cd_timeout() -> void:
 	enemyAttackCD = true
 	
 func playerAttack():
-	## var dir = current_dir
+
 	if Input.is_action_just_pressed("attack"):
 		Global.isPlayerAttacking = true
 		print("swungScythe")
 		attacking = true
-		## if dir == "right":
+		
+		match current_direction:
+			"right":
+				anim_sprite.flip_h = true
+			"left":
+				anim_sprite.flip_h = false
+			"front":
+				anim_sprite.flip_h = true
+			"back":
+				anim_sprite.flip_h = false 
+				
+		anim_sprite.play("attack")
 		$playerAttackTimer.start()
 
 func _on_player_attack_timer_timeout() -> void:
 	$playerAttackTimer.stop()
 	Global.isPlayerAttacking = false
 	attacking = false
+	anim_sprite.flip_h = false 
+	anim_sprite.play("default")
 	
 func playerFocus():
 	if Input.is_action_pressed("purify") && enemyInPurifyRange:
@@ -135,7 +162,7 @@ func _on_purify_timer_timeout() -> void:
 	if enemyInPurifyRange && targetPurifyEnemy != null && targetPurifyEnemy.is_inside_tree():
 		print("Enemy Purified")
 		targetPurifyEnemy.queue_free()
-		show_score_popup(10, Color.SKY_BLUE)
+		show_score_popup(+10, Color.SKY_BLUE)
 		meter.add_points(-10)
 		focusing = false
 		targetPurifyEnemy = null

@@ -126,16 +126,21 @@ func _input(event):
 		return
 	if event.is_action_pressed("ui_accept"):
 		if typing:
-			# Skip typing animation and show full text
 			$NinePatchRect/Text.text = full_text
 			typing = false
+		elif current_dialogue_id >= len(dialogue) - 1:
+			d_active = false
+			$NinePatchRect.visible = false
+			emit_signal("dialogue_finished")
 		else:
 			next_script()
 
 func next_script():
 	current_dialogue_id += 1
 	
-	if (current_dialogue_id >= len(dialogue)):
+	var dialogueComplete = current_dialogue_id == len(dialogue)
+
+	if (current_dialogue_id >= len(dialogue) || dialogueComplete):
 		d_active = false
 		$NinePatchRect.visible = false
 		emit_signal("dialogue_finished")
@@ -146,8 +151,7 @@ func next_script():
 	current_text = ""
 	text_index = 0
 	typing = true
-	
-	# Start the typewriter effect
+
 	type_text()
 
 func type_text():

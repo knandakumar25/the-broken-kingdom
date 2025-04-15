@@ -2,7 +2,6 @@ extends Node
 
 @onready var heartsContainer = $CanvasLayer/heartsContainer
 @onready var player = $Judge
-@onready var fountainPortal = $FountainPortal
 
 func _ready():
 	if !Global.started:
