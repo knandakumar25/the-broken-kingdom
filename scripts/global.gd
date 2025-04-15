@@ -24,6 +24,15 @@ var cookhouse: Texture = null
 var farm: Texture = null
 var academy: Texture = null
 
+var church_destroyed = false
+var castle_destroyed = false
+var prison_destroyed = false
+var theatre_destroyed = false
+var library_destroyed = false
+var cookhouse_destroyed = false
+var farm_destroyed = false
+var academy_destroyed = false
+
 func _process(delta: float) -> void:
 	pass
 
