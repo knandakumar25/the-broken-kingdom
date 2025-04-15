@@ -28,7 +28,7 @@ func _ready() -> void:
 	destroy_button.connect("pressed", _on_destroy_pressed)
 
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("interact") and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
+	if player_in_range and Input.is_action_just_pressed("interact") and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button) and is_instance_valid(label):
 		label.text = about
 		rebuild_button.show()
 		destroy_button.show()
@@ -67,11 +67,9 @@ func _on_rebuild_pressed() -> void:
 	label.position = label.position + Vector2(50, -100)
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
-	print(1)
 	if (scene_name == "Church"):
 		Global.church = rebuilt_texture
 	if (scene_name == "Castle"):
-		print(2)
 		Global.castle = rebuilt_texture
 	if (scene_name == "Prison"):
 		Global.prison = rebuilt_texture
@@ -107,19 +105,37 @@ func _on_destroy_pressed() -> void:
 	ruin_image.texture = null
 	cleanup_ui()  # Remove ruin after destroying
 	$StaticBody2D.queue_free()
+	var scene_name = get_scene_file_path().get_file().get_basename()
+	scene_name = capitalize_first_letter(scene_name)
+	if (scene_name == "Church"):
+		Global.church_destroyed = true
+	if (scene_name == "Castle"):
+		Global.castle_destroyed = true
+	if (scene_name == "Prison"):
+		Global.prison_destroyed = true
+	if (scene_name == "Theatre"):
+		Global.theatre_destroyed = true
+	if (scene_name == "Library"):
+		Global.library_destroyed = true
+	if (scene_name == "Cookhouse"):
+		Global.cookhouse_destroyed = true
+	if (scene_name == "Farm"):
+		Global.farm_destroyed = true
+	if (scene_name == "Academy"):
+		Global.academy_destroyed = true
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":
 		player_in_range = true
 		
-	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
+	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button) and is_instance_valid(label):
 		player_in_range = true
 		player_ref = body
 		label.show()
 		label.text = "[Z] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
+	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button) and is_instance_valid(label):
 		player_in_range = false
 		label.hide()
 		rebuild_button.hide()

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bjgjrxadj4a1d" path="res://assets/images/Tutorial UI.png" id="7_ts3gi"]
 [ext_resource type="Texture2D" uid="uid://ccy38lappgw8e" path="res://assets/images/moon.png" id="8_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://dhiafljh6kq7o" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Flat.png" id="8_w7kh3"]
-[ext_resource type="Texture2D" uid="uid://ly80agj3ayua" path="res://assets/images/Sun.PNG" id="9_37qwj"]
+[ext_resource type="Texture2D" uid="uid://ly80agj3ayua" path="res://assets/images/sun.png" id="9_37qwj"]
 [ext_resource type="Texture2D" uid="uid://ceoiiletvua4k" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Elevation.png" id="9_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://qoml2mnv22bo" path="res://assets/Tiny Swords Modified/Terrain/Water/Water.png" id="10_q5onr"]
 [ext_resource type="Texture2D" uid="uid://wcjofcqj85ks" path="res://assets/Tiny Swords Modified/Terrain/Bridge/Bridge_All.png" id="11_q5onr"]
