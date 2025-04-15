@@ -36,24 +36,20 @@ func _process(delta: float) -> void:
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
 
-	if player_in_range and rebuilt:
+	if player_in_range and rebuilt and scene_name == "Castle":
 		label.show()
-		label.text = "Press [E] to enter: " + scene_name
+		label.text = "Press [Z] to enter: " + scene_name
 
-	if player_in_range and Input.is_action_just_pressed("interact") and rebuilt:
-		if player_ref and not Global.transitionScene:
-			Global.playerSavedPos = player_ref.global_position
-			Global.transitionScene = true  # Prevent multiple transitions
-			scene_name = capitalize_first_letter(get_scene_file_path().get_file().get_basename())
+		if Input.is_action_just_pressed("interact") and rebuilt:
+			if player_ref and not Global.transitionScene:
+				Global.playerSavedPos = player_ref.global_position
+				Global.transitionScene = true  # Prevent multiple transitions
+				scene_name = capitalize_first_letter(get_scene_file_path().get_file().get_basename())
 
-			if scene_name == "Castle":
-				Global.currentScene = "castle_inside"
-				await get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
-				Global.finishSceneChange()
-			elif scene_name == "Academy":
-				Global.currentScene = "academy_inside"
-				await get_tree().change_scene_to_file("res://scenes/academy_inside.tscn")
-				Global.finishSceneChange()
+				if scene_name == "Castle":
+					Global.currentScene = "castle_inside"
+					await get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
+					Global.finishSceneChange()
 
 
 func capitalize_first_letter(text: String) -> String:
@@ -110,6 +106,7 @@ func _on_destroy_pressed() -> void:
 	scholar.position = self.position + Vector2(-195, 90)
 	ruin_image.texture = null
 	cleanup_ui()  # Remove ruin after destroying
+	$StaticBody2D.queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Judge":
@@ -119,7 +116,7 @@ func _on_body_entered(body: Node2D) -> void:
 		player_in_range = true
 		player_ref = body
 		label.show()
-		label.text = "[E] to interact"
+		label.text = "[Z] to interact"
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Judge" and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button):
