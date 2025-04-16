@@ -195,7 +195,7 @@ script = ExtResource("1_niqck")
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_3lhj7")
 animation = &"purify"
-frame_progress = 0.878083
+frame_progress = 0.0983685
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)

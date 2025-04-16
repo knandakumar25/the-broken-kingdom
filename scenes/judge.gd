@@ -147,6 +147,11 @@ func enemyAttack():
 		
 		world.heartsContainer.updateHearts(currentHealth)
 		
+		var damageTween := get_tree().create_tween()
+		damageTween.tween_property(anim_sprite, "modulate", Color(1, 0.2, 0.2), 0.1) 
+		damageTween.tween_property(anim_sprite, "modulate", Color(1,1,1), 0.1) 
+
+		
 		if focusing:
 			interruptFocus()
 	
@@ -202,8 +207,14 @@ func _on_purify_timer_timeout() -> void:
 		$purifyTimer.stop()
 
 func interruptFocus():
+	
+	#var interruptFocusTween := get_tree().create_tween()
+	#interruptFocusTween.tween_property(anim_sprite, "modulate", Color(0.3, 0.3, 1), 0.1) 
+	#interruptFocusTween.tween_property(anim_sprite, "modulate", Color(1, 1, 1), 0.1)     
+	
 	print("Focus Interrupted!")
 	focusing = false
+	anim_sprite.play("default")
 	$purifyTimer.stop()
 	
 func currentCamera():
