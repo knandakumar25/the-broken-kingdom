@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
-[ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
+[ext_resource type="Script" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
 [ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="24_ctatt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpybi"]
