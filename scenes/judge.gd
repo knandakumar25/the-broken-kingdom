@@ -11,6 +11,7 @@ var nearby_ruin: Area2D = null
 @onready var score_label: Label = $ScoreLabel
 
 var enemyInAttackRange = false
+var playerInHurtRange = false
 var enemyInPurifyRange = false
 var enemyAttackCD = true
 var maxHealth = 6
@@ -22,6 +23,8 @@ var ruinDestroyed = false
 var attacking = false
 var focusing = false
 var current_direction: String = "down"
+
+var enemyType
 
 
 func _physics_process(delta: float) -> void:
@@ -86,37 +89,56 @@ func _on_area_exited(area: Area2D) -> void:
 		nearby_ruin = null
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit"):
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+		
+		if body.name.contains("CorruptedKnight"):
+			enemyType = "knight"
+		else:
+			enemyType = "spirit"
+			
 		enemyInAttackRange = true
 
 
 func _on_attack_range_body_exited(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit"):
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
 		enemyInAttackRange = false
+		enemyType = null
 
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit"):
-		enemyInAttackRange = true
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+		
+		if body.name.contains("CorruptedKnight"):
+			enemyType = "knight"
+		else:
+			enemyType = "spirit"
+			
+		playerInHurtRange = true
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit"):
-		enemyInAttackRange = false
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+		playerInHurtRange = false
 		
 func _on_purify_range_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.name.contains("CorruptedSpirit"):
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+		
 		enemyInPurifyRange = true
 		targetPurifyEnemy = body
 
 func _on_purify_range_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body != null && body.name.contains("CorruptedSpirit"):
+	if body != null && ( body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight") ):
 		enemyInPurifyRange = false
 		if targetPurifyEnemy == body:
 			targetPurifyEnemy = null
 
 func enemyAttack():
-	if enemyInAttackRange && enemyAttackCD:
-		currentHealth -= 1
+	if playerInHurtRange && enemyAttackCD:
+		
+		if enemyType == "spirit":
+			currentHealth -= 1
+		elif enemyType == "knight":
+			currentHealth -= 2
+			
 		enemyAttackCD = false
 		$enemyAttackTimer.start()
 		print(currentHealth)
@@ -142,7 +164,7 @@ func playerAttack():
 			"left":
 				anim_sprite.flip_h = false
 			"front":
-				anim_sprite.flip_h = true
+				anim_sprite.flip_h = false
 			"back":
 				anim_sprite.flip_h = false 
 				

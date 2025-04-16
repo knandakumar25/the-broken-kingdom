@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @onready var meter: Control = $"../../CanvasLayer/Meter"
 
-var speed = 50
+var speed = 80
 var chasingPlayer = false
 var player = null
 

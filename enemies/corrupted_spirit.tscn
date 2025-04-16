@@ -1,29 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh5ff3bsmlu85"]
+[gd_scene load_steps=17 format=3 uid="uid://bh5ff3bsmlu85"]
 
-[ext_resource type="Texture2D" uid="uid://4lw1bgeblfas" path="res://assets/images/slime.png" id="1_3ay1a"]
 [ext_resource type="Script" uid="uid://cpke1weq8cqlv" path="res://enemies/corrupted_spirit.gd" id="1_uehel"]
+[ext_resource type="Texture2D" uid="uid://d1idjhqrhamos" path="res://assets/animations/Currupted Farmer Hit.PNG" id="2_v8ryq"]
 [ext_resource type="Texture2D" uid="uid://bvc61tnso87ib" path="res://assets/animations/Corrupted Farmer Idle.PNG" id="3_v8ryq"]
 [ext_resource type="Texture2D" uid="uid://e2obhtbsd8n5" path="res://assets/animations/Corrupted Farmer Purified.PNG" id="4_1hiv6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uehel"]
-atlas = ExtResource("1_3ay1a")
-region = Rect2(0, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_glvr5"]
-atlas = ExtResource("1_3ay1a")
-region = Rect2(32, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8ryq"]
-atlas = ExtResource("1_3ay1a")
-region = Rect2(64, 384, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hiv6"]
-atlas = ExtResource("1_3ay1a")
-region = Rect2(96, 384, 32, 32)
+atlas = ExtResource("2_v8ryq")
+region = Rect2(0, 0, 960, 960)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye2jx"]
-atlas = ExtResource("1_3ay1a")
-region = Rect2(128, 384, 32, 32)
+atlas = ExtResource("2_v8ryq")
+region = Rect2(960, 0, 960, 960)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5x60y"]
 atlas = ExtResource("3_v8ryq")
@@ -53,23 +41,14 @@ region = Rect2(960, 0, 960, 960)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uehel")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_glvr5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v8ryq")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1hiv6")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_ye2jx")
 }],
 "loop": true,
 "name": &"Death",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 3.0,
@@ -113,7 +92,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uehel"]
-radius = 14.0
+radius = 19.0
 
 [node name="CorruptedSpirit" type="CharacterBody2D"]
 collision_layer = 3
@@ -124,8 +103,8 @@ script = ExtResource("1_uehel")
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_t16ba")
-animation = &"Idle"
-frame_progress = 0.670466
+animation = &"Death"
+frame_progress = 0.389843
 
 [node name="detection_area" type="Area2D" parent="."]
 z_index = 999
