@@ -46,14 +46,13 @@ func _physics_process(delta: float) -> void:
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
-	if focusing && input_vector != Vector2.ZERO:
+	if focusing && ( input_vector != Vector2.ZERO ):
 		input_vector = input_vector.normalized()
 		velocity = input_vector * SPEED
 		move_and_slide()
-		
 		return
 		
-	if input_vector != Vector2.ZERO:
+	if input_vector != Vector2.ZERO && !focusing:
 		input_vector = input_vector.normalized()
 		velocity = input_vector * SPEED
 		move_and_slide()
@@ -71,6 +70,9 @@ func _physics_process(delta: float) -> void:
 				current_direction = "back"
 
 		anim_sprite.play("walk_" + current_direction)
+	elif focusing:
+		velocity = Vector2.ZERO
+		anim_sprite.play("purify") 
 	else:
 		velocity = Vector2.ZERO
 		anim_sprite.play("default") 

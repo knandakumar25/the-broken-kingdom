@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dl3nkjo2s7idh"]
+[gd_scene load_steps=34 format=3 uid="uid://dl3nkjo2s7idh"]
 
 [ext_resource type="Script" uid="uid://7mvqp533d8lw" path="res://scenes/judge.gd" id="1_niqck"]
 [ext_resource type="Texture2D" uid="uid://c47u204vjee7j" path="res://assets/animations/Destroy.PNG" id="2_budhr"]
@@ -52,10 +52,6 @@ region = Rect2(5760, 0, 960, 960)
 atlas = ExtResource("2_budhr")
 region = Rect2(6720, 0, 960, 960)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1xfsy"]
-atlas = ExtResource("4_xen72")
-region = Rect2(0, 0, 960, 960)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yio6r"]
 atlas = ExtResource("4_xen72")
 region = Rect2(960, 0, 960, 960)
@@ -100,10 +96,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1xfsy")
-}, {
-"duration": 10.0,
+"duration": 24.0,
 "texture": SubResource("AtlasTexture_yio6r")
 }],
 "loop": true,
@@ -201,8 +194,8 @@ script = ExtResource("1_niqck")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_3lhj7")
-animation = &"attack"
-frame_progress = 0.0755212
+animation = &"purify"
+frame_progress = 0.878083
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)
