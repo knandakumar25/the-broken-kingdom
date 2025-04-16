@@ -24,8 +24,6 @@ func _ready() -> void:
 	rebuild_button.hide()
 	destroy_button.hide()
 	#ruin_image.texture = destroyed_texture  # Set the initial destroyed state
-	rebuild_button.connect("pressed", _on_rebuild_pressed)
-	destroy_button.connect("pressed", _on_destroy_pressed)
 
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact") and !rebuilt and is_instance_valid(rebuild_button) and is_instance_valid(destroy_button) and is_instance_valid(label):
