@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=55 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -19,10 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="13_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bbcuflbeb10vs" path="res://scenes/church.tscn" id="14_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://b26dfv2qo5iaa" path="res://scenes/castle.tscn" id="15_xo05s"]
+[ext_resource type="Texture2D" uid="uid://bqleo43quxqi8" path="res://assets/animations/Scholar Open Book.PNG" id="16_luhhm"]
 [ext_resource type="PackedScene" uid="uid://dscyo6no378tp" path="res://scenes/prison.tscn" id="17_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://dob7oyqt0rsac" path="res://assets/animations/Scholar Idle.PNG" id="17_fh13f"]
 [ext_resource type="PackedScene" uid="uid://bh5ff3bsmlu85" path="res://enemies/corrupted_spirit.tscn" id="18_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://bgqm4h06ul2fp" path="res://scenes/theatre.tscn" id="18_lakw3"]
 [ext_resource type="PackedScene" uid="uid://ln6pj4ou6h0v" path="res://scenes/cookhouse.tscn" id="18_pm21f"]
+[ext_resource type="Texture2D" uid="uid://dm7j4gcexfuf4" path="res://assets/animations/Scholar Read.PNG" id="18_rup4s"]
 [ext_resource type="PackedScene" uid="uid://b37dipm70niyf" path="res://scenes/library.tscn" id="19_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
@@ -484,6 +487,106 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 sources/2 = SubResource("TileSetAtlasSource_ts3gi")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kbfs"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2olw"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("17_fh13f")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("17_fh13f")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u370"]
+atlas = ExtResource("16_luhhm")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rga7q"]
+atlas = ExtResource("18_rup4s")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oujy"]
+atlas = ExtResource("18_rup4s")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi6a0"]
+atlas = ExtResource("18_rup4s")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo1xk"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4kbfs")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_x2olw")
+}],
+"loop": false,
+"name": &"scholar_closeBook",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_817gm")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"scholar_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}, {
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_8u370")
+}],
+"loop": false,
+"name": &"scholar_openBook",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_rga7q")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_6oujy")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_hi6a0")
+}],
+"loop": true,
+"name": &"scholar_read",
+"speed": 3.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctatt"]
 radius = 21.0801
 height = 62.0
@@ -676,7 +779,15 @@ tile_set = SubResource("TileSet_lakw3")
 position = Vector2(1557, 3179)
 script = ExtResource("12_jhx03")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scholar"]
+z_index = 99
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_eo1xk")
+animation = &"scholar_read"
+frame_progress = 0.951885
+
 [node name="Sprite2D" type="Sprite2D" parent="Scholar"]
+visible = false
 z_index = 99
 position = Vector2(-2.08008, 2.91992)
 scale = Vector2(0.08, 0.08)
@@ -684,7 +795,7 @@ texture = ExtResource("12_kpybi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scholar"]
 z_index = 99
-position = Vector2(-1.90735e-06, 5)
+position = Vector2(0.999998, 3)
 shape = SubResource("CapsuleShape2D_ctatt")
 
 [node name="ScholarDetectionArea" type="Area2D" parent="Scholar"]

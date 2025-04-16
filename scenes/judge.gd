@@ -43,6 +43,13 @@ func _physics_process(delta: float) -> void:
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
+	if focusing && input_vector != Vector2.ZERO:
+		input_vector = input_vector.normalized()
+		velocity = input_vector * SPEED
+		move_and_slide()
+		
+		return
+		
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
 		velocity = input_vector * SPEED
@@ -152,6 +159,7 @@ func _on_player_attack_timer_timeout() -> void:
 func playerFocus():
 	if Input.is_action_pressed("purify") && enemyInPurifyRange:
 		print("Purifying...")
+		anim_sprite.play("purify")
 		if !focusing:
 			focusing = true
 			$purifyTimer.start()

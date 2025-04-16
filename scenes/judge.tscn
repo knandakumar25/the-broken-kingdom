@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://dl3nkjo2s7idh"]
+[gd_scene load_steps=35 format=3 uid="uid://dl3nkjo2s7idh"]
 
 [ext_resource type="Script" uid="uid://7mvqp533d8lw" path="res://scenes/judge.gd" id="1_niqck"]
 [ext_resource type="Texture2D" uid="uid://c47u204vjee7j" path="res://assets/animations/Destroy.PNG" id="2_budhr"]
 [ext_resource type="Texture2D" uid="uid://crny85b21uk3s" path="res://assets/images/Updated Back 1.png" id="2_cskas"]
 [ext_resource type="Texture2D" uid="uid://cewwvhojmdbvw" path="res://assets/images/Updated Back 2.png" id="3_vyf83"]
 [ext_resource type="Texture2D" uid="uid://dnsq5nyvuhtv7" path="res://assets/images/Updated Back 3.png" id="4_aifhk"]
+[ext_resource type="Texture2D" uid="uid://c7dj1sryph2y0" path="res://assets/animations/Purify Anim.PNG" id="4_xen72"]
 [ext_resource type="Texture2D" uid="uid://b4bgm8khygojv" path="res://assets/images/Updated Back 4.png" id="5_s4qhy"]
 [ext_resource type="Texture2D" uid="uid://gnrp8q0ix5ws" path="res://assets/images/Updated Front 1.PNG" id="6_tr4af"]
 [ext_resource type="Texture2D" uid="uid://b0vhlx8q13dep" path="res://assets/images/Updated Front 2.PNG" id="7_budhr"]
@@ -51,6 +52,14 @@ region = Rect2(5760, 0, 960, 960)
 atlas = ExtResource("2_budhr")
 region = Rect2(6720, 0, 960, 960)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xfsy"]
+atlas = ExtResource("4_xen72")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yio6r"]
+atlas = ExtResource("4_xen72")
+region = Rect2(960, 0, 960, 960)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3lhj7"]
 animations = [{
 "frames": [{
@@ -89,6 +98,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xfsy")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_yio6r")
+}],
+"loop": true,
+"name": &"purify",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,7 +184,7 @@ radius = 70.5
 height = 227.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_budhr"]
-radius = 138.058
+radius = 156.013
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xen72"]
 radius = 74.0
@@ -182,7 +202,7 @@ script = ExtResource("1_niqck")
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_3lhj7")
 animation = &"attack"
-frame_progress = 0.390575
+frame_progress = 0.769591
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)
