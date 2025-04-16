@@ -75,6 +75,7 @@ theme_override_font_sizes/font_size = 160
 text = "The Broken Kingdom"
 
 [node name="New Game" type="Label" parent="."]
+layout_mode = 0
 offset_left = 704.0
 offset_top = 456.0
 offset_right = 1844.0
@@ -86,6 +87,7 @@ text = "New Game"
 horizontal_alignment = 1
 
 [node name="Quit" type="Label" parent="."]
+layout_mode = 0
 offset_left = 704.0
 offset_top = 640.0
 offset_right = 1844.0
