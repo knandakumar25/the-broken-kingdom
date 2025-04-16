@@ -202,7 +202,7 @@ script = ExtResource("1_niqck")
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_3lhj7")
 animation = &"attack"
-frame_progress = 0.769591
+frame_progress = 0.0755212
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -1.5)
@@ -225,7 +225,7 @@ shape = SubResource("CircleShape2D_budhr")
 shape = SubResource("CapsuleShape2D_xen72")
 
 [node name="enemyAttackTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 1.75
 
 [node name="playerAttackTimer" type="Timer" parent="."]
 wait_time = 0.75
