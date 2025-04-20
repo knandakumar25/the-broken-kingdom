@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://deolaxrlvggpg" path="res://enemies/corrupted_knight.gd" id="22_fh13f"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
-[ext_resource type="Script" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
+[ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
 [ext_resource type="Texture2D" uid="uid://bm2bamikutjr2" path="res://assets/animations/Corrupted Knight MERGED PNG.png" id="24_4kbfs"]
 [ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="24_ctatt"]
 [ext_resource type="Texture2D" uid="uid://km6768rxugne" path="res://assets/animations/Corrupted Knight UP.png" id="24_f17e3"]

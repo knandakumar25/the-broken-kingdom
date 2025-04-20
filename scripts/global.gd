@@ -15,6 +15,12 @@ var score: int = 0
 var playerMaxHP: int = 6
 var playerCurrentHP: int = 6
 
+var worldRespawnPos: Vector2 = Vector2.ZERO
+var worldRespawnHealth: int = 6
+var lastEnteredFromWorld: bool = false
+
+var defeatedByKing = false
+
 var church: Texture = null
 var castle: Texture = null
 var prison: Texture = null

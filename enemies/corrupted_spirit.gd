@@ -21,7 +21,10 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Death")
 	elif chasingPlayer:
 		position += (player.position - position) / speed
-		$AnimatedSprite2D.play("Move")
+		if playerInAttackRange:
+			$AnimatedSprite2D.play("Attack")
+		else:
+			$AnimatedSprite2D.play("Move")
 		
 		if(player.position.x - position.x) < 0:
 			$AnimatedSprite2D.flip_h = true
