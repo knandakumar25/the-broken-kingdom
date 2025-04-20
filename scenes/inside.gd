@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var label: Label = $Area2D/ExitLabel
 @onready var player: CharacterBody2D = $Judge
+@onready var heartsContainer: HBoxContainer = $CanvasLayer/heartsContainer
 var player_in_range = false
 
 # Save the state when entering the building
@@ -9,7 +10,15 @@ var savedPlayerPos: Vector2
 var savedPlayerHealth: int
 
 func _ready():
-	player.global_position = Global.playerSavedPos
+	if Global.defeatedByKing:
+		player.global_position = Global.worldRespawnPos
+	else:
+		player.global_position = Global.playerSavedPos
+	player.currentHealth = Global.playerSavedHealth
+	
+	heartsContainer.setMaxHP(player.maxHealth)
+	heartsContainer.updateHearts(player.currentHealth)
+	
 	print(player.global_position)
 
 # When entering the building, save the world state
@@ -29,8 +38,6 @@ func _process(delta: float) -> void:
 
 func exit_building():
 	# Save the current player position before transitioning
-	Global.playerSavedPos = savedPlayerPos
-	player.currentHealth = savedPlayerHealth
 	Global.transitionScene = true
 	Global.currentScene = "world"
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
