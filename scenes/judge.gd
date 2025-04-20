@@ -36,7 +36,15 @@ func _physics_process(delta: float) -> void:
 		playerAlive = false
 		currentHealth = 0
 		print("Player Killed")
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
+		Global.playerSavedPos = Global.startingTile
+		Global.playerSavedHealth = maxHealth
+		
+		Global.worldRespawnPos = Vector2(3103, 849)
+		if enemyType == "king":
+			Global.defeatedByKing = true;
+		
+		get_tree().reload_current_scene()
 		## Add End Screen
 		
 	if attacking || ruinDestroyed:
@@ -108,17 +116,19 @@ func _on_attack_range_body_exited(body: Node2D) -> void:
 
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight") || body.name == "King":
 		
 		if body.name.contains("CorruptedKnight"):
 			enemyType = "knight"
+		elif body.name == "King":
+			enemyType = "king"
 		else:
 			enemyType = "spirit"
 			
 		playerInHurtRange = true
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
+	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight") || body.name == "King":
 		playerInHurtRange = false
 		
 func _on_purify_range_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
@@ -140,6 +150,8 @@ func enemyAttack():
 			currentHealth -= 1
 		elif enemyType == "knight":
 			currentHealth -= 2
+		elif enemyType == "king":
+			currentHealth -= 3
 			
 		enemyAttackCD = false
 		$enemyAttackTimer.start()
