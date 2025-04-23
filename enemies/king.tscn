@@ -72,7 +72,7 @@ script = ExtResource("1_x4qnb")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_28e6q")
 animation = &"Summoning"
-frame_progress = 0.341306
+frame_progress = 0.905342
 
 [node name="detection_area" type="Area2D" parent="."]
 z_index = 999

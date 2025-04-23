@@ -1248,7 +1248,7 @@ position = Vector2(1284, 2290)
 
 [node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
 z_index = 99
-position = Vector2(2747, 4041)
+position = Vector2(2747, 4233)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]

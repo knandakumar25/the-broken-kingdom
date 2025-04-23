@@ -77,16 +77,16 @@ func _on_destroy_pressed() -> void:
 	player.show_score_popup(+10, Color.ORANGE)
 	meter.add_points(10)  # Sun path
 	
-	## Play destroy animation
+
 	player.ruinDestroyed = true
 	player.anim_sprite.play("attack")
-	## Pause while animation plays
+
 	await get_tree().create_timer(1).timeout
 	player.ruinDestroyed = false
 	
 	scholar.position = self.position + Vector2(-195, 90)
 	ruin_image.texture = null
-	cleanup_ui()  # Remove ruin after destroying
+	cleanup_ui() 
 	$StaticBody2D.queue_free()
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
@@ -127,14 +127,10 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("c")
 	if body.name == "Judge":
-		print("d")
 		scholar_in_range = true
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("e")
 	if body.name == "Judge":
-		print("f")
 		scholar_in_range = false

@@ -7,7 +7,7 @@ var playerInRange: bool = false
 var shouldSummon: bool = false
 var isSummoning: bool = false
 var isAttacking: bool = false
-var health: int = 200
+var health: int = 300
 var canTakeDamage: bool = true
 var inDamageRange: bool = false
 
@@ -94,6 +94,10 @@ func process_damage():
 
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "position", knockback_target, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+			
+			var damageTween := get_tree().create_tween()
+			damageTween.tween_property(animated_sprite, "modulate", Color(1, 0.2, 0.2), 0.1) 
+			damageTween.tween_property(animated_sprite, "modulate", Color(1,1,1), 0.1) 
 
 			if health <= 0:
 				await get_tree().create_timer(1).timeout

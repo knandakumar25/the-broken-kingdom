@@ -67,14 +67,6 @@ func load_dialogue():
 			church.interacted = true
 			church.queue_free()
 			return content["church-destroyed"]
-	if is_instance_valid(castle) and !castle.interacted and castle.scholar_in_range:
-		if castle.rebuilt:
-			castle.interacted = true
-			return content["castle-rebuilt"]
-		else:
-			castle.interacted = true
-			castle.queue_free()
-			return content["castle-destroyed"]
 	if is_instance_valid(prison) and !prison.interacted and prison.scholar_in_range:
 		if prison.rebuilt:
 			prison.interacted = true

@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0hygw5k3ied5"]
+[gd_scene load_steps=16 format=3 uid="uid://b0hygw5k3ied5"]
 
 [ext_resource type="Texture2D" uid="uid://b25h35snucva2" path="res://assets/images/floor.png" id="1_0jyiw"]
 [ext_resource type="Script" uid="uid://bkl30p3qvscos" path="res://scenes/inside.gd" id="1_qofpn"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="2_qofpn"]
 [ext_resource type="Texture2D" uid="uid://c4o7ybeeui5ji" path="res://assets/images/castle.png" id="2_uxnqq"]
-[ext_resource type="PackedScene" uid="uid://sskc4p487tgy" path="res://enemies/king.tscn" id="5_tce5j"]
 [ext_resource type="Texture2D" uid="uid://c1cv2xj8714w0" path="res://assets/images/pedestal.PNG" id="6_28e6q"]
+[ext_resource type="Script" uid="uid://dt421fly36gsn" path="res://scenes/kingSummon.gd" id="9_f4okh"]
+[ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="10_kedcw"]
+[ext_resource type="Script" uid="uid://dgjy774b4g74t" path="res://dialogue/dialogueKingPedestal.gd" id="11_f4okh"]
 [ext_resource type="PackedScene" uid="uid://c3uth2bv7y2d1" path="res://scenes/meter.tscn" id="13_ahb3q"]
 [ext_resource type="PackedScene" uid="uid://dqat0kui06nwd" path="res://scenes/hearts_container.tscn" id="13_uppc7"]
 
@@ -16,6 +18,13 @@ size = Vector2(299, 33)
 size = Vector2(26.75, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox243"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uppc7"]
+radius = 71.0941
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omg3l"]
+radius = 24.2222
+height = 85.5555
 
 [node name="CastleInside" type="Node2D"]
 script = ExtResource("1_qofpn")
@@ -60,10 +69,8 @@ y_sort_enabled = true
 position = Vector2(0, -100)
 scale = Vector2(0.28, 0.28)
 
-[node name="King" parent="." instance=ExtResource("5_tce5j")]
-position = Vector2(3212, 831)
-
 [node name="Pedestal" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(3169, 834)
 scale = Vector2(0.1, 0.1)
 
@@ -85,5 +92,44 @@ offset_right = 723.0
 offset_bottom = 74.0
 scale = Vector2(1.2, 1.2)
 
+[node name="Pedestal2" type="CharacterBody2D" parent="."]
+z_index = 99
+position = Vector2(3172, 832)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("9_f4okh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pedestal2"]
+z_index = 99
+position = Vector2(-2.08008, 2.91992)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_28e6q")
+
+[node name="ScholarDetectionArea" type="Area2D" parent="Pedestal2"]
+z_index = 100
+position = Vector2(-1.08008, 1.91992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pedestal2/ScholarDetectionArea"]
+z_index = 100
+shape = SubResource("CircleShape2D_uppc7")
+
+[node name="DialogueUI" parent="Pedestal2" instance=ExtResource("10_kedcw")]
+offset_left = -3.99988
+offset_top = -41.0
+offset_right = 36.0001
+offset_bottom = -1.0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("11_f4okh")
+
+[node name="Timer" type="Timer" parent="Pedestal2"]
+autostart = true
+
+[node name="CollisionBox" type="CollisionShape2D" parent="Pedestal2"]
+z_index = 99
+position = Vector2(-1.11106, 2.22222)
+shape = SubResource("CapsuleShape2D_omg3l")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Pedestal2/ScholarDetectionArea" to="Pedestal2" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Pedestal2/ScholarDetectionArea" to="Pedestal2" method="_on_detection_area_body_exited"]
+[connection signal="dialogue_finished" from="Pedestal2/DialogueUI" to="Pedestal2" method="_on_dialogue_ui_dialogue_finished"]

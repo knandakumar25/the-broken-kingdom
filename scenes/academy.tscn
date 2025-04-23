@@ -20,41 +20,41 @@ size = Vector2(337, 311)
 script = ExtResource("1_ja32m")
 destroyed_texture = ExtResource("2_hqvtb")
 rebuilt_texture = ExtResource("3_637k3")
-about = "A world-renowned academy."
+about = "The world-renowned Solstrice academy."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -26)
 texture = ExtResource("2_hqvtb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 50.5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_1ej5r")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -126.0
-offset_top = 84.0
-offset_right = 158.0
-offset_bottom = 123.0
+offset_left = -146.0
+offset_top = -80.0
+offset_right = 138.0
+offset_bottom = -41.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="ButtonRebuild" type="Button" parent="."]
-offset_left = -127.0
-offset_top = 127.0
-offset_right = -77.0
-offset_bottom = 157.0
+offset_left = -148.0
+offset_top = -59.0
+offset_right = -98.0
+offset_bottom = -29.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rebuild"
 
 [node name="ButtonDestroy" type="Button" parent="."]
-offset_left = -62.0
-offset_top = 127.0
-offset_right = -10.0
-offset_bottom = 157.0
+offset_left = -83.0
+offset_top = -59.0
+offset_right = -31.0
+offset_bottom = -29.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Destroy"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 50)
+position = Vector2(-1, 17)
 shape = SubResource("RectangleShape2D_xk2uh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
