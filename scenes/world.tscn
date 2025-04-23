@@ -916,26 +916,10 @@ scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
 
-[node name="CorruptedSpirit4" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(2132, 1784)
-scale = Vector2(2.5, 2.5)
-collision_layer = 1
-collision_mask = 1
-
 [node name="CorruptedSpirit5" parent="Enemies" instance=ExtResource("18_2lf6f")]
 z_index = 99
 y_sort_enabled = true
 position = Vector2(2982, 2763)
-scale = Vector2(2.5, 2.5)
-collision_layer = 1
-collision_mask = 1
-
-[node name="CorruptedSpirit6" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(4160, 2910)
 scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
@@ -968,14 +952,6 @@ collision_mask = 1
 z_index = 99
 y_sort_enabled = true
 position = Vector2(1313, 2621)
-scale = Vector2(2.5, 2.5)
-collision_layer = 1
-collision_mask = 1
-
-[node name="CorruptedSpirit12" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
-y_sort_enabled = true
-position = Vector2(4250, 1140)
 scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
@@ -1029,6 +1005,146 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_8u370")
 
 [node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight"]
+wait_time = 0.75
+
+[node name="CorruptedKnight4" type="CharacterBody2D" parent="Enemies"]
+z_index = 99
+position = Vector2(2167, 1789)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("22_fh13f")
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight4"]
+position = Vector2(0, -5)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+animation = &"Move"
+frame_progress = 0.602486
+
+[node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight4"]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight4/detection_area"]
+z_index = 999
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8ah6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight4"]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_e75v4")
+
+[node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight4/enemyHitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_8u370")
+
+[node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight4"]
+wait_time = 0.75
+
+[node name="CorruptedKnight2" type="CharacterBody2D" parent="Enemies"]
+z_index = 99
+position = Vector2(3437, 1201)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("22_fh13f")
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight2"]
+position = Vector2(0, -5)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+animation = &"Move"
+frame_progress = 0.602486
+
+[node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight2"]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight2/detection_area"]
+z_index = 999
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8ah6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight2"]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_e75v4")
+
+[node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight2/enemyHitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_8u370")
+
+[node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight2"]
+wait_time = 0.75
+
+[node name="CorruptedKnight3" type="CharacterBody2D" parent="Enemies"]
+z_index = 99
+position = Vector2(4315, 1068)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("22_fh13f")
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight3"]
+position = Vector2(0, -5)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+animation = &"Move"
+frame_progress = 0.602486
+
+[node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight3"]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3/detection_area"]
+z_index = 999
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8ah6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3"]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_e75v4")
+
+[node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3/enemyHitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_8u370")
+
+[node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight3"]
+wait_time = 0.75
+
+[node name="CorruptedKnight5" type="CharacterBody2D" parent="Enemies"]
+z_index = 99
+position = Vector2(4195, 2903)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("22_fh13f")
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight5"]
+position = Vector2(0, -5)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+animation = &"Move"
+frame_progress = 0.602486
+
+[node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight5"]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5/detection_area"]
+z_index = 999
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8ah6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5"]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_e75v4")
+
+[node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5/enemyHitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_8u370")
+
+[node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight5"]
 wait_time = 0.75
 
 [node name="Portals" type="Node2D" parent="."]
@@ -1175,6 +1291,26 @@ position = Vector2(2747, 4041)
 [connection signal="body_shape_entered" from="Enemies/CorruptedKnight/enemyHitbox" to="Enemies/CorruptedKnight" method="_on_enemy_hitbox_body_shape_entered"]
 [connection signal="body_shape_exited" from="Enemies/CorruptedKnight/enemyHitbox" to="Enemies/CorruptedKnight" method="_on_enemy_hitbox_body_shape_exited"]
 [connection signal="timeout" from="Enemies/CorruptedKnight/takeDamageCD" to="Enemies/CorruptedKnight" method="_on_take_damage_cd_timeout"]
+[connection signal="body_entered" from="Enemies/CorruptedKnight4/detection_area" to="Enemies/CorruptedKnight4" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Enemies/CorruptedKnight4/detection_area" to="Enemies/CorruptedKnight4" method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="Enemies/CorruptedKnight4/enemyHitbox" to="Enemies/CorruptedKnight4" method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="Enemies/CorruptedKnight4/enemyHitbox" to="Enemies/CorruptedKnight4" method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="Enemies/CorruptedKnight4/takeDamageCD" to="Enemies/CorruptedKnight4" method="_on_take_damage_cd_timeout"]
+[connection signal="body_entered" from="Enemies/CorruptedKnight2/detection_area" to="Enemies/CorruptedKnight2" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Enemies/CorruptedKnight2/detection_area" to="Enemies/CorruptedKnight2" method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="Enemies/CorruptedKnight2/enemyHitbox" to="Enemies/CorruptedKnight2" method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="Enemies/CorruptedKnight2/enemyHitbox" to="Enemies/CorruptedKnight2" method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="Enemies/CorruptedKnight2/takeDamageCD" to="Enemies/CorruptedKnight2" method="_on_take_damage_cd_timeout"]
+[connection signal="body_entered" from="Enemies/CorruptedKnight3/detection_area" to="Enemies/CorruptedKnight3" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Enemies/CorruptedKnight3/detection_area" to="Enemies/CorruptedKnight3" method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="Enemies/CorruptedKnight3/enemyHitbox" to="Enemies/CorruptedKnight3" method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="Enemies/CorruptedKnight3/enemyHitbox" to="Enemies/CorruptedKnight3" method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="Enemies/CorruptedKnight3/takeDamageCD" to="Enemies/CorruptedKnight3" method="_on_take_damage_cd_timeout"]
+[connection signal="body_entered" from="Enemies/CorruptedKnight5/detection_area" to="Enemies/CorruptedKnight5" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Enemies/CorruptedKnight5/detection_area" to="Enemies/CorruptedKnight5" method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="Enemies/CorruptedKnight5/enemyHitbox" to="Enemies/CorruptedKnight5" method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="Enemies/CorruptedKnight5/enemyHitbox" to="Enemies/CorruptedKnight5" method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="Enemies/CorruptedKnight5/takeDamageCD" to="Enemies/CorruptedKnight5" method="_on_take_damage_cd_timeout"]
 [connection signal="body_entered" from="Portals/MarketPortal/MarketPortalArea" to="Portals/MarketPortal" method="_on_market_portal_area_body_entered"]
 [connection signal="body_exited" from="Portals/MarketPortal/MarketPortalArea" to="Portals/MarketPortal" method="_on_market_portal_area_body_exited"]
 [connection signal="body_entered" from="Portals/FountainPortal/FountainPortalArea" to="Portals/FountainPortal" method="_on_fountain_portal_area_body_entered"]

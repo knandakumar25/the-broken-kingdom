@@ -2,9 +2,37 @@
 	"intro": [
 		{"name": "Scholar:", "text": "That scythe… Could it be? No--"},
 		{"name": "Scholar:", "text": "Hello traveler, welcome to Solunaris. It’s been a while since anybody has passed through here."},
-		{"name": "Scholar:", "text": "I apologize for the sorry state of this place but... you’re welcome to take a look around."}	
+		{"name": "Scholar:", "text": "I apologize for the sorry state of this place but... you’re welcome to take a look around."},
 	],
-	"destruction": [
+	"milestone20": [
+		{"name": "Scholar:", "text": "Solunaris was once a great and prosperous kingdom "},
+		{"name": "Scholar:", "text": "Commoners and Nobles alike came together to build a better future for everyone. "},
+		{"name": "Scholar:", "text": "And now..."},
+	],
+	"milestone40": [
+		{"name": "Scholar:", "text": "Though the kingdom prospered, rumors began to grow about a being who would one day judge this kingdom and decide its fate."},
+		{"name": "Scholar:", "text": "They were said to wield a scythe and had the power to harness the wrath of the sun and the mending light moon."},
+		{"name": "Scholar:", "text": "Fears began to grow around this being the people dubbed The Judge."},
+		{"name": "Scholar:", "text": "They people began obsessing over making the kingdom the best it could be,"},
+		{"name": "Scholar:", "text": "To ensure that when this judgment arrived, they would be judged worthy."},
+	],
+	"milestone60": [
+		{"name": "Scholar:", "text": "Obsessions over The Judge led to the start of a new golden age of the kingdom. People prospered like never before."},
+		{"name": "Scholar:", "text": "King Solun on the other hand, grew uneasy by the fearmongering this rumor caused."},
+		{"name": "Scholar:", "text": "He reassured everyone he had everything under control, and we believed him."},
+	],
+	"milestone80": [
+		{"name": "Scholar:", "text": "Then things started to change once King Solun fell ill. "},
+		{"name": "Scholar:", "text": "Families started to grow hungry as food supplies were diverted towards the crown, and some people began to go missing."},
+		{"name": "Scholar:", "text": "I could see it was the beginning of the end."},
+		{"name": "Scholar:", "text": "I'm afraid nobody else did..."},
+	],
+	"milestone100": [
+		{"name": "Scholar:", "text": "It is known Solun's insanity drove the kingdom to ruin, but not exactly how."},
+		{"name": "Scholar:", "text": "I believe he resorted to drastic measures to save himself and his family, but my research has yet to corroborate that."},
+		{"name": "Scholar:", "text": "Perhaps it is time to visit his old palace, maybe there are some answers there."},
+	],
+	"destruction": [ 
 		{"name": "Scholar:", "text": "You have progressed along the path of destruction."},
 		{"name": "Scholar:", "text": "Is this truly the path you chose to follow? Tread carefully."},
 		{"name": "Scholar:", "text": "Perhaps some things are best left forgotten."},

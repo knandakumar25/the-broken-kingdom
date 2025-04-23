@@ -72,8 +72,8 @@ func processDamage():
 			tween.tween_property(self, "position", knockback_target, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 			
 			if ( health <= 0 ):
-				$"../../Judge".show_score_popup(+10, Color.ORANGE)
-				meter.add_points(10)
+				$"../../Judge".show_score_popup(+5, Color.ORANGE)
+				meter.add_points(5)
 				await get_tree().create_timer(1).timeout
 				self.queue_free()
 	#if Global.isFocusKill:

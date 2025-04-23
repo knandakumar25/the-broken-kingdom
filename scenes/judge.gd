@@ -173,6 +173,7 @@ func _on_attack_cd_timeout() -> void:
 func playerAttack():
 
 	if Input.is_action_just_pressed("attack"):
+		$playerAttackTimer.start()
 		Global.isPlayerAttacking = true
 		print("swungScythe")
 		attacking = true
@@ -188,7 +189,7 @@ func playerAttack():
 				anim_sprite.flip_h = false 
 				
 		anim_sprite.play("attack")
-		$playerAttackTimer.start()
+		
 
 func _on_player_attack_timer_timeout() -> void:
 	$playerAttackTimer.stop()
@@ -209,10 +210,18 @@ func playerFocus():
 
 func _on_purify_timer_timeout() -> void:
 	if enemyInPurifyRange && targetPurifyEnemy != null && targetPurifyEnemy.is_inside_tree():
-		print("Enemy Purified")
+		
+		if targetPurifyEnemy.name.contains("CorruptedSpirit"):
+			show_score_popup(+2, Color.SKY_BLUE)
+			meter.add_points(-2)
+		if targetPurifyEnemy.name.contains("CorruptedKnight"):
+			show_score_popup(+5, Color.SKY_BLUE)
+			meter.add_points(-5)
+		
 		targetPurifyEnemy.queue_free()
-		show_score_popup(+10, Color.SKY_BLUE)
-		meter.add_points(-10)
+		print("Enemy Purified")
+		
+		
 		focusing = false
 		targetPurifyEnemy = null
 		enemyInPurifyRange = false

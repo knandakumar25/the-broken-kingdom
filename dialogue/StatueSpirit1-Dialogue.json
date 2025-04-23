@@ -1,6 +1,6 @@
 {
 	"S1": [
-		{"name": "Spirit:", "text": "I look forward to our next meeting!"},
+		{"name": "Spirit:", "text": "I look forward to our next meeting King Solun!"},
 	],
 	"S2": [
 		{"name": "Spirit:", "text": "The subsidy you provided my business is a great gift, thank you, my king."},
@@ -9,7 +9,7 @@
 		{"name": "Spirit:", "text": "Great king! I hope you will visit our home again soon, we loved feeding you."},
 	],
 	"M1": [
-		{"name": "Spirit:", "text": "Help us, great king."},
+		{"name": "Spirit:", "text": "Times are changing... Help us, great king."},
 	],
 	"M2": [
 		{"name": "Spirit:", "text": "Hear us, please… Don’t shut yourself out."},

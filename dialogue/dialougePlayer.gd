@@ -23,6 +23,9 @@ var current_text = ""
 var text_index = 0
 var typewriter_speed = 0.05  # Adjust speed as needed
 
+var milestoneFlag = false
+var triggered_milestones = []
+
 func _ready():
 	$NinePatchRect.visible = false
 
@@ -35,10 +38,23 @@ func start():
 	current_dialogue_id = -1
 	scholarMet = true
 	next_script()
+	
 
 func load_dialogue():
 	var file = FileAccess.open("res://dialogue/Scholar-Dialouge.json", FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
+	
+	var scoreABS = abs(Global.score)
+	var milestones = [20, 40, 60, 80, 100]
+
+	for milestone in milestones:
+		if scoreABS >= milestone and !triggered_milestones.has(milestone):
+			triggered_milestones.append(milestone)
+			milestoneFlag = true
+			return content["milestone%d" % milestone]  
+			
+	milestoneFlag = false
+		
 	
 	if !scholarMet:
 		return content["intro"]
@@ -113,7 +129,7 @@ func load_dialogue():
 			academy.queue_free()
 			return content["academy-destroyed"]
 	
-	var score = meter.getScore()
+	var score = Global.score
 	if score > 0:
 		return content["destruction"]
 	elif score < 0:

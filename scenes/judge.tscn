@@ -177,7 +177,7 @@ radius = 70.5
 height = 227.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_budhr"]
-radius = 156.013
+radius = 132.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xen72"]
 radius = 74.0
