@@ -22,7 +22,6 @@ var lastEnteredFromWorld: bool = false
 var defeatedByKing = false
 
 var church: Texture = null
-var castle: Texture = null
 var prison: Texture = null
 var theatre: Texture = null
 var library: Texture = null
@@ -31,7 +30,7 @@ var farm: Texture = null
 var academy: Texture = null
 
 var church_destroyed = false
-var castle_destroyed = false
+var castle_destroyed = true
 var prison_destroyed = false
 var theatre_destroyed = false
 var library_destroyed = false

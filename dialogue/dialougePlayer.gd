@@ -5,7 +5,7 @@ signal dialogue_finished
 @export_file("*.json") var d_file
 @onready var meter: Control = $"../../CanvasLayer/Meter"
 @onready var church: Ruin = $"../../Ruins/Church"
-@onready var castle: Ruin = $"../../Ruins/Castle"
+@onready var castle = $"../../Ruins/Castle"
 @onready var prison: Ruin = $"../../Ruins/Prison"
 @onready var theatre: Ruin = $"../../Ruins/Theatre"
 @onready var library: Ruin = $"../../Ruins/Library"

@@ -23,14 +23,6 @@ func _ready():
 		$Ruins/Church.ruin_image.texture = null
 		$Ruins/Church/StaticBody2D.queue_free()
 		$Ruins/Church/Label.queue_free()
-	if (Global.castle != null):
-		print(4)
-		$Ruins/Castle.ruin_image.texture = Global.castle
-		$Ruins/Castle.rebuilt = true
-	elif (Global.castle_destroyed):
-		$Ruins/Castle.ruin_image.texture = null
-		$Ruins/Castle/StaticBody2D.queue_free()
-		$Ruins/Castle/Label.queue_free()
 	if (Global.prison != null):
 		print(4)
 		$Ruins/Prison.ruin_image.texture = Global.prison

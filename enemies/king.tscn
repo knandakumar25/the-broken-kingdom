@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://sskc4p487tgy"]
+
+[ext_resource type="Script" uid="uid://ba7ognj1iagsv" path="res://scenes/king.gd" id="1_x4qnb"]
+[ext_resource type="Texture2D" uid="uid://y0kb06nhrl4g" path="res://assets/animations/king_cast.PNG" id="2_x1wee"]
+[ext_resource type="Texture2D" uid="uid://ch3m30ygi2a5o" path="res://assets/images/King_Idle.png" id="3_123jb"]
+[ext_resource type="Texture2D" uid="uid://chwbr8nlvm5q8" path="res://assets/images/King_Casting.png" id="4_u5v5i"]
+[ext_resource type="Texture2D" uid="uid://ci5gvg3f6lkjy" path="res://assets/images/king.PNG" id="5_3i5k4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahb3q"]
+atlas = ExtResource("2_x1wee")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uppc7"]
+atlas = ExtResource("2_x1wee")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omg3l"]
+atlas = ExtResource("2_x1wee")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28e6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahb3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uppc7")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_omg3l")
+}],
+"loop": true,
+"name": &"Attacking",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_123jb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_u5v5i")
+}],
+"loop": true,
+"name": &"Summoning",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3i5k4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kedcw"]
+radius = 2530.02
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahb3q"]
+radius = 250.801
+height = 728.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uppc7"]
+radius = 440.454
+
+[node name="King" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_x4qnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_28e6q")
+animation = &"Summoning"
+frame_progress = 0.341306
+
+[node name="detection_area" type="Area2D" parent="."]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+z_index = 999
+position = Vector2(0, -2.38419e-07)
+shape = SubResource("CircleShape2D_kedcw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_ahb3q")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(0, 0.000244141)
+shape = SubResource("CircleShape2D_uppc7")
+
+[node name="takeDamageCD" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="SummonTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="shootTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="takeDamageCD" to="." method="_on_damage_cd_timeout"]
+[connection signal="timeout" from="SummonTimer" to="." method="_on_summon_timer_timeout"]
+[connection signal="timeout" from="shootTimer" to="." method="_on_shoot_timer_timeout"]

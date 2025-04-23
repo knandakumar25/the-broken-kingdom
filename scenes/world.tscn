@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=70 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cheph4c4b7qbb" path="res://scenes/farm.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://deolaxrlvggpg" path="res://enemies/corrupted_knight.gd" id="22_fh13f"]
 [ext_resource type="PackedScene" uid="uid://d2akrlui8jfy5" path="res://scenes/academy.tscn" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://c1rg4hnsjqupq" path="res://enemies/corrupted_knight.tscn" id="22_x2olw"]
 [ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
 [ext_resource type="Texture2D" uid="uid://bm2bamikutjr2" path="res://assets/animations/Corrupted Knight MERGED PNG.png" id="24_4kbfs"]
 [ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="24_ctatt"]
@@ -680,7 +681,7 @@ script = ExtResource("1_2lf6f")
 [node name="Judge" parent="." instance=ExtResource("3_0e3y6")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(954, 3878)
+position = Vector2(956, 3804)
 scale = Vector2(0.28, 0.28)
 
 [node name="DialogueBox" type="Control" parent="."]
@@ -972,40 +973,8 @@ scale = Vector2(2.5, 2.5)
 collision_layer = 1
 collision_mask = 1
 
-[node name="CorruptedKnight" type="CharacterBody2D" parent="Enemies"]
-z_index = 99
+[node name="CorruptedKnight" parent="Enemies" instance=ExtResource("22_x2olw")]
 position = Vector2(2837, 1240)
-scale = Vector2(2.5, 2.5)
-script = ExtResource("22_fh13f")
-
-[node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight"]
-position = Vector2(0, -5)
-scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Move"
-frame_progress = 0.602486
-
-[node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight"]
-z_index = 999
-collision_layer = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight/detection_area"]
-z_index = 999
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_l8ah6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight"]
-position = Vector2(-0.8, -4)
-shape = SubResource("CapsuleShape2D_e75v4")
-
-[node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight/enemyHitbox"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_8u370")
-
-[node name="takeDamageCD" type="Timer" parent="Enemies/CorruptedKnight"]
-wait_time = 0.75
 
 [node name="CorruptedKnight4" type="CharacterBody2D" parent="Enemies"]
 z_index = 99
@@ -1249,7 +1218,7 @@ collision_mask = 3
 [node name="Castle" parent="Ruins" instance=ExtResource("15_xo05s")]
 z_index = 99
 y_sort_enabled = true
-position = Vector2(3097, 690)
+position = Vector2(3101, 678)
 
 [node name="Prison" parent="Ruins" instance=ExtResource("17_7t5mc")]
 z_index = 99
@@ -1286,11 +1255,6 @@ position = Vector2(2747, 4041)
 [connection signal="body_entered" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Scholar/ScholarDetectionArea" to="Scholar" method="_on_detection_area_body_exited"]
 [connection signal="dialogue_finished" from="Scholar/DialogueUI" to="Scholar" method="_on_dialogue_ui_dialogue_finished"]
-[connection signal="body_entered" from="Enemies/CorruptedKnight/detection_area" to="Enemies/CorruptedKnight" method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="Enemies/CorruptedKnight/detection_area" to="Enemies/CorruptedKnight" method="_on_detection_area_body_exited"]
-[connection signal="body_shape_entered" from="Enemies/CorruptedKnight/enemyHitbox" to="Enemies/CorruptedKnight" method="_on_enemy_hitbox_body_shape_entered"]
-[connection signal="body_shape_exited" from="Enemies/CorruptedKnight/enemyHitbox" to="Enemies/CorruptedKnight" method="_on_enemy_hitbox_body_shape_exited"]
-[connection signal="timeout" from="Enemies/CorruptedKnight/takeDamageCD" to="Enemies/CorruptedKnight" method="_on_take_damage_cd_timeout"]
 [connection signal="body_entered" from="Enemies/CorruptedKnight4/detection_area" to="Enemies/CorruptedKnight4" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Enemies/CorruptedKnight4/detection_area" to="Enemies/CorruptedKnight4" method="_on_detection_area_body_exited"]
 [connection signal="body_shape_entered" from="Enemies/CorruptedKnight4/enemyHitbox" to="Enemies/CorruptedKnight4" method="_on_enemy_hitbox_body_shape_entered"]

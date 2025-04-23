@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1rg4hnsjqupq"]
+
+[ext_resource type="Script" uid="uid://deolaxrlvggpg" path="res://enemies/corrupted_knight.gd" id="1_up163"]
+[ext_resource type="Texture2D" uid="uid://bm2bamikutjr2" path="res://assets/animations/Corrupted Knight MERGED PNG.png" id="2_7sgxl"]
+[ext_resource type="Texture2D" uid="uid://km6768rxugne" path="res://assets/animations/Corrupted Knight UP.png" id="3_aapgw"]
+[ext_resource type="Texture2D" uid="uid://e2obhtbsd8n5" path="res://assets/animations/Corrupted Farmer Purified.PNG" id="4_2fgk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo1xk"]
+atlas = ExtResource("2_7sgxl")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18clu"]
+atlas = ExtResource("2_7sgxl")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wdv8"]
+atlas = ExtResource("3_aapgw")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d46x8"]
+atlas = ExtResource("3_aapgw")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50hk5"]
+atlas = ExtResource("4_2fgk0")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ufp"]
+atlas = ExtResource("4_2fgk0")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggc52"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_eo1xk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_18clu")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4wdv8")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_d46x8")
+}],
+"loop": true,
+"name": &"Move_Up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50hk5")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_v6ufp")
+}],
+"loop": true,
+"name": &"Purified",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8ah6"]
+radius = 59.6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e75v4"]
+radius = 15.2
+height = 55.9999
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8u370"]
+radius = 28.4254
+
+[node name="CorruptedKnight" type="CharacterBody2D"]
+z_index = 99
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_up163")
+
+[node name="KnightSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+animation = &"Move"
+frame_progress = 0.602486
+
+[node name="detection_area" type="Area2D" parent="."]
+z_index = 999
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+z_index = 999
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8ah6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.8, -4)
+shape = SubResource("CapsuleShape2D_e75v4")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_8u370")
+
+[node name="takeDamageCD" type="Timer" parent="."]
+wait_time = 0.75
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_shape_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_shape_entered"]
+[connection signal="body_shape_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_shape_exited"]
+[connection signal="timeout" from="takeDamageCD" to="." method="_on_take_damage_cd_timeout"]

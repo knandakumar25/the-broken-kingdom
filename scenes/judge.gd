@@ -246,6 +246,8 @@ func currentCamera():
 		$Camera2D.enabled = false
 		$SpiritWorldCamera.enabled = true
 		
+
+		
 func show_score_popup(value: int, color: Color) -> void:
 	if (value > 0):
 		score_label.text = "+" + str(value)

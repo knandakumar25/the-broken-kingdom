@@ -1,5 +1,6 @@
 # Used ChatGPT to create the code for a Ruin
 extends Area2D
+
 class_name Ruin
 @export var destroyed_texture: Texture  # Set in Inspector
 @export var rebuilt_texture: Texture  # Set in Inspector
@@ -34,20 +35,6 @@ func _process(delta: float) -> void:
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
 
-	if player_in_range and rebuilt and scene_name == "Castle":
-		label.show()
-		label.text = "Press [Z] to enter: " + scene_name
-
-		if Input.is_action_just_pressed("interact") and rebuilt:
-			if player_ref and not Global.transitionScene:
-				Global.playerSavedPos = player_ref.global_position
-				Global.transitionScene = true  # Prevent multiple transitions
-				scene_name = capitalize_first_letter(get_scene_file_path().get_file().get_basename())
-
-				if scene_name == "Castle":
-					Global.currentScene = "castle_inside"
-					await get_tree().change_scene_to_file("res://scenes/castle_inside.tscn")
-					Global.finishSceneChange()
 
 
 func capitalize_first_letter(text: String) -> String:
@@ -67,8 +54,6 @@ func _on_rebuild_pressed() -> void:
 	scene_name = capitalize_first_letter(scene_name)
 	if (scene_name == "Church"):
 		Global.church = rebuilt_texture
-	if (scene_name == "Castle"):
-		Global.castle = rebuilt_texture
 	if (scene_name == "Prison"):
 		Global.prison = rebuilt_texture
 	if (scene_name == "Theatre"):
@@ -107,8 +92,6 @@ func _on_destroy_pressed() -> void:
 	scene_name = capitalize_first_letter(scene_name)
 	if (scene_name == "Church"):
 		Global.church_destroyed = true
-	if (scene_name == "Castle"):
-		Global.castle_destroyed = true
 	if (scene_name == "Prison"):
 		Global.prison_destroyed = true
 	if (scene_name == "Theatre"):

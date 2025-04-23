@@ -1,69 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://b26dfv2qo5iaa"]
+[gd_scene load_steps=6 format=3 uid="uid://b26dfv2qo5iaa"]
 
-[ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_0ysgy"]
-[ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_rjj26"]
-[ext_resource type="Texture2D" uid="uid://cj2kyvxbpdutg" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Yellow.png" id="3_rjj26"]
+[ext_resource type="Script" uid="uid://p8n5gkbgcqgt" path="res://scenes/castle.gd" id="1_0ysgy"]
+[ext_resource type="Texture2D" uid="uid://dofrofnn21su8" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="2_njhjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjj26"]
 size = Vector2(342, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj81n"]
-size = Vector2(369, 153)
+size = Vector2(501, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njhjj"]
-size = Vector2(395, 367)
+size = Vector2(502, 269)
 
 [node name="Castle" type="Area2D"]
 script = ExtResource("1_0ysgy")
-destroyed_texture = ExtResource("2_rjj26")
-rebuilt_texture = ExtResource("3_rjj26")
-about = "The former home of the king."
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3, 62)
+position = Vector2(5, 48)
 shape = SubResource("RectangleShape2D_rjj26")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rjj26")
+texture = ExtResource("2_njhjj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 63.5)
+position = Vector2(2.5, 61.5)
 shape = SubResource("RectangleShape2D_jj81n")
 
-[node name="Label" type="Label" parent="."]
-offset_top = -29.0
-offset_right = 40.0
-offset_bottom = -6.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Interaction Radius" type="Area2D" parent="."]
+position = Vector2(107, -83)
 
-[node name="ButtonRebuild" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 130.0
-offset_right = 78.0
-offset_bottom = 161.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Rebuild"
-
-[node name="ButtonDestroy" type="Button" parent="."]
-offset_left = 100.0
-offset_top = 130.0
-offset_right = 169.0
-offset_bottom = 161.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Destroy"
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-277, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-107.5, 173.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Radius"]
+position = Vector2(-105, 145)
 shape = SubResource("RectangleShape2D_njhjj")
+
+[node name="CastleLabel" type="Label" parent="."]
+offset_left = -128.0
+offset_top = 38.0
+offset_right = -88.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="pressed" from="ButtonRebuild" to="." method="_on_rebuild_pressed"]
-[connection signal="pressed" from="ButtonDestroy" to="." method="_on_destroy_pressed"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
+[connection signal="body_exited" from="Interaction Radius" to="." method="_on_interaction_radius_body_exited"]
