@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	scene_name = capitalize_first_letter(scene_name)
 
 	if player_in_range and scene_name == "Castle":
-		if Global.score == 0 or Global.score == -1:
+		if Global.score == -100 or Global.score == 100:
 			label.show()
 			label.text = "Press [Z] to enter: " + scene_name
 
