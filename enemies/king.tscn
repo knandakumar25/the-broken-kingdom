@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sskc4p487tgy"]
+[gd_scene load_steps=14 format=3 uid="uid://sskc4p487tgy"]
 
 [ext_resource type="Script" uid="uid://ba7ognj1iagsv" path="res://scenes/king.gd" id="1_x4qnb"]
 [ext_resource type="Texture2D" uid="uid://y0kb06nhrl4g" path="res://assets/animations/king_cast.PNG" id="2_x1wee"]
@@ -17,6 +17,10 @@ region = Rect2(960, 0, 960, 960)
 [sub_resource type="AtlasTexture" id="AtlasTexture_omg3l"]
 atlas = ExtResource("2_x1wee")
 region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4qnb"]
+atlas = ExtResource("5_3i5k4")
+region = Rect2(0, 0, 960, 960)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_28e6q"]
 animations = [{
@@ -46,6 +50,14 @@ animations = [{
 "speed": 2.0
 }, {
 "frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_x4qnb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_3i5k4")
 }],
@@ -71,8 +83,7 @@ script = ExtResource("1_x4qnb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_28e6q")
-animation = &"Summoning"
-frame_progress = 0.905342
+animation = &"death"
 
 [node name="detection_area" type="Area2D" parent="."]
 z_index = 999

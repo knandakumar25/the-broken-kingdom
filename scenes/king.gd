@@ -7,7 +7,7 @@ var playerInRange: bool = false
 var shouldSummon: bool = false
 var isSummoning: bool = false
 var isAttacking: bool = false
-var health: int = 300
+var health: int = 25
 var canTakeDamage: bool = true
 var inDamageRange: bool = false
 
@@ -79,15 +79,32 @@ func _on_summon_timer_timeout() -> void:
 
 		isSummoning = false
 		$SummonTimer.start()
+		
+func die():
+	print("Die func called")
+	health = 0
+	canTakeDamage = false
+	inDamageRange = false
+				
+	animated_sprite.play("death")
+	await get_tree().create_timer(1.0).timeout
+
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+	
 
 func process_damage():
 	if inDamageRange and Global.isPlayerAttacking:
 		if canTakeDamage:
 			health -= 25
 			canTakeDamage = false
+			
 			$takeDamageCD.start()
 			print("King health = ", health)
 
+			if health <= 0:
+				die()
+				return  
+				
 			var knockback_direction = (position - player.position).normalized()
 			var knockback_distance = 20.0
 			var knockback_target = position + knockback_direction * knockback_distance
@@ -96,12 +113,10 @@ func process_damage():
 			tween.tween_property(self, "position", knockback_target, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 			
 			var damageTween := get_tree().create_tween()
-			damageTween.tween_property(animated_sprite, "modulate", Color(1, 0.2, 0.2), 0.1) 
-			damageTween.tween_property(animated_sprite, "modulate", Color(1,1,1), 0.1) 
+			damageTween.tween_property(animated_sprite, "modulate", Color(1, 0.2, 0.2), 0.1)
+			damageTween.tween_property(animated_sprite, "modulate", Color(1, 1, 1), 0.1)
 
-			if health <= 0:
-				await get_tree().create_timer(1).timeout
-				queue_free()
+			
 
 func _on_damage_cd_timeout() -> void:
 	canTakeDamage = true

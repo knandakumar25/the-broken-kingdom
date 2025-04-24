@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://cpcskvmajc07l"]
+[gd_scene load_steps=70 format=4 uid="uid://cpcskvmajc07l"]
 
 [ext_resource type="Script" uid="uid://cvuowfkl6qx6j" path="res://scenes/spirit_world.gd" id="1_duhyv"]
 [ext_resource type="Texture2D" uid="uid://dhiafljh6kq7o" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Flat.png" id="1_lxtos"]
@@ -12,11 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cdgxfkyu8vl1v" path="res://assets/Tiny Swords Modified/SW Terrain/SW Water.png" id="8_q5tcv"]
 [ext_resource type="Script" uid="uid://dhac8d421w6ch" path="res://scenes/spiritWorldExitPortal.gd" id="8_rgxta"]
 [ext_resource type="Script" uid="uid://yue4g1q8mq0x" path="res://scenes/genericNPC.gd" id="9_7fsud"]
-[ext_resource type="Texture2D" uid="uid://btd3qwu7vopk6" path="res://assets/images/Screenshot 2025-04-09 101524.png" id="9_ql0a1"]
 [ext_resource type="PackedScene" uid="uid://b0ct1o0wwl42b" path="res://dialogue/dialougeUI.tscn" id="11_7fsud"]
 [ext_resource type="Texture2D" uid="uid://cbrthtjc33wgs" path="res://assets/images/Spirit World NPCs/Male 2.png" id="11_vgon5"]
 [ext_resource type="Script" uid="uid://rt0bmeddwu37" path="res://dialogue/dialogueFountainSpirit1.gd" id="12_81bf4"]
+[ext_resource type="Texture2D" uid="uid://b03cdli01xh2m" path="res://assets/animations/Portal - SW.png" id="12_q5tcv"]
 [ext_resource type="Script" uid="uid://beoqkcdhilrqa" path="res://dialogue/dialogueFountainSpirit2.gd" id="13_7fsud"]
+[ext_resource type="Texture2D" uid="uid://c03fs5cdj0hqy" path="res://assets/animations/Portal - normal.png" id="13_msk1j"]
 [ext_resource type="Texture2D" uid="uid://c30el7qanohd3" path="res://assets/images/Spirit World NPCs/Female 4.png" id="14_g3svi"]
 [ext_resource type="Script" uid="uid://c5a7r0ah1i6ke" path="res://dialogue/dialogueStatueSpirit1.gd" id="14_l5t4w"]
 [ext_resource type="Script" uid="uid://cfoype3gcwfop" path="res://dialogue/dialogueStatueSpirit2.gd" id="15_sxg0f"]
@@ -796,6 +797,103 @@ size = Vector2(93.625, 95.75)
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lgkt"]
 radius = 89.0898
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l05q"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x28ej"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxku"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dgkn"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e68xj"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hglh"]
+atlas = ExtResource("12_q5tcv")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg546"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf35h"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iexy4"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbic"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ckp"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvg0v"]
+atlas = ExtResource("13_msk1j")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0rxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l05q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x28ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dgkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e68xj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hglh")
+}],
+"loop": true,
+"name": &"PortalOW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg546")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf35h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iexy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ckp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvg0v")
+}],
+"loop": true,
+"name": &"PortalSW",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgxta"]
 size = Vector2(85.625, 85.75)
 
@@ -909,11 +1007,12 @@ z_index = 99
 position = Vector2(2961, 2954)
 shape = SubResource("CircleShape2D_7lgkt")
 
-[node name="Sprite2D" type="Sprite2D" parent="FountainPortal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FountainPortal"]
 z_index = 99
-position = Vector2(2969, 2952)
-scale = Vector2(0.11245, 0.11245)
-texture = ExtResource("9_ql0a1")
+position = Vector2(2961, 2954)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_l0rxy")
+animation = &"PortalOW"
 
 [node name="StatuePortal" type="StaticBody2D" parent="."]
 position = Vector2(133, -762)
@@ -931,11 +1030,12 @@ z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_tdnjl")
 
-[node name="Sprite2D" type="Sprite2D" parent="StatuePortal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StatuePortal"]
 z_index = 99
-position = Vector2(2969, 2952)
-scale = Vector2(0.11245, 0.11245)
-texture = ExtResource("9_ql0a1")
+position = Vector2(2967, 2953)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_l0rxy")
+animation = &"PortalOW"
 
 [node name="MarketPortal" type="StaticBody2D" parent="."]
 position = Vector2(-705, -793)
@@ -953,11 +1053,12 @@ z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_6ojsk")
 
-[node name="Sprite2D" type="Sprite2D" parent="MarketPortal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarketPortal"]
 z_index = 99
-position = Vector2(2969, 2952)
-scale = Vector2(0.11245, 0.11245)
-texture = ExtResource("9_ql0a1")
+position = Vector2(2967, 2953)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_l0rxy")
+animation = &"PortalOW"
 
 [node name="FestivalPortal" type="StaticBody2D" parent="."]
 position = Vector2(-1750, -1666)
@@ -975,11 +1076,12 @@ z_index = 99
 position = Vector2(2969, 2952)
 shape = SubResource("CircleShape2D_81bf4")
 
-[node name="Sprite2D" type="Sprite2D" parent="FestivalPortal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FestivalPortal"]
 z_index = 99
-position = Vector2(2969, 2952)
-scale = Vector2(0.11245, 0.11245)
-texture = ExtResource("9_ql0a1")
+position = Vector2(2967, 2953)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_l0rxy")
+animation = &"PortalOW"
 
 [node name="Spirits" type="Node2D" parent="."]
 

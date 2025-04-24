@@ -1,0 +1,301 @@
+[gd_scene load_steps=41 format=3 uid="uid://mc8snj03j2dj"]
+
+[ext_resource type="Script" uid="uid://botvd3tpupgk8" path="res://scenes/end_screen.gd" id="1_016ls"]
+[ext_resource type="Texture2D" uid="uid://baptbms0cm7b7" path="res://assets/images/MenuBG.png" id="1_plosh"]
+[ext_resource type="Texture2D" uid="uid://ci5gvg3f6lkjy" path="res://assets/images/king.PNG" id="2_4j4el"]
+[ext_resource type="Texture2D" uid="uid://c47u204vjee7j" path="res://assets/animations/Destroy.PNG" id="3_vvs2i"]
+[ext_resource type="Theme" uid="uid://buavv42pvp0c8" path="res://MenuTheme.tres" id="3_wke0n"]
+[ext_resource type="Texture2D" uid="uid://chm4iyb16ergx" path="res://assets/images/Updated Right 1.PNG" id="4_016ls"]
+[ext_resource type="Texture2D" uid="uid://b7pabffki3hvs" path="res://assets/images/TextBanner.png" id="4_um0j2"]
+[ext_resource type="Texture2D" uid="uid://c7dj1sryph2y0" path="res://assets/animations/Purify Anim.PNG" id="5_33qqg"]
+[ext_resource type="Texture2D" uid="uid://b8bj7t8ec1y10" path="res://assets/images/UI Base.png" id="5_fix67"]
+[ext_resource type="Texture2D" uid="uid://crny85b21uk3s" path="res://assets/images/Updated Back 1.png" id="6_hxk3r"]
+[ext_resource type="Texture2D" uid="uid://bwk01gyd5bdde" path="res://assets/images/Moon Hovered.png" id="6_qyl73"]
+[ext_resource type="Texture2D" uid="uid://s4ndja2lalmp" path="res://assets/images/Moon Button.png" id="7_7ycdd"]
+[ext_resource type="Texture2D" uid="uid://cewwvhojmdbvw" path="res://assets/images/Updated Back 2.png" id="7_17b70"]
+[ext_resource type="Texture2D" uid="uid://dnsq5nyvuhtv7" path="res://assets/images/Updated Back 3.png" id="8_aosfm"]
+[ext_resource type="Texture2D" uid="uid://b4bgm8khygojv" path="res://assets/images/Updated Back 4.png" id="9_clebu"]
+[ext_resource type="Texture2D" uid="uid://gnrp8q0ix5ws" path="res://assets/images/Updated Front 1.PNG" id="10_yyvlx"]
+[ext_resource type="Texture2D" uid="uid://b0vhlx8q13dep" path="res://assets/images/Updated Front 2.PNG" id="11_2pnep"]
+[ext_resource type="Texture2D" uid="uid://d0xh4m63xude6" path="res://assets/images/Updated Front 3.PNG" id="12_eer74"]
+[ext_resource type="Texture2D" uid="uid://dgactbhhrd7px" path="res://assets/images/Updated Front 4.PNG" id="13_bh4bk"]
+[ext_resource type="Texture2D" uid="uid://desj18l2oqnbv" path="res://assets/images/Updated Left 1.PNG" id="14_y8dw3"]
+[ext_resource type="Texture2D" uid="uid://c2wflye0ndpvf" path="res://assets/images/Updated Left 2.PNG" id="15_j3f4a"]
+[ext_resource type="Texture2D" uid="uid://csyevisvwtbyj" path="res://assets/images/Updated Left 3.PNG" id="16_bf2dx"]
+[ext_resource type="Texture2D" uid="uid://cbx6oa8r44ns6" path="res://assets/images/Updated Left 4.PNG" id="17_2a1eq"]
+[ext_resource type="Texture2D" uid="uid://dxo1wx1gxrpgc" path="res://assets/images/Updated Right 2.PNG" id="18_f4i33"]
+[ext_resource type="Texture2D" uid="uid://dkt5bdsalxmrr" path="res://assets/images/Updated Right 3.PNG" id="19_oljci"]
+[ext_resource type="Texture2D" uid="uid://b3cyvy6tegfgy" path="res://assets/images/Updated Right 4.PNG" id="20_hcerw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xen72"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5u8d"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fohl3"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1od4p"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(2880, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xc2v"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(3840, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fce4e"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(4800, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni3bw"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(5760, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbx43"]
+atlas = ExtResource("3_vvs2i")
+region = Rect2(6720, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yio6r"]
+atlas = ExtResource("5_33qqg")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hepnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xen72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5u8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fohl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1od4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xc2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fce4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni3bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbx43")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_016ls")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 24.0,
+"texture": SubResource("AtlasTexture_yio6r")
+}],
+"loop": false,
+"name": &"purify",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hxk3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_17b70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aosfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_clebu")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yyvlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2pnep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eer74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bh4bk")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_y8dw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j3f4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bf2dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2a1eq")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_016ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f4i33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oljci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcerw")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2urw2"]
+texture = ExtResource("6_qyl73")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0vkk"]
+texture = ExtResource("7_7ycdd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_016ls"]
+texture = ExtResource("4_um0j2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33qqg"]
+texture = ExtResource("5_fix67")
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_016ls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540.5)
+scale = Vector2(1.25, 1.05371)
+texture = ExtResource("1_plosh")
+
+[node name="King" type="Sprite2D" parent="."]
+position = Vector2(1096, 512)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_4j4el")
+
+[node name="Judge" type="AnimatedSprite2D" parent="."]
+position = Vector2(848, 520)
+scale = Vector2(0.39, 0.39)
+sprite_frames = SubResource("SpriteFrames_hepnh")
+
+[node name="TheEndLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 136.0
+offset_right = 3179.0
+offset_bottom = 317.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "With King Solun's spirit destroyed and the kingdom in ruins...\\n You have judged Solunaris worthy of Destruction"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 707.0
+offset_right = 1284.0
+offset_bottom = 899.0
+
+[node name="ButtonMoon" type="Button" parent="MarginContainer"]
+visible = false
+z_index = 99
+layout_mode = 2
+theme = ExtResource("3_wke0n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2urw2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x0vkk")
+
+[node name="ButtonSun" type="Button" parent="MarginContainer"]
+visible = false
+z_index = 99
+layout_mode = 2
+theme = ExtResource("3_wke0n")
+
+[node name="The End" type="Button" parent="MarginContainer"]
+z_index = 99
+layout_mode = 2
+theme = ExtResource("3_wke0n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_016ls")
+theme_override_styles/normal = SubResource("StyleBoxTexture_33qqg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 22.0
+
+[node name="Kill" type="Label" parent="."]
+visible = false
+z_index = 100
+offset_left = 704.0
+offset_top = 744.0
+offset_right = 1844.0
+offset_bottom = 1120.0
+scale = Vector2(0.456017, 0.437356)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Destroy King Solun"
+horizontal_alignment = 1
+
+[node name="Purify" type="Label" parent="."]
+visible = false
+z_index = 100
+offset_left = 704.0
+offset_top = 744.0
+offset_right = 1844.0
+offset_bottom = 1120.0
+scale = Vector2(0.456017, 0.437356)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Purify King Solun"
+horizontal_alignment = 1
+
+[node name="TheEnd" type="Label" parent="."]
+visible = false
+z_index = 100
+offset_left = 704.0
+offset_top = 744.0
+offset_right = 1844.0
+offset_bottom = 1120.0
+scale = Vector2(0.456017, 0.437356)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "The End."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/The End" to="." method="_on_the_end_pressed"]

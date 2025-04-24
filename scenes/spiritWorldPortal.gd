@@ -3,6 +3,7 @@ extends StaticBody2D
 var player_in_range = false
 
 func _process(delta: float) -> void:
+	$AnimatedSprite2D.play("PortalOW")
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		print("portalInteracted")
 		Global.transitionScene = true
