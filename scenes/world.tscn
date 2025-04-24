@@ -2231,7 +2231,7 @@ position = Vector2(5459, 4738)
 [node name="Theatre" parent="Ruins" instance=ExtResource("18_lakw3")]
 z_index = 100
 y_sort_enabled = true
-position = Vector2(4595, 1140)
+position = Vector2(4491, 1140)
 
 [node name="Library" parent="Ruins" instance=ExtResource("19_pm21f")]
 z_index = 99
@@ -2251,7 +2251,7 @@ position = Vector2(1284, 2290)
 
 [node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
 z_index = 99
-position = Vector2(2747, 4233)
+position = Vector2(2747, 4173)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
 [connection signal="pressed" from="DialogueBox/ButtonSun" to="DialogueBox" method="_on_button_sun_pressed"]
