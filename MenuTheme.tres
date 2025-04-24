@@ -39,9 +39,13 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pejwf"]
 texture = ExtResource("2_qju8s")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_11w2h"]
 texture = ExtResource("3_c2tco")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w2h"]
 content_margin_left = 4.0

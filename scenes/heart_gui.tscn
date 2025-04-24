@@ -12,6 +12,7 @@ script = ExtResource("1_x0egl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 1)
+scale = Vector2(0.290323, 0.290323)
 texture = ExtResource("1_l0qp3")
 centered = false
 hframes = 3

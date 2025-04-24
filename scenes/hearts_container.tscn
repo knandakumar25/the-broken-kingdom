@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ddxlfu2aag0fh" path="res://scenes/hearts_container.gd" id="1_ie7yt"]
 
 [node name="heartsContainer" type="HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 76.0
+offset_bottom = 76.0
 theme_override_constants/separation = 10
 script = ExtResource("1_ie7yt")
