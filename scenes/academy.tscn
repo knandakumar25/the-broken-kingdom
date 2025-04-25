@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_ja32m"]
 [ext_resource type="Texture2D" uid="uid://fe3bpnna5pxb" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_hqvtb"]
-[ext_resource type="Texture2D" uid="uid://cj2kyvxbpdutg" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/Castle/Castle_Yellow.png" id="3_637k3"]
+[ext_resource type="Texture2D" uid="uid://vnuaqjwqq0wm" path="res://assets/Buildings/Academy.png" id="3_ja32m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ej5r"]
 size = Vector2(336, 155)
@@ -19,7 +19,7 @@ size = Vector2(337, 311)
 [node name="Academy" type="Area2D"]
 script = ExtResource("1_ja32m")
 destroyed_texture = ExtResource("2_hqvtb")
-rebuilt_texture = ExtResource("3_637k3")
+rebuilt_texture = ExtResource("3_ja32m")
 about = "The world-renowned Solstrice academy."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

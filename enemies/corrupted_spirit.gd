@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		$AnimatedSprite2D.play("Death")
 	elif purified:
-		$AnimatedSprite2D.play("purified")
+		$AnimatedSprite2D.play("Purified")
 		await get_tree().create_timer(1.2).timeout
 		purified = false
 	elif chasingPlayer:

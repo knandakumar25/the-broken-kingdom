@@ -41,13 +41,13 @@ func _physics_process(delta: float) -> void:
 		Global.playerSavedHealth = maxHealth
 		
 		Global.worldRespawnPos = Vector2(3103, 849)
-		if enemyType == "king":
+		if enemyType == "king" || (enemyType == "knight" and world.name == "CastleInside"):
 			Global.defeatedByKing = true;
 		
 		get_tree().reload_current_scene()
 		## Add End Screen
 		
-	if attacking || ruinDestroyed:
+	if ruinDestroyed:
 		return
 
 	var input_vector = Vector2.ZERO
@@ -65,25 +65,22 @@ func _physics_process(delta: float) -> void:
 		velocity = input_vector * SPEED
 		move_and_slide()
 
-		# Animation direction logic
-		if abs(input_vector.x) > abs(input_vector.y):
-			if input_vector.x > 0:
-				current_direction = "right"
+		if !attacking:
+			# Only change animation if not attacking
+			if abs(input_vector.x) > abs(input_vector.y):
+				current_direction = "right" if input_vector.x > 0 else "left"
 			else:
-				current_direction = "left"
-		else:
-			if input_vector.y > 0:
-				current_direction = "front"
-			else:
-				current_direction = "back"
-
-		anim_sprite.play("walk_" + current_direction)
+				current_direction = "front" if input_vector.y > 0 else "back"
+			anim_sprite.play("walk_" + current_direction)
 	elif focusing:
 		velocity = Vector2.ZERO
-		anim_sprite.play("purify") 
+		if !attacking:
+			anim_sprite.play("purify")
 	else:
 		velocity = Vector2.ZERO
-		anim_sprite.play("default") 
+		if !attacking:
+			anim_sprite.play("default")
+ 
 
 func _process(delta: float) -> void:
 	Global.isFocusKill = false

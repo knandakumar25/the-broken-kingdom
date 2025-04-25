@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_jjgid"]
 [ext_resource type="Texture2D" uid="uid://bbh5ttkrcq00v" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Destroyed.png" id="2_7byxm"]
-[ext_resource type="Texture2D" uid="uid://2duomuiwyomp" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Yellow.png" id="3_5q3ck"]
+[ext_resource type="Texture2D" uid="uid://b7mnq06552nko" path="res://assets/Buildings/Farm.png" id="3_jjgid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ej5r"]
 size = Vector2(208, 157)
@@ -19,7 +19,7 @@ size = Vector2(349, 287)
 [node name="Farm" type="Area2D"]
 script = ExtResource("1_jjgid")
 destroyed_texture = ExtResource("2_7byxm")
-rebuilt_texture = ExtResource("3_5q3ck")
+rebuilt_texture = ExtResource("3_jjgid")
 about = "The Alder's farm"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -46,6 +46,7 @@ func _on_rebuild_pressed() -> void:
 	player.show_score_popup(+10, Color.SKY_BLUE)
 	meter.add_points(-10)  # Moon path
 	ruin_image.texture = rebuilt_texture  # Change the image
+	ruin_image.scale = Vector2(0.25, 0.25)
 	scholar.position = self.position + Vector2(-195, 90)
 	rebuilt = true
 	cleanup_ui()

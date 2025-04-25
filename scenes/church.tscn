@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di0wjibpnfch7" path="res://scenes/ruin.gd" id="1_20jv8"]
 [ext_resource type="Texture2D" uid="uid://bbh5ttkrcq00v" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Destroyed.png" id="1_ua547"]
-[ext_resource type="Texture2D" uid="uid://2duomuiwyomp" path="res://assets/Tiny Swords Modified/Factions/Knights/Buildings/House/House_Yellow.png" id="3_yh3iq"]
+[ext_resource type="Texture2D" uid="uid://dtiy4ba60ij07" path="res://assets/Buildings/Church.png" id="3_yh3iq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2eii"]
 size = Vector2(145, 125)
