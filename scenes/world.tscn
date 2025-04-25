@@ -2204,7 +2204,7 @@ animation = &"PortalOW"
 frame_progress = 0.15005
 
 [node name="ZLabel" type="Label" parent="Portals/StatuePortal"]
-z_index = 99
+z_index = 999
 offset_left = 2934.0
 offset_top = 2886.0
 offset_right = 3170.0
