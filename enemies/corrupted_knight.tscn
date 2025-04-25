@@ -84,8 +84,7 @@ script = ExtResource("1_up163")
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Move"
-frame_progress = 0.602486
+animation = &"Purified"
 
 [node name="detection_area" type="Area2D" parent="."]
 z_index = 999

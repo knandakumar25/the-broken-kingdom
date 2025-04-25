@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddasjdopwx2f1"
-path="res://.godot/imported/x-mark-32.png-5053fab89d6afa3d8a121b79d9a39612.ctex"
+uid="uid://clkfeq5puy6s4"
+path="res://.godot/imported/Library.png-f90bad9c968a62e265a78d2316f0653a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/x-mark-32.png"
-dest_files=["res://.godot/imported/x-mark-32.png-5053fab89d6afa3d8a121b79d9a39612.ctex"]
+source_file="res://assets/Buildings/Library.png"
+dest_files=["res://.godot/imported/Library.png-f90bad9c968a62e265a78d2316f0653a.ctex"]
 
 [params]
 

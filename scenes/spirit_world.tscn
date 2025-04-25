@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://cpcskvmajc07l"]
+[gd_scene load_steps=103 format=4 uid="uid://cpcskvmajc07l"]
 
 [ext_resource type="Script" uid="uid://cvuowfkl6qx6j" path="res://scenes/spirit_world.gd" id="1_duhyv"]
 [ext_resource type="Texture2D" uid="uid://dhiafljh6kq7o" path="res://assets/Tiny Swords Modified/Terrain/Ground/Tilemap_Flat.png" id="1_lxtos"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://eonpcakliipt" path="res://assets/Tiny Swords Modified/SW Terrain/SW Grass.png" id="2_q4uro"]
 [ext_resource type="Texture2D" uid="uid://qoml2mnv22bo" path="res://assets/Tiny Swords Modified/Terrain/Water/Water.png" id="3_duhyv"]
 [ext_resource type="Texture2D" uid="uid://wcjofcqj85ks" path="res://assets/Tiny Swords Modified/Terrain/Bridge/Bridge_All.png" id="4_rgxta"]
-[ext_resource type="Texture2D" uid="uid://ddasjdopwx2f1" path="res://assets/x-mark-32.png" id="5_tdnjl"]
+[ext_resource type="Texture2D" uid="uid://kg3sucdh6ikm" path="res://assets/images/x-mark-32.png" id="5_tdnjl"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="6_ffv1d"]
 [ext_resource type="Texture2D" uid="uid://cj8g1p4adsyrw" path="res://assets/Tiny Swords Modified/SW Terrain/SW Rocks.png" id="7_lhp2p"]
 [ext_resource type="Texture2D" uid="uid://cdgxfkyu8vl1v" path="res://assets/Tiny Swords Modified/SW Terrain/SW Water.png" id="8_q5tcv"]
@@ -41,6 +41,10 @@
 [ext_resource type="Texture2D" uid="uid://cl4gqckh2vgjk" path="res://assets/Deco/pixil-frame-0(9).png" id="20_vk82p"]
 [ext_resource type="Texture2D" uid="uid://dqawc6wiccei2" path="res://assets/images/Spirit World NPCs/Female 1.PNG" id="22_lhp2p"]
 [ext_resource type="Texture2D" uid="uid://doch03mtjicja" path="res://assets/images/Spirit World NPCs/Male 1.PNG" id="24_q5tcv"]
+[ext_resource type="Texture2D" uid="uid://cr1nafmh0uj5s" path="res://assets/Deco/IMG_1254.PNG" id="25_2jjfh"]
+[ext_resource type="Texture2D" uid="uid://diuot4f448rfs" path="res://assets/Deco/IMG_1262.PNG" id="25_bfh0p"]
+[ext_resource type="Texture2D" uid="uid://b6xg1upatt3uu" path="res://assets/Deco/IMG_1260.PNG" id="25_mqsqw"]
+[ext_resource type="Script" uid="uid://d20ed8cds4wa0" path="res://scenes/fountain.gd" id="25_rc88a"]
 [ext_resource type="Texture2D" uid="uid://bl8odl1d0k46a" path="res://assets/images/Spirit World NPCs/Child 2.PNG" id="26_g3svi"]
 [ext_resource type="Texture2D" uid="uid://b83fr1h5auar1" path="res://assets/images/Spirit World NPCs/Female 3.PNG" id="26_msk1j"]
 [ext_resource type="Texture2D" uid="uid://bkvsxtpmxx7ew" path="res://assets/images/Spirit World NPCs/Child 1.png" id="27_l0rxy"]
@@ -1756,17 +1760,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc88a"]
+atlas = ExtResource("25_2jjfh")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u5h2"]
+atlas = ExtResource("25_2jjfh")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nm3ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc88a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u5h2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rc88a"]
+radius = 76.0
+height = 158.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgxta"]
 size = Vector2(85.625, 85.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdnjl"]
 radius = 86.209
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc88a"]
+size = Vector2(89, 118)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lgkt"]
 size = Vector2(85.625, 85.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ojsk"]
 radius = 86.209
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfh0p"]
+radius = 57.0
+height = 144.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ojsk"]
 size = Vector2(85.625, 85.75)
@@ -1808,7 +1845,7 @@ position = Vector2(-995, -3504)
 [node name="Deco" type="TileMapLayer" parent="MapSW"]
 z_index = 99
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AACCAJwBAQAAAAAAAAByAKsBAQAAAAAAAACVAJkBAQADAAAAAACXALkBAQADAAAAAACSAL0BAAAAAAAAAACQAK0BAAAAAAAAAACZAKUBAAAAAAAAAACEAKMBAAAAAAAAAAB1ALEBAAAAAAAAAACLAJoBAAAAAAAAAAClAK0BAAAAAAAAAACoALcBAAAAAAAAAACAAKEBBAAAAAAAAACUAJ8BBAAAAAAAAACcALoBBAAAAAAAAABvAK8BBAAAAAAAAAA8AGYAAwAAAAAAAABDAGYAAwAAAAAAAAA1AFoAAwAAAAAAAAA1AFAAAwAAAAAAAAAwAFkAAwAAAAAAAAAfAEsAAgABAAEAAAAmAEYAAgACAAAAAAAeAEYAAgAAAAEAAAAoAEwAAgAAAAEAAAAeAE0ABgAAAAAAAAAlAEYABgAAAAAAAAAoAEcABgAAAAAAAAAlAE0ABwAAAAAAAAAeAEwABwAAAAAAAAAdAEkABwAAAAAAAAAgAEYABwAAAAAAAAAoAEoABwAAAAAAAAAkAEkABwAAAAAAAAAhAE0ABwAAAAAAAAAgAEgACgAAAAAAAAAeAEoACgAAAAAAAAAlAEsACgAAAAAAAAAnAEgACgAAAAAAAAAkAEgACgAAAAAAAAAvAFcABgAAAAAAAAAzAFwABgAAAAAAAAA0AFsABAAAAAAAAAA0AFIABAAAAAAAAAAwAFYABAAAAAAAAAA2AFEABQAAAAAAAAA2AFkABQAAAAAAAAAvAFsABQAAAAAAAAA/AFsABQAAAAAAAABCAFkABQAAAAAAAAA+AFUABQAAAAAAAAA7AGQABgAAAAAAAABEAGMABgAAAAAAAABBAGAABgAAAAAAAAA9AGMABQAAAAAAAABBAGMABQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AACCAJwBAQAAAAAAAAByAKsBAQAAAAAAAACVAJkBAQADAAAAAACXALkBAQADAAAAAACSAL0BAAAAAAAAAACQAK0BAAAAAAAAAACZAKUBAAAAAAAAAACEAKMBAAAAAAAAAAB1ALEBAAAAAAAAAACLAJoBAAAAAAAAAAClAK0BAAAAAAAAAACoALcBAAAAAAAAAACAAKEBBAAAAAAAAACUAJ8BBAAAAAAAAACcALoBBAAAAAAAAABvAK8BBAAAAAAAAAA8AGYAAwAAAAAAAABDAGYAAwAAAAAAAAA1AFAAAwAAAAAAAAAwAFkAAwAAAAAAAAAfAEsAAgABAAEAAAAmAEYAAgACAAAAAAAeAEYAAgAAAAEAAAAoAEwAAgAAAAEAAAAeAE0ABgAAAAAAAAAlAEYABgAAAAAAAAAoAEcABgAAAAAAAAAlAE0ABwAAAAAAAAAeAEwABwAAAAAAAAAdAEkABwAAAAAAAAAgAEYABwAAAAAAAAAoAEoABwAAAAAAAAAkAEkABwAAAAAAAAAhAE0ABwAAAAAAAAAgAEgACgAAAAAAAAAeAEoACgAAAAAAAAAlAEsACgAAAAAAAAAnAEgACgAAAAAAAAAkAEgACgAAAAAAAAAvAFcABgAAAAAAAAAzAFwABgAAAAAAAAA0AFIABAAAAAAAAAA2AFEABQAAAAAAAAA2AFkABQAAAAAAAAAvAFsABQAAAAAAAAA/AFsABQAAAAAAAABCAFkABQAAAAAAAAA7AGQABgAAAAAAAABEAGMABgAAAAAAAABBAGAABgAAAAAAAAA9AGMABQAAAAAAAAA2AFsAAwAAAAAAAAA9AFYABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_vlm50")
 
 [node name="Cliff Grass" type="TileMapLayer" parent="MapSW"]
@@ -1883,6 +1920,22 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l0rxy")
 animation = &"PortalOW"
 
+[node name="Fountain" type="StaticBody2D" parent="FountainPortal"]
+position = Vector2(996, -28)
+script = ExtResource("25_rc88a")
+
+[node name="FountainSprite" type="AnimatedSprite2D" parent="FountainPortal/Fountain"]
+z_index = 99
+position = Vector2(1967, 2800)
+scale = Vector2(0.225, 0.225)
+sprite_frames = SubResource("SpriteFrames_nm3ph")
+frame_progress = 0.737098
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FountainPortal/Fountain"]
+z_index = 99
+position = Vector2(1968, 2846)
+shape = SubResource("CapsuleShape2D_rc88a")
+
 [node name="StatuePortal" type="StaticBody2D" parent="."]
 position = Vector2(133, -762)
 script = ExtResource("8_rgxta")
@@ -1906,6 +1959,20 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l0rxy")
 animation = &"PortalOW"
 
+[node name="Statue" type="StaticBody2D" parent="StatuePortal"]
+position = Vector2(1005, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="StatuePortal/Statue"]
+z_index = 99
+position = Vector2(1966, 2821)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("25_bfh0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StatuePortal/Statue"]
+z_index = 99
+position = Vector2(1966.5, 2832)
+shape = SubResource("RectangleShape2D_rc88a")
+
 [node name="MarketPortal" type="StaticBody2D" parent="."]
 position = Vector2(-705, -793)
 script = ExtResource("8_rgxta")
@@ -1928,6 +1995,49 @@ position = Vector2(2967, 2953)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l0rxy")
 animation = &"PortalOW"
+
+[node name="Stall" type="StaticBody2D" parent="MarketPortal"]
+position = Vector2(815, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarketPortal/Stall"]
+z_index = 99
+position = Vector2(1966, 2831)
+scale = Vector2(0.159049, 0.159049)
+texture = ExtResource("25_mqsqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketPortal/Stall"]
+z_index = 99
+position = Vector2(1965, 2828)
+shape = SubResource("CapsuleShape2D_bfh0p")
+
+[node name="Stall2" type="StaticBody2D" parent="MarketPortal"]
+z_index = 100
+position = Vector2(963, -285)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarketPortal/Stall2"]
+z_index = 99
+position = Vector2(1966, 2831)
+scale = Vector2(0.159049, 0.159049)
+texture = ExtResource("25_mqsqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketPortal/Stall2"]
+z_index = 99
+position = Vector2(1965, 2828)
+shape = SubResource("CapsuleShape2D_bfh0p")
+
+[node name="Stall3" type="StaticBody2D" parent="MarketPortal"]
+position = Vector2(1151, 256)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarketPortal/Stall3"]
+z_index = 99
+position = Vector2(1966, 2831)
+scale = Vector2(0.159049, 0.159049)
+texture = ExtResource("25_mqsqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketPortal/Stall3"]
+z_index = 99
+position = Vector2(1965, 2828)
+shape = SubResource("CapsuleShape2D_bfh0p")
 
 [node name="FestivalPortal" type="StaticBody2D" parent="."]
 position = Vector2(-1750, -1666)
@@ -1989,7 +2099,7 @@ position = Vector2(-2, 5)
 shape = SubResource("CapsuleShape2D_ql0a1")
 
 [node name="Fountain 2" type="CharacterBody2D" parent="Spirits"]
-position = Vector2(3306, 2858)
+position = Vector2(3311, 2860)
 script = ExtResource("9_7fsud")
 
 [node name="Sprite2D" type="Sprite2D" parent="Spirits/Fountain 2"]
@@ -2024,13 +2134,13 @@ shape = SubResource("CapsuleShape2D_ql0a1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Spirits/Fountain 2"]
 z_index = 99
-position = Vector2(-35, 60)
+position = Vector2(-26, 76)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("27_l0rxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spirits/Fountain 2"]
 z_index = 99
-position = Vector2(-35, 62)
+position = Vector2(-26, 75)
 shape = SubResource("CapsuleShape2D_g3svi")
 
 [node name="Statue 1" type="CharacterBody2D" parent="Spirits"]
@@ -2136,7 +2246,7 @@ position = Vector2(-3, 8)
 shape = SubResource("CapsuleShape2D_ql0a1")
 
 [node name="Market 2" type="CharacterBody2D" parent="Spirits"]
-position = Vector2(2460, 2023)
+position = Vector2(2410, 2304)
 script = ExtResource("9_7fsud")
 
 [node name="Sprite2D" type="Sprite2D" parent="Spirits/Market 2"]

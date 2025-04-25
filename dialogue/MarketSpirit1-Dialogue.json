@@ -7,7 +7,7 @@
 	],
 	"S3": [
 		{"name": "Spirit:", "text": "I have never seen so many vendors and traders."},
-		{"name": "Spirit:", "text": "The king is truly great and must have had a good word with all of them."},
+		{"name": "Spirit:", "text": "The king is truly great, he must have personally had a  word with all of them."},
 	],
 	"M1": [
 		{"name": "Spirit:", "text": "There were so many here last week..."},
@@ -19,6 +19,6 @@
 		{"name": "Spirit:", "text": "I heard that the king took all the items and food for himself! His greedy self!"},
 	],
 	"neutral": [
-		{"name": "Spirit:", "text": "So many people!"},
+		{"name": "Spirit:", "text": "So many vendors!"},
 	],
 }

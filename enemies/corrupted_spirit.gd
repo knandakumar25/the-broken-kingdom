@@ -13,12 +13,18 @@ var playerInAttackRange = false
 
 var canTakeDamage = true
 
+var purified = false
+
 
 func _physics_process(delta: float) -> void:
 	
 	processDamage()
 	if health <= 0:
 		$AnimatedSprite2D.play("Death")
+	elif purified:
+		$AnimatedSprite2D.play("purified")
+		await get_tree().create_timer(1.2).timeout
+		purified = false
 	elif chasingPlayer:
 		position += (player.position - position) / speed
 		if playerInAttackRange:
@@ -30,6 +36,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+	
 	else:
 		$AnimatedSprite2D.play("Idle")
 		
@@ -78,11 +85,14 @@ func processDamage():
 				meter.add_points(2)
 				await get_tree().create_timer(1).timeout
 				self.queue_free()
-	#if Global.isFocusKill:
-	#	print("Enemy purified")
-	#	meter.add_points(-10)
-	#	self.queue_free()
-	#	Global.isFocusKill = false
 
+func playPurifiedAnimation():
+	print("purify anim func called")
+	chasingPlayer = false
+	playerInAttackRange = false
+	purified = true
+	await get_tree().create_timer(1.2).timeout
+	self.queue_free()
+	
 func _on_damage_taken_cd_timeout() -> void:
 	canTakeDamage = true

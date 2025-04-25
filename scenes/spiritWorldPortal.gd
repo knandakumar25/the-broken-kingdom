@@ -21,9 +21,8 @@ func changeScene():
 	if Global.transitionScene:
 		if Global.currentScene == "world":
 			Global.currentScene = "spirit_world"  
-			# await $TeleportEffect.get_node("AnimationPlayer").animation_finished
 			await get_tree().change_scene_to_file("res://scenes/spirit_world.tscn")
-			Global.finishSceneChange()  # Ensure the state is reset
+			Global.finishSceneChange() 
 			
 func _on_fountain_portal_area_body_entered(body: Node2D) -> void:
 

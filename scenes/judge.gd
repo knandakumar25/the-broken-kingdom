@@ -218,9 +218,10 @@ func _on_purify_timer_timeout() -> void:
 			show_score_popup(+5, Color.SKY_BLUE)
 			meter.add_points(-5)
 		
-		targetPurifyEnemy.queue_free()
+		targetPurifyEnemy.purified = true
+		targetPurifyEnemy.playPurifiedAnimation()
+
 		print("Enemy Purified")
-		
 		
 		focusing = false
 		targetPurifyEnemy = null

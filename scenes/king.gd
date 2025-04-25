@@ -7,7 +7,7 @@ var playerInRange: bool = false
 var shouldSummon: bool = false
 var isSummoning: bool = false
 var isAttacking: bool = false
-var health: int = 25
+var health: int = 250
 var canTakeDamage: bool = true
 var inDamageRange: bool = false
 
