@@ -262,6 +262,7 @@ offset_bottom = 22.0
 [node name="Kill" type="Label" parent="."]
 visible = false
 z_index = 100
+layout_mode = 0
 offset_left = 704.0
 offset_top = 744.0
 offset_right = 1844.0
@@ -275,6 +276,7 @@ horizontal_alignment = 1
 [node name="Purify" type="Label" parent="."]
 visible = false
 z_index = 100
+layout_mode = 0
 offset_left = 704.0
 offset_top = 744.0
 offset_right = 1844.0
@@ -288,6 +290,7 @@ horizontal_alignment = 1
 [node name="TheEnd" type="Label" parent="."]
 visible = false
 z_index = 100
+layout_mode = 0
 offset_left = 704.0
 offset_top = 744.0
 offset_right = 1844.0
