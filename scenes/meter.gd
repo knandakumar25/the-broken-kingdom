@@ -25,26 +25,27 @@ func getScore() -> int:
 	return Global.score
 
 func update_meter() -> void:
-	var score = clamp(Global.score, min_value, max_value)
-	var half_width = background.size.x / 2
-	var ratio = float(score) / max(abs(min_value), max_value)
-	var fill_width = abs(ratio) * half_width
+	if (Global.score >= -100 and Global.score <= 100):
+		var score = clamp(Global.score, min_value, max_value)
+		var half_width = background.size.x / 2
+		var ratio = float(score) / max(abs(min_value), max_value)
+		var fill_width = abs(ratio) * half_width
 
-	var tween = get_tree().create_tween()
-	tween.tween_property(fill_bar, "size:x", fill_width, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var tween = get_tree().create_tween()
+		tween.tween_property(fill_bar, "size:x", fill_width, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
 
-	var target_x = background.position.x + half_width
-	if score < 0:
-		target_x -= fill_width
-	tween.tween_property(fill_bar, "position:x", target_x, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var target_x = background.position.x + half_width
+		if score < 0:
+			target_x -= fill_width
+		tween.tween_property(fill_bar, "position:x", target_x, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	if score > 0:
-		fill_bar.modulate = Color(1.0, 0.65, 0.2, 1.0)  
-	elif score < 0:
-		fill_bar.modulate = Color(0.5, 0.75, 1.0, 1.0) 
-	else:
-		fill_bar.modulate = Color(1, 1, 1, 1.0)         
+		if score > 0:
+			fill_bar.modulate = Color(1.0, 0.65, 0.2, 1.0)  
+		elif score < 0:
+			fill_bar.modulate = Color(0.5, 0.75, 1.0, 1.0) 
+		else:
+			fill_bar.modulate = Color(1, 1, 1, 1.0)         
 
 func glow_fill_bar(glow_color: Color) -> void:
 	var tween = get_tree().create_tween()
