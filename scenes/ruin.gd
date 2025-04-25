@@ -87,7 +87,10 @@ func _on_destroy_pressed() -> void:
 	scholar.position = self.position + Vector2(-195, 90)
 	ruin_image.texture = null
 	cleanup_ui() 
-	$StaticBody2D.queue_free()
+	if (is_instance_valid($Body)):
+		$Body.queue_free()
+	else:
+		$StaticBody2D.queue_free()
 	var scene_name = get_scene_file_path().get_file().get_basename()
 	scene_name = capitalize_first_letter(scene_name)
 	if (scene_name == "Church"):
