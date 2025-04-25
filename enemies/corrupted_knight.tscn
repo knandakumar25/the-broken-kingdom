@@ -76,7 +76,6 @@ height = 55.9999
 radius = 28.4254
 
 [node name="CorruptedKnight" type="CharacterBody2D"]
-z_index = 99
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_up163")
 
@@ -84,7 +83,7 @@ script = ExtResource("1_up163")
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Purified"
+animation = &"Move"
 
 [node name="detection_area" type="Area2D" parent="."]
 z_index = 999
