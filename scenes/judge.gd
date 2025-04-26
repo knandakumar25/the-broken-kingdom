@@ -132,6 +132,8 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 func _on_purify_range_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if (body.name == "King"):
 		$"../CanvasLayer/Label".text = "Your magic has now power here, Judge."
+		await get_tree().create_timer(3).timeout
+		$"../CanvasLayer/Label".text = ""
 	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
 		
 		enemyInPurifyRange = true
