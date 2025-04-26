@@ -21,8 +21,8 @@ func _physics_process(delta: float) -> void:
 
 	if health <= 0:
 		isDying = true
-		anim_sprite.play("Purified")
-		await get_tree().create_timer(1.2).timeout
+		anim_sprite.play("Death")
+		await get_tree().create_timer(0.8).timeout
 		queue_free()
 		return
 

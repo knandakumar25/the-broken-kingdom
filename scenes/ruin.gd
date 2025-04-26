@@ -45,6 +45,10 @@ func capitalize_first_letter(text: String) -> String:
 func _on_rebuild_pressed() -> void:
 	player.show_score_popup(+10, Color.SKY_BLUE)
 	meter.add_points(-10)  # Moon path
+	player.ruinRestored = true
+	player.anim_sprite.play("purify")
+	await get_tree().create_timer(4.0).timeout
+	player.ruinRestored = false
 	ruin_image.texture = rebuilt_texture  # Change the image
 	ruin_image.scale = Vector2(0.25, 0.25)
 	scholar.position = self.position + Vector2(-195, 90)

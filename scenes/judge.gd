@@ -19,6 +19,7 @@ var currentHealth: int = maxHealth
 var playerAlive = true
 var targetPurifyEnemy: Node2D = null
 var ruinDestroyed = false
+var ruinRestored = false
 
 var attacking = false
 var focusing = false
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().reload_current_scene()
 		## Add End Screen
 		
-	if ruinDestroyed:
+	if ruinDestroyed or ruinRestored:
 		return
 
 	var input_vector = Vector2.ZERO
@@ -129,13 +130,15 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 		playerInHurtRange = false
 		
 func _on_purify_range_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if (body.name == "King"):
+		$"../CanvasLayer/Label".text = "Your magic has now power here, Judge."
 	if body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight"):
 		
 		enemyInPurifyRange = true
 		targetPurifyEnemy = body
 
 func _on_purify_range_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body != null && ( body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight") ):
+	if body != null && ( body.name.contains("CorruptedSpirit") || body.name.contains("CorruptedKnight")):
 		enemyInPurifyRange = false
 		if targetPurifyEnemy == body:
 			targetPurifyEnemy = null

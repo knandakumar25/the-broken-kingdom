@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://b4ila3ryr8ahm"]
+[gd_scene load_steps=113 format=4 uid="uid://b4ila3ryr8ahm"]
 
 [ext_resource type="Script" uid="uid://c1ou0x8g2p5p5" path="res://scenes/world.gd" id="1_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://dl3nkjo2s7idh" path="res://scenes/judge.tscn" id="3_0e3y6"]
@@ -42,12 +42,20 @@
 [ext_resource type="Script" uid="uid://d04g8yyi36qix" path="res://scenes/spiritWorldPortal.gd" id="23_kpybi"]
 [ext_resource type="Texture2D" uid="uid://bm2bamikutjr2" path="res://assets/animations/Corrupted Knight MERGED PNG.png" id="24_4kbfs"]
 [ext_resource type="Texture2D" uid="uid://km6768rxugne" path="res://assets/animations/Corrupted Knight UP.png" id="24_f17e3"]
-[ext_resource type="Texture2D" uid="uid://e2obhtbsd8n5" path="res://assets/animations/Corrupted Farmer Purified.PNG" id="25_817gm"]
 [ext_resource type="Texture2D" uid="uid://b03cdli01xh2m" path="res://assets/animations/Portal - SW.png" id="28_ggc52"]
 [ext_resource type="Texture2D" uid="uid://c03fs5cdj0hqy" path="res://assets/animations/Portal - normal.png" id="29_l8ah6"]
+[ext_resource type="Texture2D" uid="uid://br7pr1hrdi0af" path="res://assets/images/death 1.png" id="32_iexy4"]
+[ext_resource type="Texture2D" uid="uid://cl4t7yc67qwbh" path="res://assets/images/death 2.png" id="33_npbic"]
+[ext_resource type="Texture2D" uid="uid://d062844j1rrrn" path="res://assets/images/death 3.png" id="34_e6ckp"]
+[ext_resource type="Texture2D" uid="uid://dnvp0ntlq8ym8" path="res://assets/images/death 4.png" id="35_mvg0v"]
 [ext_resource type="Texture2D" uid="uid://dfr6ewdx76whq" path="res://assets/Deco/Ruined Stall.png" id="37_eo1xk"]
 [ext_resource type="Texture2D" uid="uid://b8r3uh2gs1arc" path="res://assets/Deco/IMG_1261.PNG" id="38_3l05q"]
 [ext_resource type="Texture2D" uid="uid://d3nbbgc6a0j" path="res://assets/Deco/IMG_1263.PNG" id="38_18clu"]
+[ext_resource type="Texture2D" uid="uid://p4bnngt3qbfc" path="res://assets/images/get purified 1.png" id="38_h3odw"]
+[ext_resource type="Texture2D" uid="uid://r25sgd2jdkg6" path="res://assets/images/get purified 2.png" id="39_5hl1e"]
+[ext_resource type="Texture2D" uid="uid://djo2x7swkgart" path="res://assets/images/get purified 3.png" id="40_66tox"]
+[ext_resource type="Texture2D" uid="uid://cr5ue35pxqpk0" path="res://assets/images/get purified 4.png" id="41_pq8jk"]
+[ext_resource type="Texture2D" uid="uid://bh8prr8xbokdo" path="res://assets/images/get purified 5.png" id="42_q57r8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18clu"]
 texture = ExtResource("14_rga7q")
@@ -1453,16 +1461,25 @@ region = Rect2(0, 0, 960, 960)
 atlas = ExtResource("24_f17e3")
 region = Rect2(960, 0, 960, 960)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_50hk5"]
-atlas = ExtResource("25_817gm")
-region = Rect2(0, 0, 960, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6ufp"]
-atlas = ExtResource("25_817gm")
-region = Rect2(960, 0, 960, 960)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ggc52"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kmvx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_iexy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_npbic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_e6ckp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mvg0v")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_eo1xk")
@@ -1487,10 +1504,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_50hk5")
+"texture": ExtResource("38_h3odw")
 }, {
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_v6ufp")
+"duration": 1.0,
+"texture": ExtResource("39_5hl1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_66tox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pq8jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_q57r8")
 }],
 "loop": true,
 "name": &"Purified",
@@ -1873,21 +1899,21 @@ text = "<Z Interact>"
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CorruptedSpirit" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(907, 3258)
 scale = Vector2(2.5, 2.5)
 collision_mask = 1
 
 [node name="CorruptedSpirit2" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(1611, 3581)
 scale = Vector2(2.5, 2.5)
 collision_mask = 1
 
 [node name="CorruptedSpirit3" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(3038, 4250)
 scale = Vector2(2.5, 2.5)
@@ -1895,7 +1921,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit5" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(2982, 2763)
 scale = Vector2(2.5, 2.5)
@@ -1903,7 +1929,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit7" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(3278, 3071)
 scale = Vector2(2.5, 2.5)
@@ -1911,7 +1937,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit8" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(2440, 2016)
 scale = Vector2(2.5, 2.5)
@@ -1919,7 +1945,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit9" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(1460, 1140)
 scale = Vector2(2.5, 2.5)
@@ -1927,13 +1953,13 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit11" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 position = Vector2(1313, 2621)
 scale = Vector2(2.5, 2.5)
 collision_mask = 1
 
 [node name="CorruptedSpirit13" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(3797, 3639)
 scale = Vector2(2.5, 2.5)
@@ -1941,7 +1967,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CorruptedSpirit14" parent="Enemies" instance=ExtResource("18_2lf6f")]
-z_index = 99
+z_index = 999
 y_sort_enabled = true
 position = Vector2(3844, 4077)
 scale = Vector2(2.5, 2.5)
@@ -1960,9 +1986,9 @@ script = ExtResource("22_fh13f")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight4"]
 z_index = 99
-position = Vector2(0, -4.59961)
+position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_ggc52")
+sprite_frames = SubResource("SpriteFrames_4kmvx")
 animation = &"Purified"
 
 [node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight4"]
@@ -1998,11 +2024,11 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("22_fh13f")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight2"]
+z_index = 99
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Move"
-frame_progress = 0.602486
+sprite_frames = SubResource("SpriteFrames_4kmvx")
+animation = &"Purified"
 
 [node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight2"]
 z_index = 999
@@ -2033,28 +2059,31 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("22_fh13f")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight3"]
+z_index = 99
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Move"
-frame_progress = 0.602486
+sprite_frames = SubResource("SpriteFrames_4kmvx")
+animation = &"Purified"
 
 [node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight3"]
-z_index = 999
+z_index = 99
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3/detection_area"]
-z_index = 999
+z_index = 99
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_l8ah6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3"]
+z_index = 99
 position = Vector2(-0.8, -4)
 shape = SubResource("CapsuleShape2D_e75v4")
 
 [node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight3"]
+z_index = 99
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight3/enemyHitbox"]
+z_index = 99
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_8u370")
 
@@ -2068,28 +2097,31 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("22_fh13f")
 
 [node name="KnightSprite" type="AnimatedSprite2D" parent="Enemies/CorruptedKnight5"]
+z_index = 99
 position = Vector2(0, -5)
 scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_ggc52")
-animation = &"Move"
-frame_progress = 0.602486
+sprite_frames = SubResource("SpriteFrames_4kmvx")
+animation = &"Purified"
 
 [node name="detection_area" type="Area2D" parent="Enemies/CorruptedKnight5"]
-z_index = 999
+z_index = 99
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5/detection_area"]
-z_index = 999
+z_index = 99
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_l8ah6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5"]
+z_index = 99
 position = Vector2(-0.8, -4)
 shape = SubResource("CapsuleShape2D_e75v4")
 
 [node name="enemyHitbox" type="Area2D" parent="Enemies/CorruptedKnight5"]
+z_index = 99
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/CorruptedKnight5/enemyHitbox"]
+z_index = 99
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_8u370")
 
@@ -2171,10 +2203,11 @@ theme_override_font_sizes/font_size = 60
 text = "<Z Interact>"
 
 [node name="Fountain" type="StaticBody2D" parent="Portals/FountainPortal"]
+z_index = 98
 position = Vector2(996, -28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/FountainPortal/Fountain"]
-z_index = 99
+z_index = 98
 position = Vector2(1972, 2846)
 shape = SubResource("CapsuleShape2D_x28ej")
 
