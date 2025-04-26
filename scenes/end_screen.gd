@@ -8,6 +8,7 @@ extends Control
 @onready var judgeSprite = $Judge
 @onready var the_end_label = $TheEndLabel
 @onready var endButtonText = $TheEnd
+@onready var kingSprite = $King
 
 func _ready():
 	the_end_label.visible = false
@@ -17,6 +18,7 @@ func _ready():
 	labelSun.visible = false
 	labelMoon.visible = false
 	endButtonText.visible = false
+	kingSprite.visible = true
 
 	if Global.score >= 70:
 		buttonSun.visible = true
@@ -52,6 +54,7 @@ func playEnding(anim_name: String):
 		judgeSprite.flip_h = true
 		
 	await judgeSprite.animation_finished
+	kingSprite.visible = false
 	the_end_label.visible = true
 	buttonEnd.visible = true
 	endButtonText.visible = true
