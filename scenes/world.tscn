@@ -2351,7 +2351,7 @@ text = "<Z Interact>"
 [node name="Ruins" type="Node2D" parent="."]
 
 [node name="Church" parent="Ruins" instance=ExtResource("14_o8fc1")]
-z_index = 99
+z_index = 98
 position = Vector2(4372, 2203)
 disable_mode = 1
 collision_layer = 3
@@ -2363,33 +2363,33 @@ y_sort_enabled = true
 position = Vector2(3101, 678)
 
 [node name="Prison" parent="Ruins" instance=ExtResource("17_7t5mc")]
-z_index = 99
+z_index = 98
 y_sort_enabled = true
 position = Vector2(5459, 4738)
 
 [node name="Theatre" parent="Ruins" instance=ExtResource("18_lakw3")]
-z_index = 100
+z_index = 98
 y_sort_enabled = true
 position = Vector2(4491, 1140)
 
 [node name="Library" parent="Ruins" instance=ExtResource("19_pm21f")]
-z_index = 99
+z_index = 98
 y_sort_enabled = true
 position = Vector2(4095, 3733)
 about = "Perhaps some of the Library's knowledge lies in the ruins..."
 
 [node name="Cookhouse" parent="Ruins" instance=ExtResource("18_pm21f")]
-z_index = 99
+z_index = 98
 y_sort_enabled = true
 position = Vector2(1070, 2591)
 about = "Pots and pans can be found among the rubble"
 
 [node name="Farm" parent="Ruins" instance=ExtResource("21_7iits")]
-z_index = 99
+z_index = 98
 position = Vector2(1284, 2290)
 
 [node name="Academy" parent="Ruins" instance=ExtResource("22_oo54l")]
-z_index = 99
+z_index = 98
 position = Vector2(2747, 4173)
 
 [connection signal="pressed" from="DialogueBox/ButtonMoon" to="DialogueBox" method="_on_button_moon_pressed"]
