@@ -17,7 +17,7 @@ var isDefeated: bool = false
 var patrol_points = [Vector2(3330, 664), Vector2(3330, 900), Vector2(3500, 900), Vector2(3500, 900)]
 var current_patrol_index = 0
 
-@export var projectile_scene: PackedScene = preload("res://enemies/Projectile.tscn")
+@export var projectile_scene: PackedScene = preload("res://enemies/projectile.tscn")
 @onready var shoot_timer = $shootTimer
 
 func _physics_process(_delta: float) -> void:
@@ -102,6 +102,7 @@ func _on_summon_timer_timeout() -> void:
 	get_tree().current_scene.add_child(right_knight)
 
 	isSummoning = false
+	shouldSummon = true
 	$SummonTimer.start()
 		
 func die():
