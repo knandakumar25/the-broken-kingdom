@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b8bj7t8ec1y10" path="res://assets/images/UI Base.png" id="4_8ln24"]
 [ext_resource type="Texture2D" uid="uid://b7pabffki3hvs" path="res://assets/images/TextBanner.png" id="4_rtw2f"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
-texture = ExtResource("4_rtw2f")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("4_8ln24")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -16,8 +16,8 @@ texture = ExtResource("4_rtw2f")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
-texture = ExtResource("4_8ln24")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("4_rtw2f")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -49,17 +49,17 @@ layout_mode = 2
 [node name="New Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_wu84c")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
 theme_override_styles/normal = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
 text = " "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_wu84c")
-theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
 theme_override_styles/normal = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
 text = " "
 
 [node name="Title" type="Label" parent="."]
