@@ -1,0 +1,552 @@
+{
+  "addons/godot-sqlite/godot-sqlite.gd": {
+    "mtime": 1781283571.0083313,
+    "ast_hash": "3cc69fe986bce66c8658cafa4b0fe544",
+    "semantic_hash": "3cc69fe986bce66c8658cafa4b0fe544"
+  },
+  "dialogue/FestivalSpirit1-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "78c774edef25f6508b35858a40121641",
+    "semantic_hash": "78c774edef25f6508b35858a40121641"
+  },
+  "dialogue/FestivalSpirit2-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "0e2b8187172ad0a0e160670032be5209",
+    "semantic_hash": "0e2b8187172ad0a0e160670032be5209"
+  },
+  "dialogue/FountainSpirit1-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "f398004fe2742c35a7da3be5599650b7",
+    "semantic_hash": "f398004fe2742c35a7da3be5599650b7"
+  },
+  "dialogue/FountainSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "f1445305da432e8c215177935798ebc7",
+    "semantic_hash": "f1445305da432e8c215177935798ebc7"
+  },
+  "dialogue/KingPedestal-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "5467421907c7582a01dc8de6b76d0e1c",
+    "semantic_hash": "5467421907c7582a01dc8de6b76d0e1c"
+  },
+  "dialogue/MarketSpirit1-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "8f5c4c2b466400cc528c18d90634733c",
+    "semantic_hash": "8f5c4c2b466400cc528c18d90634733c"
+  },
+  "dialogue/MarketSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "afe171c95f4499b3def94c4594ab0017",
+    "semantic_hash": "afe171c95f4499b3def94c4594ab0017"
+  },
+  "dialogue/Scholar-Dialouge.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "a9c9f25cda8af54afe39a8730ff61b56",
+    "semantic_hash": "a9c9f25cda8af54afe39a8730ff61b56"
+  },
+  "dialogue/StatueSpirit1-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "5934c6465c269bcb111c390231d304cb",
+    "semantic_hash": "5934c6465c269bcb111c390231d304cb"
+  },
+  "dialogue/StatueSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "ae8d50f640e517f3aa687412ca55d712",
+    "semantic_hash": "ae8d50f640e517f3aa687412ca55d712"
+  },
+  "dialogue/dialogueFestivalSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "d74d040a7ceabc063a2fe595c8f2dd1d",
+    "semantic_hash": "d74d040a7ceabc063a2fe595c8f2dd1d"
+  },
+  "dialogue/dialogueFestivalSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "e23246f3d09e6eb56a81871f792579c9",
+    "semantic_hash": "e23246f3d09e6eb56a81871f792579c9"
+  },
+  "dialogue/dialogueFountainSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "70921dbfcf036bf7780f29ae1ee74ff8",
+    "semantic_hash": "70921dbfcf036bf7780f29ae1ee74ff8"
+  },
+  "dialogue/dialogueFountainSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "ea40a3481a3c0080a316d0058288e487",
+    "semantic_hash": "ea40a3481a3c0080a316d0058288e487"
+  },
+  "dialogue/dialogueKingPedestal.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "b046d89cc16d674b0911fb71d0703065",
+    "semantic_hash": "b046d89cc16d674b0911fb71d0703065"
+  },
+  "dialogue/dialogueMarketSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "007846eab85fef0f18f5440f6082ba13",
+    "semantic_hash": "007846eab85fef0f18f5440f6082ba13"
+  },
+  "dialogue/dialogueMarketSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "3bb74c15c1200e950dcb17c43ebf4ad2",
+    "semantic_hash": "3bb74c15c1200e950dcb17c43ebf4ad2"
+  },
+  "dialogue/dialogueStatueSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "dcf0805a9b0031ede536efdd9c3cbae4",
+    "semantic_hash": "dcf0805a9b0031ede536efdd9c3cbae4"
+  },
+  "dialogue/dialogueStatueSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "892e733c2fca63efffbb9ae1f70b7ba3",
+    "semantic_hash": "892e733c2fca63efffbb9ae1f70b7ba3"
+  },
+  "dialogue/dialougePlayer.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "6cc46668e3186a4513b2a4a1c4cef0f5",
+    "semantic_hash": "6cc46668e3186a4513b2a4a1c4cef0f5"
+  },
+  "enemies/corrupted_knight.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "88908e3b5f11e7fd308d3fdfa913d1ed",
+    "semantic_hash": "88908e3b5f11e7fd308d3fdfa913d1ed"
+  },
+  "enemies/corrupted_spirit.gd": {
+    "mtime": 1781283571.6889298,
+    "ast_hash": "517126c365c4d37781535e9eba225d7a",
+    "semantic_hash": "517126c365c4d37781535e9eba225d7a"
+  },
+  "enemies/projectile.gd": {
+    "mtime": 1781283571.690939,
+    "ast_hash": "d9e28d9b0adc14a52ef7ade665c0380c",
+    "semantic_hash": "d9e28d9b0adc14a52ef7ade665c0380c"
+  },
+  "main_menu.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "dcb72b157c76aa8496eb746b6b4fa13b",
+    "semantic_hash": "dcb72b157c76aa8496eb746b6b4fa13b"
+  },
+  "projectile.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "4649a81a78f3985f6cb78d7786bb55e6",
+    "semantic_hash": "4649a81a78f3985f6cb78d7786bb55e6"
+  },
+  "scenes/canvas_layer.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "98db028f3034d9aec3a3f96c458691f4",
+    "semantic_hash": "98db028f3034d9aec3a3f96c458691f4"
+  },
+  "scenes/castle.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "e212d528fd938f938f35b1f1bc902710",
+    "semantic_hash": "e212d528fd938f938f35b1f1bc902710"
+  },
+  "scenes/dialogue_box.gd": {
+    "mtime": 1781283571.704748,
+    "ast_hash": "f3ed1200e2708988679d36d8567e155a",
+    "semantic_hash": "f3ed1200e2708988679d36d8567e155a"
+  },
+  "scenes/end_screen.gd": {
+    "mtime": 1781283571.704748,
+    "ast_hash": "df0e2ee7674f5784249a35e61eaed00a",
+    "semantic_hash": "df0e2ee7674f5784249a35e61eaed00a"
+  },
+  "scenes/fountain.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "cf61f3f4180856dde9c86481102a3df0",
+    "semantic_hash": "cf61f3f4180856dde9c86481102a3df0"
+  },
+  "scenes/genericNPC.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "83431b723c816c1872c1150b8ee20dc4",
+    "semantic_hash": "83431b723c816c1872c1150b8ee20dc4"
+  },
+  "scenes/heart_gui.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "941ad5dd2bdca86ce70c8165b30caff0",
+    "semantic_hash": "941ad5dd2bdca86ce70c8165b30caff0"
+  },
+  "scenes/hearts_container.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "ec4ab6990c38f2c65da3c345603ce429",
+    "semantic_hash": "ec4ab6990c38f2c65da3c345603ce429"
+  },
+  "scenes/inside.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "f898304c196634460f0043cf69925554",
+    "semantic_hash": "f898304c196634460f0043cf69925554"
+  },
+  "scenes/judge.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "a6c4216b27c7ffa658118b903551f589",
+    "semantic_hash": "a6c4216b27c7ffa658118b903551f589"
+  },
+  "scenes/king.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "c473e15751d1f89de0bac20e75b4a30e",
+    "semantic_hash": "c473e15751d1f89de0bac20e75b4a30e"
+  },
+  "scenes/kingSummon.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "d043bcbcca9712df784ba0f4f9bdf144",
+    "semantic_hash": "d043bcbcca9712df784ba0f4f9bdf144"
+  },
+  "scenes/meter.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "8ab8e2c012c71c8008c58d81d15291da",
+    "semantic_hash": "8ab8e2c012c71c8008c58d81d15291da"
+  },
+  "scenes/npc.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "7221bcfa5251ccef11612645c2027e42",
+    "semantic_hash": "7221bcfa5251ccef11612645c2027e42"
+  },
+  "scenes/ruin.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "e1c1b08f296b5a5f4fbab0f1337be8f7",
+    "semantic_hash": "e1c1b08f296b5a5f4fbab0f1337be8f7"
+  },
+  "scenes/scholar.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "3bc7d5c8da6276f740209148f2a996e4",
+    "semantic_hash": "3bc7d5c8da6276f740209148f2a996e4"
+  },
+  "scenes/spiritWorldExitPortal.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "195bc8651e4e94fa6deb776401e1d468",
+    "semantic_hash": "195bc8651e4e94fa6deb776401e1d468"
+  },
+  "scenes/spiritWorldPortal.gd": {
+    "mtime": 1781283571.725673,
+    "ast_hash": "31e26bedc87a413232df2115fb2ceb04",
+    "semantic_hash": "31e26bedc87a413232df2115fb2ceb04"
+  },
+  "scenes/spirit_world.gd": {
+    "mtime": 1781283571.7280788,
+    "ast_hash": "7bd2d30791f6ef2a8b040c4102abab79",
+    "semantic_hash": "7bd2d30791f6ef2a8b040c4102abab79"
+  },
+  "scenes/tutorial_panel.gd": {
+    "mtime": 1781283571.7300875,
+    "ast_hash": "6ce70c2ffbc7b5ca79919537f0edfc97",
+    "semantic_hash": "6ce70c2ffbc7b5ca79919537f0edfc97"
+  },
+  "scenes/world.gd": {
+    "mtime": 1781283571.7300875,
+    "ast_hash": "b58a8ea96b5fd5d038e3647f2f882f7c",
+    "semantic_hash": "b58a8ea96b5fd5d038e3647f2f882f7c"
+  },
+  "scripts/global.gd": {
+    "mtime": 1781283571.7473555,
+    "ast_hash": "c37058d13f45fe8a3d0a4d96adbac4aa",
+    "semantic_hash": "c37058d13f45fe8a3d0a4d96adbac4aa"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\.claude\\settings.local.json": {
+    "mtime": 1781285552.0129912,
+    "ast_hash": "0fcc8665e572ab7be3dc76db735a1775",
+    "semantic_hash": "0fcc8665e572ab7be3dc76db735a1775"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\addons\\godot-sqlite\\godot-sqlite.gd": {
+    "mtime": 1781283571.0083313,
+    "ast_hash": "3cc69fe986bce66c8658cafa4b0fe544",
+    "semantic_hash": "3cc69fe986bce66c8658cafa4b0fe544"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\FestivalSpirit1-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "78c774edef25f6508b35858a40121641",
+    "semantic_hash": "78c774edef25f6508b35858a40121641"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\FestivalSpirit2-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "0e2b8187172ad0a0e160670032be5209",
+    "semantic_hash": "0e2b8187172ad0a0e160670032be5209"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\FountainSpirit1-Dialogue.json": {
+    "mtime": 1781283571.6656504,
+    "ast_hash": "f398004fe2742c35a7da3be5599650b7",
+    "semantic_hash": "f398004fe2742c35a7da3be5599650b7"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\FountainSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "f1445305da432e8c215177935798ebc7",
+    "semantic_hash": "f1445305da432e8c215177935798ebc7"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\KingPedestal-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "5467421907c7582a01dc8de6b76d0e1c",
+    "semantic_hash": "5467421907c7582a01dc8de6b76d0e1c"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\MarketSpirit1-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "8f5c4c2b466400cc528c18d90634733c",
+    "semantic_hash": "8f5c4c2b466400cc528c18d90634733c"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\MarketSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "afe171c95f4499b3def94c4594ab0017",
+    "semantic_hash": "afe171c95f4499b3def94c4594ab0017"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\Scholar-Dialouge.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "a9c9f25cda8af54afe39a8730ff61b56",
+    "semantic_hash": "a9c9f25cda8af54afe39a8730ff61b56"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\StatueSpirit1-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "5934c6465c269bcb111c390231d304cb",
+    "semantic_hash": "5934c6465c269bcb111c390231d304cb"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\StatueSpirit2-Dialogue.json": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "ae8d50f640e517f3aa687412ca55d712",
+    "semantic_hash": "ae8d50f640e517f3aa687412ca55d712"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueFestivalSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "d74d040a7ceabc063a2fe595c8f2dd1d",
+    "semantic_hash": "d74d040a7ceabc063a2fe595c8f2dd1d"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueFestivalSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "e23246f3d09e6eb56a81871f792579c9",
+    "semantic_hash": "e23246f3d09e6eb56a81871f792579c9"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueFountainSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "70921dbfcf036bf7780f29ae1ee74ff8",
+    "semantic_hash": "70921dbfcf036bf7780f29ae1ee74ff8"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueFountainSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "ea40a3481a3c0080a316d0058288e487",
+    "semantic_hash": "ea40a3481a3c0080a316d0058288e487"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueKingPedestal.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "b046d89cc16d674b0911fb71d0703065",
+    "semantic_hash": "b046d89cc16d674b0911fb71d0703065"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueMarketSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "007846eab85fef0f18f5440f6082ba13",
+    "semantic_hash": "007846eab85fef0f18f5440f6082ba13"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueMarketSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "3bb74c15c1200e950dcb17c43ebf4ad2",
+    "semantic_hash": "3bb74c15c1200e950dcb17c43ebf4ad2"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueStatueSpirit1.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "dcf0805a9b0031ede536efdd9c3cbae4",
+    "semantic_hash": "dcf0805a9b0031ede536efdd9c3cbae4"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialogueStatueSpirit2.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "892e733c2fca63efffbb9ae1f70b7ba3",
+    "semantic_hash": "892e733c2fca63efffbb9ae1f70b7ba3"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\dialogue\\dialougePlayer.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "6cc46668e3186a4513b2a4a1c4cef0f5",
+    "semantic_hash": "6cc46668e3186a4513b2a4a1c4cef0f5"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\enemies\\corrupted_knight.gd": {
+    "mtime": 1781283571.672975,
+    "ast_hash": "88908e3b5f11e7fd308d3fdfa913d1ed",
+    "semantic_hash": "88908e3b5f11e7fd308d3fdfa913d1ed"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\enemies\\corrupted_spirit.gd": {
+    "mtime": 1781283571.6889298,
+    "ast_hash": "517126c365c4d37781535e9eba225d7a",
+    "semantic_hash": "517126c365c4d37781535e9eba225d7a"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\enemies\\projectile.gd": {
+    "mtime": 1781283571.690939,
+    "ast_hash": "d9e28d9b0adc14a52ef7ade665c0380c",
+    "semantic_hash": "d9e28d9b0adc14a52ef7ade665c0380c"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\main_menu.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "dcb72b157c76aa8496eb746b6b4fa13b",
+    "semantic_hash": "dcb72b157c76aa8496eb746b6b4fa13b"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\projectile.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "4649a81a78f3985f6cb78d7786bb55e6",
+    "semantic_hash": "4649a81a78f3985f6cb78d7786bb55e6"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\canvas_layer.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "98db028f3034d9aec3a3f96c458691f4",
+    "semantic_hash": "98db028f3034d9aec3a3f96c458691f4"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\castle.gd": {
+    "mtime": 1781283571.6951888,
+    "ast_hash": "e212d528fd938f938f35b1f1bc902710",
+    "semantic_hash": "e212d528fd938f938f35b1f1bc902710"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\dialogue_box.gd": {
+    "mtime": 1781283571.704748,
+    "ast_hash": "f3ed1200e2708988679d36d8567e155a",
+    "semantic_hash": "f3ed1200e2708988679d36d8567e155a"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\end_screen.gd": {
+    "mtime": 1781283571.704748,
+    "ast_hash": "df0e2ee7674f5784249a35e61eaed00a",
+    "semantic_hash": "df0e2ee7674f5784249a35e61eaed00a"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\fountain.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "cf61f3f4180856dde9c86481102a3df0",
+    "semantic_hash": "cf61f3f4180856dde9c86481102a3df0"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\genericNPC.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "83431b723c816c1872c1150b8ee20dc4",
+    "semantic_hash": "83431b723c816c1872c1150b8ee20dc4"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\heart_gui.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "941ad5dd2bdca86ce70c8165b30caff0",
+    "semantic_hash": "941ad5dd2bdca86ce70c8165b30caff0"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\hearts_container.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "ec4ab6990c38f2c65da3c345603ce429",
+    "semantic_hash": "ec4ab6990c38f2c65da3c345603ce429"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\inside.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "f898304c196634460f0043cf69925554",
+    "semantic_hash": "f898304c196634460f0043cf69925554"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\judge.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "a6c4216b27c7ffa658118b903551f589",
+    "semantic_hash": "a6c4216b27c7ffa658118b903551f589"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\king.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "c473e15751d1f89de0bac20e75b4a30e",
+    "semantic_hash": "c473e15751d1f89de0bac20e75b4a30e"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\kingSummon.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "d043bcbcca9712df784ba0f4f9bdf144",
+    "semantic_hash": "d043bcbcca9712df784ba0f4f9bdf144"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\meter.gd": {
+    "mtime": 1781283571.708766,
+    "ast_hash": "8ab8e2c012c71c8008c58d81d15291da",
+    "semantic_hash": "8ab8e2c012c71c8008c58d81d15291da"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\npc.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "7221bcfa5251ccef11612645c2027e42",
+    "semantic_hash": "7221bcfa5251ccef11612645c2027e42"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\ruin.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "e1c1b08f296b5a5f4fbab0f1337be8f7",
+    "semantic_hash": "e1c1b08f296b5a5f4fbab0f1337be8f7"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\scholar.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "3bc7d5c8da6276f740209148f2a996e4",
+    "semantic_hash": "3bc7d5c8da6276f740209148f2a996e4"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\spiritWorldExitPortal.gd": {
+    "mtime": 1781283571.720682,
+    "ast_hash": "195bc8651e4e94fa6deb776401e1d468",
+    "semantic_hash": "195bc8651e4e94fa6deb776401e1d468"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\spiritWorldPortal.gd": {
+    "mtime": 1781283571.725673,
+    "ast_hash": "31e26bedc87a413232df2115fb2ceb04",
+    "semantic_hash": "31e26bedc87a413232df2115fb2ceb04"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\spirit_world.gd": {
+    "mtime": 1781283571.7280788,
+    "ast_hash": "7bd2d30791f6ef2a8b040c4102abab79",
+    "semantic_hash": "7bd2d30791f6ef2a8b040c4102abab79"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\tutorial_panel.gd": {
+    "mtime": 1781283571.7300875,
+    "ast_hash": "6ce70c2ffbc7b5ca79919537f0edfc97",
+    "semantic_hash": "6ce70c2ffbc7b5ca79919537f0edfc97"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scenes\\world.gd": {
+    "mtime": 1781283571.7300875,
+    "ast_hash": "b58a8ea96b5fd5d038e3647f2f882f7c",
+    "semantic_hash": "b58a8ea96b5fd5d038e3647f2f882f7c"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\scripts\\global.gd": {
+    "mtime": 1781283571.7473555,
+    "ast_hash": "c37058d13f45fe8a3d0a4d96adbac4aa",
+    "semantic_hash": "c37058d13f45fe8a3d0a4d96adbac4aa"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\package.json": {
+    "mtime": 1781289276.0944676,
+    "ast_hash": "e3407c804fd7067c99cab5c005ee0e34",
+    "semantic_hash": "e3407c804fd7067c99cab5c005ee0e34"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\App.jsx": {
+    "mtime": 1781288987.039062,
+    "ast_hash": "9d55672c39b0d3ed27b0f40833bf54c9",
+    "semantic_hash": "9d55672c39b0d3ed27b0f40833bf54c9"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\components\\Footer.jsx": {
+    "mtime": 1781288859.3923278,
+    "ast_hash": "96f7d20853661b09c64e3248869ab3ed",
+    "semantic_hash": "96f7d20853661b09c64e3248869ab3ed"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\components\\Navbar.jsx": {
+    "mtime": 1781288846.0862782,
+    "ast_hash": "d76578372e0f54504fe120dd38ae023c",
+    "semantic_hash": "d76578372e0f54504fe120dd38ae023c"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\main.jsx": {
+    "mtime": 1781288989.1642632,
+    "ast_hash": "ec05c83d9bfed70d888b2da13f269eef",
+    "semantic_hash": "ec05c83d9bfed70d888b2da13f269eef"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\pages\\Factions.jsx": {
+    "mtime": 1781292024.799732,
+    "ast_hash": "80b1ff1d006b85c4a5f25aa7035dead5",
+    "semantic_hash": "80b1ff1d006b85c4a5f25aa7035dead5"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\pages\\Home.jsx": {
+    "mtime": 1781288874.2519248,
+    "ast_hash": "24a02bcfd72d273f0a2af5e1d9ff7b93",
+    "semantic_hash": "24a02bcfd72d273f0a2af5e1d9ff7b93"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\pages\\Join.jsx": {
+    "mtime": 1781288981.8541963,
+    "ast_hash": "c21bd4ac79bc3f14996869ce839b2172",
+    "semantic_hash": "c21bd4ac79bc3f14996869ce839b2172"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\pages\\Lore.jsx": {
+    "mtime": 1781292001.4058864,
+    "ast_hash": "dd2f177b40784621e8ce9d458b14b0cb",
+    "semantic_hash": "dd2f177b40784621e8ce9d458b14b0cb"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\src\\pages\\Ruins.jsx": {
+    "mtime": 1781292036.7072566,
+    "ast_hash": "dbba1419a24dec59d7940c8a623883cd",
+    "semantic_hash": "dbba1419a24dec59d7940c8a623883cd"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\tailwind.config.js": {
+    "mtime": 1781288804.0751412,
+    "ast_hash": "ab4c60947cadae261a04946432b50f62",
+    "semantic_hash": "ab4c60947cadae261a04946432b50f62"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\vite.config.js": {
+    "mtime": 1781289003.8959076,
+    "ast_hash": "9bf09b6d97edba4eebf0fe93baaad662",
+    "semantic_hash": "9bf09b6d97edba4eebf0fe93baaad662"
+  },
+  "C:\\Users\\karthiknk21\\Desktop\\the-broken-kingdom\\website\\index.html": {
+    "mtime": 1781288834.348108,
+    "ast_hash": "6f027f9863aa0e97e418771ef379c28b",
+    "semantic_hash": "6f027f9863aa0e97e418771ef379c28b"
+  }
+}
