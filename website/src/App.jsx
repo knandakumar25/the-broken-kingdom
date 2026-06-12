@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Lore from './pages/Lore';
 import Factions from './pages/Factions';
 import Ruins from './pages/Ruins';
+import Characters from './pages/Characters';
 import Join from './pages/Join';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/lore" element={<Lore />} />
             <Route path="/factions" element={<Factions />} />
             <Route path="/ruins" element={<Ruins />} />
+            <Route path="/characters" element={<Characters />} />
             <Route path="/join" element={<Join />} />
           </Routes>
         </main>

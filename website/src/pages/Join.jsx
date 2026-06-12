@@ -26,6 +26,26 @@ const Join = () => {
       >
         Begin the Descent
       </motion.button>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-sm font-cinzel text-gray-600 uppercase tracking-tighter"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-blood-red">⚠</span>
+          <p>Beware the Corrupted</p>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-blood-red">⚠</span>
+          <p>Trust no one in Solunaris</p>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-blood-red">⚠</span>
+          <p>The Judge is watching</p>
+        </div>
+      </motion.div>
     </div>
   );
 };

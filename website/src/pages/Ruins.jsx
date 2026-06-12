@@ -4,10 +4,14 @@ import { MapPin } from 'lucide-react';
 
 const Ruins = () => {
   const buildings = [
-    { name: "The Academy", desc: "Where the laws of magic were rewritten in blood.", color: "bg-royal-purple", img: "/assets/buildings/Academy.png" },
-    { name: "The Prison", desc: "A cold void where the forgotten scream eternally.", color: "bg-zinc-800", img: "/assets/buildings/Prison.png" },
-    { name: "The Castle", desc: "A jagged spire of grief and lost majesty.", color: "bg-blood-red", img: "/assets/buildings/Castle.png" },
-    { name: "The Church", desc: "Holy ground now desecrated by the broken.", color: "bg-decayed-gold", img: "/assets/buildings/Church.png" },
+    { name: "The Academy", desc: "Where the laws of magic were rewritten in blood.", color: "bg-royal-purple", img: "/assets/images/Academy.png" },
+    { name: "The Prison", desc: "A cold void where the forgotten scream eternally.", color: "bg-zinc-800", img: "/assets/images/Prison.png" },
+    { name: "The Castle", desc: "A jagged spire of grief and lost majesty.", color: "bg-blood-red", img: "/assets/images/castle.png" },
+    { name: "The Church", desc: "Holy ground now desecrated by the broken.", color: "bg-decayed-gold", img: "/assets/images/Church.png" },
+    { name: "The Theatre", desc: "A stage for tragedies, where the actors never left the scene.", color: "bg-indigo-900", img: "/assets/images/Theater.png" },
+    { name: "The Library", desc: "Dusty archives of a forgotten age, holding secrets that should remain buried.", color: "bg-emerald-900", img: "/assets/images/Library.png" },
+    { name: "The Cookhouse", desc: "The scent of feast and famine lingers in the air.", color: "bg-orange-900", img: "/assets/images/Cookhouse.png" },
+    { name: "The Farm", desc: "Fields of ash where nothing grows but sorrow.", color: "bg-amber-900", img: "/assets/images/Farm.png" },
   ];
 
   return (

@@ -37,13 +37,13 @@ body {
   box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
 }
 
-.knight-gradient {
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+.judge-gradient {
+  background: linear-gradient(135deg, #0c1424, #1b2845, #3b0a4d);
   background-size: 400% 400%;
 }
 
-.goblin-gradient {
-  background: linear-gradient(135deg, #134e50, #71b280, #000000);
+.king-gradient {
+  background: linear-gradient(135deg, #2a080c, #4d0a0a, #261605);
   background-size: 400% 400%;
 }
 

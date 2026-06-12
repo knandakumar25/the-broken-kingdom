@@ -16,9 +16,10 @@ const Navbar = () => {
       <div className="hidden md:flex space-x-8 font-cinzel text-sm uppercase tracking-tighter">
         <Link to="/lore" className="hover:text-decayed-gold transition-colors">The Lore</Link>
         <Link to="/factions" className="hover:text-decayed-gold transition-colors">The War</Link>
+        <Link to="/characters" className="hover:text-decayed-gold transition-colors">The Cast</Link>
         <Link to="/ruins" className="hover:text-decayed-gold transition-colors">The Ruins</Link>
         <Link to="/join" className="bg-decayed-gold text-black px-4 py-1 font-bold hover:bg-white transition-all">
-          Enter the Void
+          Reclaim the Throne
         </Link>
       </div>
     </nav>

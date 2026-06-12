@@ -46,7 +46,7 @@ const Lore = () => {
             className="gold-border p-2 rounded-sm rotate-3 transition-transform duration-500"
           >
             <img
-              src="/assets/buildings/Castle.png"
+              src="/assets/images/castle.png"
               className="grayscale contrast-125"
               alt="The Ruin"
             />

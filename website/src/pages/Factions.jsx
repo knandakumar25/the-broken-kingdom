@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sword, Bomb, Shield, Crown, Footprints, Coins } from 'lucide-react';
+import { Scale, Sun, Moon, Crown, Flame, Skull } from 'lucide-react';
 
 const Factions = () => {
   return (
@@ -16,33 +16,50 @@ const Factions = () => {
       <div className="flex flex-col md:flex-row gap-0 h-auto md:h-[700px]">
         <motion.div
           whileHover={{ flex: 1.1 }}
-          className="flex-1 knight-gradient p-12 flex flex-col justify-center items-center text-center group cursor-pointer transition-all duration-500"
+          className="flex-1 judge-gradient p-12 flex flex-col justify-center items-center text-center group cursor-pointer transition-all duration-500"
         >
-          <div className="mb-6 p-4 bg-white/10 rounded-full text-white group-hover:scale-125 transition-transform">
-            <Sword size={48} />
+          <div className="mb-6 relative">
+            <div className="absolute inset-0 bg-white/20 blur-xl rounded-full"></div>
+            <img
+              src="/assets/images/judge.png"
+              alt="The Judge"
+              className="relative z-10 w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute -bottom-2 -right-2 p-2 bg-black rounded-full text-white group-hover:rotate-12 transition-transform">
+              <Scale size={20} />
+            </div>
           </div>
-          <h3 className="font-gothic text-6xl text-white group-hover:scale-110 transition-transform">The Knights</h3>
-          <p className="font-cinzel text-white opacity-80 mt-4 mb-8">Order. Honor. Blood.</p>
+          <h3 className="font-gothic text-6xl text-white group-hover:scale-110 transition-transform">The Judge</h3>
+          <p className="font-cinzel text-white opacity-80 mt-4 mb-8">Fate. Balance. Judgment.</p>
           <ul className="text-left space-y-4 font-serif text-white opacity-90">
-            <li className="flex items-center gap-3"><Sword size={16} className="text-decayed-gold" /> Disciplined Phalanxes</li>
-            <li className="flex items-center gap-3"><Shield size={16} className="text-decayed-gold" /> Unyielding Fortresses</li>
-            <li className="flex items-center gap-3"><Crown size={16} className="text-decayed-gold" /> The Royal Standard</li>
+            <li className="flex items-center gap-3"><Scale size={16} className="text-decayed-gold" /> Scythe of Destiny</li>
+            <li className="flex items-center gap-3"><Moon size={16} className="text-decayed-gold" /> Mending Moon Light</li>
+            <li className="flex items-center gap-3"><Sun size={16} className="text-decayed-gold" /> Blazing Sun Wrath</li>
           </ul>
         </motion.div>
 
+
         <motion.div
           whileHover={{ flex: 1.1 }}
-          className="flex-1 goblin-gradient p-12 flex flex-col justify-center items-center text-center group cursor-pointer transition-all duration-500"
+          className="flex-1 king-gradient p-12 flex flex-col justify-center items-center text-center group cursor-pointer transition-all duration-500"
         >
-          <div className="mb-6 p-4 bg-green-400/10 rounded-full text-green-400 group-hover:scale-125 transition-transform">
-            <Bomb size={48} />
+          <div className="mb-6 relative">
+            <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
+            <img
+              src="/assets/images/king.PNG"
+              alt="King Solun"
+              className="relative z-10 w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute -bottom-2 -right-2 p-2 bg-black rounded-full text-red-500 group-hover:rotate-12 transition-transform">
+              <Crown size={20} />
+            </div>
           </div>
-          <h3 className="font-gothic text-6xl text-green-400 group-hover:scale-110 transition-transform">The Goblins</h3>
-          <p className="font-cinzel text-green-200 opacity-80 mt-4 mb-8">Chaos. Cunning. Greed.</p>
-          <ul className="text-left space-y-4 font-serif text-green-100 opacity-90">
-            <li className="flex items-center gap-3"><Bomb size={16} className="text-green-400" /> Volatile Alchemy</li>
-            <li className="flex items-center gap-3"><Footprints size={16} className="text-green-400" /> Swarming Ambush</li>
-            <li className="flex items-center gap-3"><Coins size={16} className="text-green-400" /> Stolen Relics</li>
+          <h3 className="font-gothic text-6xl text-red-500 group-hover:scale-110 transition-transform">King Solun</h3>
+          <p className="font-cinzel text-red-200 opacity-80 mt-4 mb-8">Decay. Madness. Ruin.</p>
+          <ul className="text-left space-y-4 font-serif text-red-100 opacity-90">
+            <li className="flex items-center gap-3"><Crown size={16} className="text-red-500" /> The Shattered Crown</li>
+            <li className="flex items-center gap-3"><Flame size={16} className="text-red-500" /> Void Conjuring</li>
+            <li className="flex items-center gap-3"><Skull size={16} className="text-red-500" /> Hollow Legion</li>
           </ul>
         </motion.div>
       </div>
