@@ -1,0 +1,17 @@
+# Ignore game graphics formats
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp
+
+# Ignore asset directories (adjust paths if needed)
+assets/
+public/images/
+
+# Ignore Godot cache/imported assets
+.godot/
+
+# Ignore documents to keep the corpus code-only (needs no LLM key)
+README.md
+addons/godot-sqlite/LICENSE.md
