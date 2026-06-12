@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccwrkevnk6wvv"
-path="res://.godot/imported/IMG_1227.PNG-f3a1bacadd633a04143c97ab3f1a139f.ctex"
+path="res://.godot/imported/IMG_1227.PNG-04f8c3028606c53379cf373eb35500e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Spirit World NPCs/IMG_1227.PNG"
-dest_files=["res://.godot/imported/IMG_1227.PNG-f3a1bacadd633a04143c97ab3f1a139f.ctex"]
+source_file="res://website/public/assets/images/Spirit World NPCs/IMG_1227.PNG"
+dest_files=["res://.godot/imported/IMG_1227.PNG-04f8c3028606c53379cf373eb35500e3.ctex"]
 
 [params]
 

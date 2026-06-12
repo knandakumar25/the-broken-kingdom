@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coiuah3ncb873"
-path="res://.godot/imported/Male 3.png-6ca41f621c8dc650dc8b7a784dde34e0.ctex"
+path="res://.godot/imported/Male 3.png-df7103005b73687e00702a34b77a0c0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Spirit World NPCs/Male 3.png"
-dest_files=["res://.godot/imported/Male 3.png-6ca41f621c8dc650dc8b7a784dde34e0.ctex"]
+source_file="res://website/public/assets/images/Spirit World NPCs/Male 3.png"
+dest_files=["res://.godot/imported/Male 3.png-df7103005b73687e00702a34b77a0c0f.ctex"]
 
 [params]
 

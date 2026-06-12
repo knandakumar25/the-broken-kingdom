@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkt5bdsalxmrr"
-path="res://.godot/imported/Updated Right 3.PNG-5b36003da428ec28c01833f5df70aa27.ctex"
+path="res://.godot/imported/Updated Right 3.PNG-d5cabcc769f953f9bc0e2350cc4fdd76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Updated Right 3.PNG"
-dest_files=["res://.godot/imported/Updated Right 3.PNG-5b36003da428ec28c01833f5df70aa27.ctex"]
+source_file="res://website/public/assets/images/Updated Right 3.PNG"
+dest_files=["res://.godot/imported/Updated Right 3.PNG-d5cabcc769f953f9bc0e2350cc4fdd76.ctex"]
 
 [params]
 

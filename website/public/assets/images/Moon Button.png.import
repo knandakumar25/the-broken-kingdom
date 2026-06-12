@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s4ndja2lalmp"
-path="res://.godot/imported/Moon Button.png-bf0860cbee88184b0e4dd8488f8c8319.ctex"
+path="res://.godot/imported/Moon Button.png-fb9238b5238308709ff3ad50661cbc90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Moon Button.png"
-dest_files=["res://.godot/imported/Moon Button.png-bf0860cbee88184b0e4dd8488f8c8319.ctex"]
+source_file="res://website/public/assets/images/Moon Button.png"
+dest_files=["res://.godot/imported/Moon Button.png-fb9238b5238308709ff3ad50661cbc90.ctex"]
 
 [params]
 

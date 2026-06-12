@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8mnsoahy2tbp"
-path="res://.godot/imported/judge.png-22ccdf3437cbca2dabbe16e777467cdb.ctex"
+path="res://.godot/imported/judge.png-3d1417d2209a262bd553437c9e0b579d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/judge.png"
-dest_files=["res://.godot/imported/judge.png-22ccdf3437cbca2dabbe16e777467cdb.ctex"]
+source_file="res://website/public/assets/images/judge.png"
+dest_files=["res://.godot/imported/judge.png-3d1417d2209a262bd553437c9e0b579d.ctex"]
 
 [params]
 

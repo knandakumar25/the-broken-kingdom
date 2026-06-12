@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b83fr1h5auar1"
-path="res://.godot/imported/Female 3.PNG-e0ae19770e800c1fd7746f223403d25e.ctex"
+path="res://.godot/imported/Female 3.PNG-e77e88591f12c5c9b4ea5746d4182497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Spirit World NPCs/Female 3.PNG"
-dest_files=["res://.godot/imported/Female 3.PNG-e0ae19770e800c1fd7746f223403d25e.ctex"]
+source_file="res://website/public/assets/images/Spirit World NPCs/Female 3.PNG"
+dest_files=["res://.godot/imported/Female 3.PNG-e77e88591f12c5c9b4ea5746d4182497.ctex"]
 
 [params]
 

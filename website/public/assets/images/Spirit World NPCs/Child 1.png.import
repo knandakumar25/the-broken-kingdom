@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkvsxtpmxx7ew"
-path="res://.godot/imported/Child 1.png-3904c4624dd1c104f9ce9c5a04475de4.ctex"
+path="res://.godot/imported/Child 1.png-ec0a25842582bfddb5f68bc970adc629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Spirit World NPCs/Child 1.png"
-dest_files=["res://.godot/imported/Child 1.png-3904c4624dd1c104f9ce9c5a04475de4.ctex"]
+source_file="res://website/public/assets/images/Spirit World NPCs/Child 1.png"
+dest_files=["res://.godot/imported/Child 1.png-ec0a25842582bfddb5f68bc970adc629.ctex"]
 
 [params]
 

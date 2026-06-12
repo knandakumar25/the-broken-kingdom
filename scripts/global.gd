@@ -1,7 +1,6 @@
 extends Node
 
-var db: SQLite
-var db_path = "user://game_data.db"
+var save_path = "user://game_data.cfg"
 
 var isPlayerAttacking = false
 var isFocusKill = false
@@ -51,39 +50,27 @@ func _process(delta: float) -> void:
 	pass
 
 func init_database():
-	db = SQLite.new()
-	db.path = db_path
-	db.open_db()
-	
-	# Create table if it doesn't exist
-	var table_dict = {
-		"id": {"data_type": "int", "primary_key": true, "not_null": true},
-		"highest_score": {"data_type": "int", "not_null": true}
-	}
-	db.create_table("game_stats", table_dict)
-	
-	# Check if we have data
-	db.query("SELECT * FROM game_stats WHERE id = 1;")
-	var result = db.query_result
-	if result.size() == 0:
-		# First time playing, insert initial record
-		var data = {"id": 1, "highest_score": 0}
-		db.insert_row("game_stats", data)
+	var config = ConfigFile.new()
+	var err = config.load(save_path)
+	if err != OK:
+		# First time playing, create default file
+		config.set_value("stats", "highest_score", 0)
+		config.save(save_path)
 		has_played_before = false
 	else:
 		has_played_before = true
 
 func load_highest_score():
-	if db:
-		db.query("SELECT highest_score FROM game_stats WHERE id = 1;")
-		var result = db.query_result
-		if result.size() > 0:
-			highest_score = result[0]["highest_score"]
+	var config = ConfigFile.new()
+	var err = config.load(save_path)
+	if err == OK:
+		highest_score = config.get_value("stats", "highest_score", 0)
 
 func save_highest_score():
-	if db:
-		var data = {"highest_score": highest_score}
-		db.update_rows("game_stats", "id = 1", data)
+	var config = ConfigFile.new()
+	config.load(save_path)
+	config.set_value("stats", "highest_score", highest_score)
+	config.save(save_path)
 
 func update_highest_score():
 	var abs_score = abs(score)
