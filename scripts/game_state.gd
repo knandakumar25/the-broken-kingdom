@@ -9,7 +9,6 @@ class_name GameState
 @export var player_max_hp: int = 6
 @export var player_current_hp: int = 6
 @export var score: int = 0
-@export var highest_score: int = 0
 
 # World State
 @export var current_scene: String = "world"

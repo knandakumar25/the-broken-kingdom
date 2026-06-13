@@ -6,7 +6,6 @@ extends Control
 @onready var background = $Background
 @onready var fill_bar = $FillBar
 @onready var current_score_label = $CurrentScoreLabel
-@onready var highest_score_label = $HighestScoreLabel
 
 func _ready() -> void:
 	update_meter()
@@ -18,17 +17,6 @@ func _process(_delta: float) -> void:
 
 func add_points(points: int) -> void:
 	Global.score = clamp(Global.score + points, min_value, max_value)
-	
-	# Update highest score in real-time based on conditions
-	if not Global.has_played_before:
-		# First time playing: always update highest score
-		Global.update_highest_score()
-	else:
-		# After first time: only update if current score exceeds highest
-		var abs_current = abs(Global.score)
-		var abs_highest = abs(Global.highest_score)
-		if abs_current > abs_highest:
-			Global.update_highest_score()
 	
 	update_meter()
 	update_score_labels()
@@ -74,7 +62,3 @@ func update_score_labels() -> void:
 	# Update current score label
 	var abs_score = abs(Global.score)
 	current_score_label.text = "Score: " + str(abs_score)
-	
-	# Update highest score label
-	var abs_highest = abs(Global.highest_score)
-	highest_score_label.text = "Highest: " + str(abs_highest)
