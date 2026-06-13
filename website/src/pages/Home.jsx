@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -23,10 +24,11 @@ const Home = () => {
             "Solunaris: Where crowns lie in dust and the silence of the fallen screams of betrayal."
           </p>
           <div className="flex justify-center gap-4">
-            <button className="gold-border px-8 py-3 font-cinzel uppercase tracking-widest hover:bg-decayed-gold hover:text-black transition-all duration-500 text-white">
+            <Link to="/join" className="gold-border px-8 py-3 font-cinzel uppercase tracking-widest hover:bg-decayed-gold hover:text-black transition-all duration-500 text-white inline-block">
               Reclaim the Throne
-            </button>
+            </Link>
           </div>
+
         </motion.div>
 
         <motion.div
