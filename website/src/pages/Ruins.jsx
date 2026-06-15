@@ -2,27 +2,42 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Ruins = () => {
-  const [selectedLocation, setSelectedLocation] = useState({
-    name: "The Shattered Capital",
-    desc: "The epicenter of the great sundering. Massive obsidian chunks float unnaturally in the heavy air, tethered by residual magics of a forgotten royal bloodline. The streets, once paved with gold, are now choked with ash and restless spirits.",
-    danger: "Extreme Danger",
-    status: "Undiscovered"
-  });
-
   const locations = {
-    capital: {
-      name: "The Shattered Capital",
-      desc: "The epicenter of the great sundering. Massive obsidian chunks float unnaturally in the heavy air, tethered by residual magics of a forgotten royal bloodline. The streets, once paved with gold, are now choked with ash and restless spirits.",
+    castle: {
+      name: "The Castle",
+      desc: "A jagged spire of grief and lost majesty. The final stronghold of a broken dynasty, now haunted by the memories of King Solun's descent into madness.",
       danger: "Extreme Danger",
-      status: "Undiscovered"
+      status: "Shattered Spire",
+      img: "/assets/images/castle.png"
     },
-    spires: {
-      name: "Sunless Spires",
-      desc: "Once observatories for the royal mages, these towers now pierce a permanent layer of toxic clouds. The air is thin, and the echoes of mad ravings still bounce between the crumbling pillars.",
+    academy: {
+      name: "The Academy",
+      desc: "Where the laws of magic were rewritten in blood. Once a beacon of prestige and magic study, now a dark monument to forbidden, dangerous secrets.",
       danger: "High Danger",
-      status: "Explored"
+      status: "Desolate Spire",
+      img: "/assets/images/Academy.png"
+    },
+    prison: {
+      name: "The Prison",
+      desc: "A cold void where the forgotten scream eternally. Rumors suggest prisoners disappeared into the void as the kingdom fell, leaving only hollow cells behind.",
+      danger: "High Danger",
+      status: "Lost Abyss",
+      img: "/assets/images/Prison.png"
     }
   };
+
+  const [selectedLocation, setSelectedLocation] = useState(locations.castle);
+
+  const buildings = [
+    { name: "The Academy", desc: "Where the laws of magic were rewritten in blood. Once a beacon of prestige, now a monument to forgotten knowledge.", color: "bg-royal-purple/20", border: "border-royal-purple", img: "/assets/images/Academy.png", danger: "High Danger", leagues: "14 Leagues" },
+    { name: "The Prison", desc: "A cold void where the forgotten scream eternally. Rumors suggest prisoners disappeared as the kingdom fell.", color: "bg-zinc-800/20", border: "border-zinc-700", img: "/assets/images/Prison.png", danger: "High Danger", leagues: "22 Leagues" },
+    { name: "The Castle", desc: "A jagged spire of grief and lost majesty. The final stronghold of a broken dynasty.", color: "bg-blood-red/20", border: "border-blood-red", img: "/assets/images/castle.png", danger: "Extreme Danger", leagues: "0 Leagues" },
+    { name: "The Church", desc: "Holy ground now desecrated by the broken. Its stained glass holds a secret about the Judge.", color: "bg-decayed-gold/20", border: "border-decayed-gold", img: "/assets/images/Church.png", danger: "Medium Danger", leagues: "8 Leagues" },
+    { name: "The Theatre", desc: "A stage for tragedies, where the actors never left the scene. A mirror of the kingdom's fall.", color: "bg-indigo-900/20", border: "border-indigo-800", img: "/assets/images/Theater.png", danger: "Medium Danger", leagues: "19 Leagues" },
+    { name: "The Library", desc: "Dusty archives of a forgotten age, holding secrets that should remain buried.", color: "bg-emerald-900/20", border: "border-emerald-800", img: "/assets/images/Library.png", danger: "Low Danger", leagues: "11 Leagues" },
+    { name: "The Cookhouse", desc: "The scent of feast and famine lingers in the air. Once fed the masses, now feeds only the wind.", color: "bg-orange-900/20", border: "border-orange-800", img: "/assets/images/Cookhouse.png", danger: "Low Danger", leagues: "5 Leagues" },
+    { name: "The Farm", desc: "Fields of ash where nothing grows but sorrow. The heart of Solunaris's sustenance, now dead.", color: "bg-amber-900/20", border: "border-amber-800", img: "/assets/images/Farm.png", danger: "Low Danger", leagues: "31 Leagues" }
+  ];
 
   return (
     <div className="content-layer bg-obsidian-base min-h-screen text-on-surface flex flex-col antialiased relative overflow-x-hidden selection:bg-blood-lust/30 selection:text-etched-gold">
@@ -42,15 +57,15 @@ const Ruins = () => {
             transition={{ duration: 0.8 }}
             className="font-display-lg text-display-lg-mobile md:text-display-lg text-etched-gold mb-6 drop-shadow-[0_0_15px_rgba(226,194,133,0.2)]"
           >
-            The Ruins
+            Ruins of the Realm
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-body-lg text-body-lg text-on-surface-variant opacity-80 leading-relaxed"
+            className="font-body-lg text-body-lg text-on-surface-variant opacity-85 leading-relaxed"
           >
-            Behold the remnants of a shattered era. Once-great spires now pierce a sunless sky, and the capital lies fractured beneath the weight of its own hubris. Tread carefully, for history rarely sleeps.
+            Eight monuments to a fallen age. Will you rebuild them to restore the light, or dismantle them to erase the shame? Explore the remnants of Solunaris.
           </motion.p>
           <div className="divider-ornate">
             <span className="material-symbols-outlined divider-ornate-icon">explore</span>
@@ -62,30 +77,40 @@ const Ruins = () => {
           <div className="obsidian-card rounded-lg flex flex-col lg:flex-row group transition-all duration-500 gold-glow-hover">
             <div className="w-full lg:w-2/3 h-[400px] lg:h-[450px] relative overflow-hidden bg-surface-container">
               <img 
-                alt="A dark fantasy map" 
+                alt="A dark fantasy map of the ruins" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-102 transition-transform duration-1000 ease-in-out mix-blend-luminosity" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW4jgW95SXDk5K8HddlW5kyXgKk5LCrTTk87IYEYR9lA4B6wUWMmGvKfczm-6goXlpIcOP2osNcIPPTP8-joBwcdmVCIp2uVrJ_M_MaglnHTCVEd-AtuuNVOpFt0F72S_75klUy_HY9uyL17OqZO91pXjdPqYrwiTpbqVRHNTIR-ac1OCB_MBee-i5Uy7QsrVABnQMZZXSx8Myz3GTkalqwn9F4i5siYwiqCbFVMOoeQvTd0dkggRafF4SoDFPfrktAkTGiXA4KO4"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-base via-transparent to-transparent lg:bg-gradient-to-r"></div>
               
-              {/* Map Markers (Interactive elements) */}
+              {/* Map Markers for original key locations */}
               <div 
-                className="absolute top-[30%] left-[40%] group/marker cursor-pointer"
-                onClick={() => setSelectedLocation(locations.capital)}
+                className="absolute top-[38%] left-[48%] group/marker cursor-pointer"
+                onClick={() => setSelectedLocation(locations.castle)}
               >
                 <div className="w-4 h-4 rounded-full bg-blood-lust border-2 border-etched-gold animate-pulse"></div>
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-outline-variant/50 px-3 py-1 rounded-sm opacity-100 transition-opacity whitespace-nowrap">
-                  <span className="font-label-caps text-label-caps text-etched-gold">The Shattered Capital</span>
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-outline-variant/50 px-3 py-1 rounded-sm opacity-100 transition-opacity whitespace-nowrap z-20">
+                  <span className="font-label-caps text-label-caps text-etched-gold">The Castle</span>
                 </div>
               </div>
               
               <div 
-                className="absolute top-[60%] left-[70%] group/marker cursor-pointer"
-                onClick={() => setSelectedLocation(locations.spires)}
+                className="absolute top-[28%] left-[25%] group/marker cursor-pointer"
+                onClick={() => setSelectedLocation(locations.academy)}
               >
-                <div className="w-3 h-3 rounded-full bg-surface-variant border border-etched-gold/50"></div>
-                <div className="absolute top-5 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-outline-variant/50 px-3 py-1 rounded-sm opacity-100 transition-opacity whitespace-nowrap">
-                  <span className="font-label-caps text-label-caps text-on-surface-variant">Sunless Spires</span>
+                <div className="w-3.5 h-3.5 rounded-full bg-royal-purple border-2 border-etched-gold/50 cursor-pointer"></div>
+                <div className="absolute top-5 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-outline-variant/50 px-3 py-1 rounded-sm opacity-100 transition-opacity whitespace-nowrap z-20">
+                  <span className="font-label-caps text-label-caps text-on-surface-variant">The Academy</span>
+                </div>
+              </div>
+
+              <div 
+                className="absolute top-[60%] left-[35%] group/marker cursor-pointer"
+                onClick={() => setSelectedLocation(locations.prison)}
+              >
+                <div className="w-3.5 h-3.5 rounded-full bg-zinc-600 border border-etched-gold/50 cursor-pointer"></div>
+                <div className="absolute top-5 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-outline-variant/50 px-3 py-1 rounded-sm opacity-100 transition-opacity whitespace-nowrap z-20">
+                  <span className="font-label-caps text-label-caps text-on-surface-variant">The Prison</span>
                 </div>
               </div>
             </div>
@@ -112,143 +137,63 @@ const Ruins = () => {
                 <p className="text-on-surface-variant mb-8 text-sm leading-relaxed">
                   {selectedLocation.desc}
                 </p>
-                <button className="self-start flex items-center gap-2 text-etched-gold font-label-caps text-label-caps border-b border-etched-gold/30 pb-1 hover:border-etched-gold transition-colors group/btn uppercase tracking-wider">
-                  Explore Region
-                  <span className="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">
-                    arrow_right_alt
+                <div className="flex gap-2">
+                  <span className="text-xs font-label-caps text-outline border border-outline-variant/40 px-2.5 py-1 rounded-sm">
+                    {selectedLocation.danger}
                   </span>
-                </button>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Bento Grid Gallery */}
+        {/* Bento Grid Gallery - Eight Locations */}
         <div className="mb-12 flex justify-between items-end border-b border-outline-variant/20 pb-4 px-4">
           <h3 className="font-headline-md text-headline-md text-on-surface uppercase tracking-wider">
             Fractured Domains
           </h3>
-          <div className="flex gap-2">
-            <button className="p-2 bg-surface-container-highest rounded-sm text-etched-gold hover:bg-surface-bright transition-colors">
-              <span className="material-symbols-outlined text-[20px]">grid_view</span>
-            </button>
-            <button className="p-2 bg-transparent rounded-sm text-outline hover:text-etched-gold transition-colors">
-              <span className="material-symbols-outlined text-[20px]">view_list</span>
-            </button>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter px-4">
-          {/* Card 1 */}
-          <motion.article 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="obsidian-card rounded-lg group cursor-pointer gold-glow-hover flex flex-col h-[400px]"
-          >
-            <div className="h-1/2 relative overflow-hidden bg-surface-container-lowest">
-              <img 
-                alt="Sunless Spires" 
-                className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700 mix-blend-luminosity" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt4h9dht_ef1ThmroXLRBPqDNmic9y2XR-FStN6c515FKD8w0wv3uBqB6wK1H2P8xGatLjhVDq6ALj4mphzySN0OHk3gEt7ScOHGHXmp1vQIuGcMdwB30HIbyedjG0A9RRqL7gNDdzzZFDtDSG4f87BLz6DxrTVzr3MevqiMtWPzdUg9dkBRGejHh_19P8bXsbWXKNP36D1JMD249HRoUOmDBTHBQuJgBf8lTHffi0NfXvmJ0jkscIHWHmk1bHJQMM7ByrEck46SY"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent"></div>
-              <div className="absolute top-4 right-4 bg-blood-lust text-on-error font-label-caps text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider border border-blood-lust/50 shadow-[0_0_10px_rgba(176,0,0,0.5)]">
-                High Danger
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-4">
+          {buildings.map((b, i) => (
+            <motion.article 
+              key={b.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: (i % 4) * 0.1 }}
+              className={`obsidian-card border-t-2 ${b.border} rounded-lg group cursor-pointer gold-glow-hover flex flex-col h-[420px]`}
+            >
+              <div className={`h-1/2 relative overflow-hidden ${b.color} flex items-center justify-center p-4`}>
+                <img 
+                  alt={b.name} 
+                  className="w-4/5 h-4/5 object-contain grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
+                  src={b.img}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-base to-transparent"></div>
+                <div className="absolute top-4 right-4 bg-obsidian-base/80 text-etched-gold font-label-caps text-[9px] px-2 py-0.5 rounded-sm uppercase tracking-wider border border-outline-variant/30">
+                  {b.danger}
+                </div>
               </div>
-            </div>
-            <div className="p-6 flex-grow flex flex-col justify-between relative z-10">
-              <div>
-                <h4 className="font-headline-md text-[20px] text-etched-gold mb-2 uppercase tracking-wide">Sunless Spires</h4>
-                <p className="text-sm text-on-surface-variant line-clamp-3">
-                  Once observatories for the royal mages, these towers now pierce a permanent layer of toxic clouds. The air is thin, and the echoes of mad ravings still bounce between the crumbling pillars.
-                </p>
+              <div className="p-6 flex-grow flex flex-col justify-between relative z-10 bg-surface-container-low/40">
+                <div>
+                  <h4 className="font-headline-md text-[18px] text-etched-gold mb-2 uppercase tracking-wide">{b.name}</h4>
+                  <p className="text-xs text-on-surface-variant line-clamp-4 leading-relaxed italic">
+                    "{b.desc}"
+                  </p>
+                </div>
+                <div className="flex items-center justify-between mt-4 border-t border-outline-variant/20 pt-4">
+                  <span className="text-[10px] font-label-caps text-outline flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[12px]">distance</span> 
+                    {b.leagues} from Spire
+                  </span>
+                  <span className="material-symbols-outlined text-etched-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                    chevron_right
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center justify-between mt-4 border-t border-outline-variant/20 pt-4">
-                <span className="text-xs font-label-caps text-outline flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]">distance</span> 
-                  42 Leagues
-                </span>
-                <span className="material-symbols-outlined text-etched-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                  chevron_right
-                </span>
-              </div>
-            </div>
-          </motion.article>
-
-          {/* Card 2 */}
-          <motion.article 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="obsidian-card rounded-lg group cursor-pointer gold-glow-hover flex flex-col h-[400px]"
-          >
-            <div className="h-1/2 relative overflow-hidden bg-surface-container-lowest">
-              <img 
-                alt="The Drowned Archives" 
-                className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700 mix-blend-luminosity" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBba0DPJNcdcUTQCiUXXnYfFl2V6P5oqu8mfUwVWqwnDURUtHAhbCvwV29A_sK0Q7ncqZ1VwSLXqNLw5i_fS_E5msmLsJOWT03lHa8HMPdytQj0hmMGhiYFOPbSQ7RRSh4xSoHUH_aREDeNorHqTqHNWIQeDUvbHFTvOsY0J66SWNAilZwTGOl8Cdk_1pX_NGtsjwfFHFoTzcph6Rchyu-c6vfuCHos-oJaUo5v0Yv2iRMadAH6Pm4uv4xr0qD2YOLAJWL-8J8jYmk"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent"></div>
-            </div>
-            <div className="p-6 flex-grow flex flex-col justify-between relative z-10">
-              <div>
-                <h4 className="font-headline-md text-[20px] text-etched-gold mb-2 uppercase tracking-wide">Drowned Archives</h4>
-                <p className="text-sm text-on-surface-variant line-clamp-3">
-                  The lower levels of the capital flooded when the levee broke during the siege. Priceless tomes of forbidden magic now dissolve in the murky depths, guarded by things that adapted to the dark water.
-                </p>
-              </div>
-              <div className="flex items-center justify-between mt-4 border-t border-outline-variant/20 pt-4">
-                <span className="text-xs font-label-caps text-outline flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]">distance</span> 
-                  12 Leagues
-                </span>
-                <span className="material-symbols-outlined text-etched-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                  chevron_right
-                </span>
-              </div>
-            </div>
-          </motion.article>
-
-          {/* Card 3 */}
-          <motion.article 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="obsidian-card rounded-lg group cursor-pointer gold-glow-hover flex flex-col h-[400px]"
-          >
-            <div className="h-1/2 relative overflow-hidden bg-surface-container-lowest">
-              <img 
-                alt="Ashen Wastes" 
-                className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700 mix-blend-luminosity" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFKc7iOcNtCrSRBGfZEiLr18Y8cJeWE1LZsai7al0leTwO-3Ott4uUVf5k5bd1GMEM1VpwDUG4ZDD4jVPGVgyyzlv8IR_AWGaKqFh-0JojS1ezwDvr38BCwwAIi_y7BEDzqnbCnrdgNsC3UEVFJBc4kO_VHTuofSqOcf4WcZ-g_UGrJmbZclxIKUzBqtdIe8gb-gB9iW4Vb10vdSvHekB2SAjcyYoevcsREo0zfPwM-abwdiIJJSli0Gd0dbNDzDT7EZUldRyE9xI"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent"></div>
-              <div className="absolute top-4 right-4 bg-surface-container text-etched-gold font-label-caps text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider border border-etched-gold/30">
-                Explored
-              </div>
-            </div>
-            <div className="p-6 flex-grow flex flex-col justify-between relative z-10">
-              <div>
-                <h4 className="font-headline-md text-[20px] text-etched-gold mb-2 uppercase tracking-wide">The Ashen Wastes</h4>
-                <p className="text-sm text-on-surface-variant line-clamp-3">
-                  Once the verdant King's Wood, scorched by dragon fire during the rebellion. The ground is a deep bed of pale grey ash that hides deep fissures and dormant embers.
-                </p>
-              </div>
-              <div className="flex items-center justify-between mt-4 border-t border-outline-variant/20 pt-4">
-                <span className="text-xs font-label-caps text-outline flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]">distance</span> 
-                  89 Leagues
-                </span>
-                <span className="material-symbols-outlined text-etched-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                  chevron_right
-                </span>
-              </div>
-            </div>
-          </motion.article>
+            </motion.article>
+          ))}
         </div>
 
       </main>

@@ -65,11 +65,11 @@ const Join = () => {
             >
               <div className="flex items-center gap-4 group">
                 <span className="material-symbols-outlined text-primary group-hover:text-blood-lust transition-colors" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  swords
+                  scale
                 </span>
                 <div>
-                  <h3 className="font-headline-md text-on-surface text-lg">Brutal Combat</h3>
-                  <p className="font-body-md text-on-surface-variant text-sm">Every strike carries the weight of a kingdom.</p>
+                  <h3 className="font-headline-md text-on-surface text-lg">The Judge's Path</h3>
+                  <p className="font-body-md text-on-surface-variant text-sm">Swear your oath to restoration, or lead the world into total ruin.</p>
                 </div>
               </div>
               
@@ -78,8 +78,8 @@ const Join = () => {
                   castle
                 </span>
                 <div>
-                  <h3 className="font-headline-md text-on-surface text-lg">Ancient Ruins</h3>
-                  <p className="font-body-md text-on-surface-variant text-sm">Explore the forgotten halls of your ancestors.</p>
+                  <h3 className="font-headline-md text-on-surface text-lg">Ruins of Solunaris</h3>
+                  <p className="font-body-md text-on-surface-variant text-sm">Explore the forgotten spires of the Castle, Academy, and Prison.</p>
                 </div>
               </div>
             </motion.div>

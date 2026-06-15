@@ -7,7 +7,7 @@ const Lore = () => {
       {/* Background Texture Overlay */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')] opacity-5"></div>
 
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-24 relative z-10">
         {/* Hero Section */}
         <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-margin-desktop">
           {/* Background Image */}
@@ -25,7 +25,7 @@ const Lore = () => {
               transition={{ duration: 0.8 }}
               className="text-display-lg-mobile font-display-lg-mobile md:text-display-lg md:font-display-lg text-etched-gold text-glow uppercase tracking-[0.1em]"
             >
-              The Annals of Solunaris
+              The Eternal Tragedy
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
@@ -33,7 +33,7 @@ const Lore = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto"
             >
-              Before the ash, there was gold. Before the silence, there were oaths. Delve into the fractured history of a kingdom torn asunder by pride and blood.
+              Once, the kingdom was a beacon of enlightenment. The Academy thrived, the Church sang of peace, and the Castle stood as an unbreakable shield against the dark.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0 }}
@@ -41,9 +41,12 @@ const Lore = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex justify-center gap-4 mt-8"
             >
-              <button className="bg-obsidian-base border border-etched-gold text-etched-gold text-label-caps font-label-caps px-8 py-3 rounded-DEFAULT hover:bg-surface-container-highest transition-colors gold-glow uppercase tracking-widest">
+              <a 
+                href="#chronicle"
+                className="bg-obsidian-base border border-etched-gold text-etched-gold text-label-caps font-label-caps px-8 py-3 rounded-DEFAULT hover:bg-surface-container-highest transition-colors gold-glow uppercase tracking-widest"
+              >
                 Read the Scriptures
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>
@@ -58,13 +61,13 @@ const Lore = () => {
         </div>
 
         {/* Crucible of Prosperity Section (Bento Grid) */}
-        <section className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+        <section id="chronicle" className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 scroll-mt-24">
           <div className="mb-12 text-center">
             <h2 className="text-headline-md font-headline-md text-primary mb-4 uppercase tracking-widest">
-              The Crucible of Prosperity
+              The Era of Enlightenment
             </h2>
             <p className="text-body-md font-body-md text-on-surface-variant max-w-3xl mx-auto">
-              An era when the spires touched the heavens and the vaults brimmed with starlight. Yet, within the brilliance, shadows lengthened.
+              Before the Schism, commoners and nobles alike stood united. But a growing obsession with the legend of the Judge set in motion a descent into absolute fear.
             </p>
           </div>
 
@@ -86,9 +89,9 @@ const Lore = () => {
                 <span className="inline-block px-2 py-1 bg-surface-container-highest/80 text-etched-gold text-label-caps font-label-caps border border-outline-variant/50 rounded-sm">
                   Era of the First Light
                 </span>
-                <h3 className="text-headline-md font-headline-md text-primary">The Golden Zenith</h3>
+                <h3 className="text-headline-md font-headline-md text-primary">The Golden Dynasty</h3>
                 <p className="text-body-md font-body-md text-on-surface-variant">
-                  Under the reign of High King Aethelgard, Solunaris reached its terrifying peak. The mastery of aether-forging led to unparalleled wealth, but demanded sacrifices that history erased.
+                  Solunaris was once a great and prosperous kingdom. Commoners and Nobles alike came together to build a better future for everyone. But obsession over a legend—the Judge—drove the people to a golden age of fear, and eventually, to a ruin born of insanity.
                 </p>
               </div>
             </motion.div>
@@ -105,9 +108,9 @@ const Lore = () => {
                 <span className="material-symbols-outlined text-etched-gold text-4xl mb-4 opacity-70">
                   menu_book
                 </span>
-                <h4 className="text-body-lg font-body-lg text-primary font-bold mb-2">The Aether Accords</h4>
+                <h4 className="text-body-lg font-body-lg text-primary font-bold mb-2">The Academy's Prestige</h4>
                 <p className="text-body-md font-body-md text-on-surface-variant text-sm">
-                  The binding pacts that harnessed the chaotic energies of the void, written in the blood of the willing.
+                  A place where scholars and teachers once thrived, studying the laws of magic before their teachings were rewritten in blood.
                 </p>
               </motion.div>
               <motion.div 
@@ -118,11 +121,11 @@ const Lore = () => {
                 className="glass-obsidian border-l border-blood-lust rounded-lg p-6 flex-grow flex flex-col justify-center relative overflow-hidden crimson-glow transition-all cursor-pointer"
               >
                 <span className="material-symbols-outlined text-blood-lust text-4xl mb-4 opacity-70">
-                  bloodtype
+                  church
                 </span>
-                <h4 className="text-body-lg font-body-lg text-error font-bold mb-2">The Hidden Toll</h4>
+                <h4 className="text-body-lg font-body-lg text-error font-bold mb-2">The Desecrated Holy Ground</h4>
                 <p className="text-body-md font-body-md text-on-surface-variant text-sm">
-                  Prosperity required anchors. The lower districts sank deeper into darkness to elevate the high spires.
+                  The Church sang of peace, but its holy halls and stained glass were desecrated, holding dark secrets about the Judge.
                 </p>
               </motion.div>
             </div>
@@ -138,7 +141,7 @@ const Lore = () => {
           </div>
         </div>
 
-        {/* The Betrayal (Asymmetric Text & Image Layout) */}
+        {/* The Fracture (Asymmetric Text & Image Layout) */}
         <section className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-4">
             <motion.div 
@@ -149,28 +152,28 @@ const Lore = () => {
               className="order-2 lg:order-1 space-y-6 pr-0 lg:pr-8"
             >
               <h2 className="text-headline-md font-headline-md text-error uppercase tracking-widest">
-                Betrayal of the Obsidian Court
+                The Great Fracture
               </h2>
               <div className="w-16 h-1 bg-blood-lust opacity-70"></div>
               <p className="text-body-lg font-body-lg text-on-surface-variant">
-                When the Aether reserves dwindled, the Council of Elders did not look outward for salvation; they looked inward, to the veins of their own people. The Night of the Red Moons marked the beginning of the Great Schism.
+                Then came the Fracture. A betrayal born of royal blood, a spell cast in desperation, and a kingdom shattered into a thousand jagged pieces. Now, the crown lies in dust, and the only thing remaining is the choice of the Judge.
               </p>
               <p className="text-body-md font-body-md text-spectral-gray">
-                Lord Malakor, once the Keeper of the Accords, shattered the Obsidian Throne. His rebellion was not one of liberation, but of darker ambition. He sought to replace the dwindling aether with soul-stuff, plunging the kingdom into a civil war from which it would never recover.
+                The ghosts of the past wander the crumbling halls of the ruins, guarding secrets that should have stayed buried. Their silent voices whisper of the tragedy that befell Solunaris.
               </p>
               
               <ul className="space-y-4 mt-8 border-l border-outline-variant pl-4">
                 <li className="flex items-start">
                   <span className="material-symbols-outlined text-blood-lust mr-3 mt-1">close</span>
-                  <span className="text-body-md font-body-md text-on-surface">The Severing of the Ley Lines</span>
+                  <span className="text-body-md font-body-md text-on-surface">The Madness of King Solun</span>
                 </li>
                 <li className="flex items-start">
                   <span className="material-symbols-outlined text-blood-lust mr-3 mt-1">close</span>
-                  <span className="text-body-md font-body-md text-on-surface">Massacre at the Sun Spire</span>
+                  <span className="text-body-md font-body-md text-on-surface">The Summoning of the Harbinger of Fate</span>
                 </li>
                 <li className="flex items-start">
                   <span className="material-symbols-outlined text-blood-lust mr-3 mt-1">close</span>
-                  <span className="text-body-md font-body-md text-on-surface">The Exile of the True Heirs</span>
+                  <span className="text-body-md font-body-md text-on-surface">The Shattering of the Spires of Balance</span>
                 </li>
               </ul>
             </motion.div>
@@ -208,10 +211,10 @@ const Lore = () => {
         <section className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 mb-24">
           <div className="text-center mb-16 px-4">
             <h2 className="text-headline-md font-headline-md text-primary mb-2 uppercase tracking-widest">
-              Lineage of the Damned
+              Timeline of the Schism
             </h2>
             <p className="text-body-md font-body-md text-on-surface-variant">
-              The reign of the High Kings, from zenith to ruin.
+              The descent of Solunaris, from a beacon of peace to a graveyard of dust.
             </p>
           </div>
 
@@ -228,13 +231,13 @@ const Lore = () => {
                 className="glass-obsidian border-l md:border-l-0 md:border-r border-etched-gold p-6 rounded-lg inline-block w-full max-w-md gold-glow transition-all text-left md:text-right cursor-pointer"
               >
                 <span className="text-label-caps font-label-caps text-etched-gold opacity-70 mb-2 block">
-                  1st Age - The Dawn
+                  1st Age - The Enlightenment
                 </span>
                 <h3 className="text-body-lg font-body-lg text-on-surface font-bold mb-3">
-                  King Aethelgard the Bright
+                  The Golden Spire
                 </h3>
                 <p className="text-body-md font-body-md text-on-surface-variant text-sm">
-                  Forged the kingdom from warring tribes. Established the Obsidian Court and built the first spires.
+                  Solunaris rises. The Academy, Church, and Castle stand as beacons of peace and wisdom, uniting commoner and noble alike.
                 </p>
               </motion.div>
             </div>
@@ -250,13 +253,13 @@ const Lore = () => {
                 className="glass-obsidian border-l border-etched-gold p-6 rounded-lg inline-block w-full max-w-md gold-glow transition-all text-left cursor-pointer"
               >
                 <span className="text-label-caps font-label-caps text-etched-gold opacity-70 mb-2 block">
-                  2nd Age - The Zenith
+                  2nd Age - The Fracture
                 </span>
                 <h3 className="text-body-lg font-body-lg text-on-surface font-bold mb-3">
-                  Queen Valerius the Architect
+                  Decay and Betrayal
                 </h3>
                 <p className="text-body-md font-body-md text-on-surface-variant text-sm">
-                  Discovered the Aether wells. Initiated the Great Expansion, driving the city deeper underground.
+                  King Solun's descent into madness and desperation leads to a catastrophic spell that shatters the kingdom into a thousand pieces.
                 </p>
               </motion.div>
             </div>
@@ -272,13 +275,13 @@ const Lore = () => {
                 className="glass-obsidian border-l md:border-l-0 md:border-r border-blood-lust p-6 rounded-lg inline-block w-full max-w-md crimson-glow transition-all text-left md:text-right cursor-pointer"
               >
                 <span className="text-label-caps font-label-caps text-blood-lust opacity-70 mb-2 block">
-                  3rd Age - The Fall
+                  3rd Age - The Aftermath
                 </span>
                 <h3 className="text-body-lg font-body-lg text-error font-bold mb-3">
-                  King Malakor the Usurper
+                  Silence of the Fallen
                 </h3>
                 <p className="text-body-md font-body-md text-on-surface-variant text-sm">
-                  Shattered the throne. Unleashed the Void horrors upon the lower districts to secure his power.
+                  Restless spirits wander the Prison and Library, guarding ancient secrets while the Judge's shadow looms over the ruins.
                 </p>
               </motion.div>
             </div>

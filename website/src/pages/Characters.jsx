@@ -4,37 +4,64 @@ import { motion } from 'framer-motion';
 const Characters = () => {
   const characters = [
     {
-      name: "Kaelen Vance",
-      title: "The Exiled Blade",
-      desc: "Stripped of his titles after the Fall of Aethelgard, Vance wanders the ash wastes seeking a death worthy of his lineage. His blade, forged from the bones of a betrayed king, hums with restless spirits.",
-      allegiance: "None",
-      themeColor: "border-etched-gold",
-      tagBg: "bg-surface-container-highest/80 border-outline-variant/50 text-etched-gold",
-      textColor: "text-primary",
-      btnColor: "text-etched-gold hover:text-primary",
-      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUOB-tgjNIlpj70f7jnT8nCO5RShWOqU930IGBIBZSvhX0-JaKPhbrMJF6kYLKGivB0JYl34TgGj2bBilVyj2JLnvHmIE2VWpW2bfiSg-likFH7OoDLVTtNuMgM9bOyPAOWHg-3otMdAKKS-KFDdL9x7F8hXDuMDfl3MmWZ6viNsUbtAht7CmX6HzhuBT7dKjEdui4utO_jRPlbTJYDeyhPrFaYqhhJ1rogKFVie_DsK7ABBYl4i5AvYBrM1QX9GixNWjo8MDnask"
-    },
-    {
-      name: "Morgath",
-      title: "Weaver of Agony",
-      desc: "She does not seek to conquer the kingdom; she seeks to unravel it. Feeding on the collective despair of the surviving factions, Morgath's rituals require sacrifices that even the old gods deemed abhorrent.",
-      allegiance: "The Void",
-      themeColor: "border-blood-lust",
-      tagBg: "bg-blood-lust/20 border-blood-lust/50 text-secondary",
-      textColor: "text-secondary",
-      btnColor: "text-blood-lust hover:text-error",
-      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvIh2X9smViVfr7LTj_6MaVxRR5Uqp5Jq_CI-mK3vRoyjobQaEFpe60_q0qcEjPeDDvH2mSodW9hVg3PkC5zTcPgKpxxUqy2Xns1AUZn_fZh0Fovpy-1WZOZUqaoVRvht7rsW2qBCs9sJ3BW8pCE5vlwMtVXtSMJkcZ9dyFE2OQcoOeepwpdfGAB3MsXaZQ5hHfG6nl3CsyFYe9763JOOI1NYImWXymUxkqnEk275vbzRXIoccx0Fm3sTN_9OVr7baXDM0p27po3A"
-    },
-    {
-      name: "Elias the Hollow",
-      title: "Keeper of Truths",
-      desc: "Trading his physical eyes for the sight of the Beyond, Elias documents the dying breaths of the kingdom. He holds the lost prophecies, waiting for a champion ruthless enough to enact them.",
+      name: "The Scholar",
+      title: "The Chronicler of Ruin",
+      desc: "A former teacher of the Academy, now the last keeper of Solunaris's history. He guides travellers through the wreckage, warning them of the paths they tread.",
+      quote: "Perhaps some things are best left forgotten.",
       allegiance: "History",
-      themeColor: "border-etched-gold",
+      themeColor: "border-royal-purple",
+      tagBg: "bg-royal-purple/20 border-royal-purple/50 text-purple-300",
+      textColor: "text-purple-300",
+      btnColor: "text-purple-300 hover:text-purple-100",
+      bgUrl: "/assets/images/scholar.PNG"
+    },
+    {
+      name: "The Judge",
+      title: "The Harbinger of Fate",
+      desc: "A being of myth and terror who wields a scythe and the power of the sun and moon. It is said the Judge arrives only when a kingdom has truly fallen.",
+      quote: "Judgment is not a choice; it is an inevitability.",
+      allegiance: "Balance",
+      themeColor: "border-blood-red",
+      tagBg: "bg-blood-red/20 border-blood-red/50 text-red-300",
+      textColor: "text-red-300",
+      btnColor: "text-red-300 hover:text-red-100",
+      bgUrl: "/assets/images/judge.png"
+    },
+    {
+      name: "King Solun",
+      title: "The Fallen Sovereign",
+      desc: "Once a beacon of hope, Solun's descent into insanity and desperation shattered his kingdom. His legacy is one of betrayal and dust.",
+      quote: "The crown is but a gilded cage for the mad.",
+      allegiance: "Ruin",
+      themeColor: "border-decayed-gold",
       tagBg: "bg-surface-container-highest/80 border-outline-variant/50 text-etched-gold",
       textColor: "text-primary",
       btnColor: "text-etched-gold hover:text-primary",
-      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2G9ox1IFSpue19LmuD4Ga6CkUdho9Ofh78YHRokpO9Kc4AXIfB9SYk1XpPnsQ_jRB7volijHY_IPhhEu4qhZmDN4Jfk0OUI5ZYsEcIo0P_J_m8pbV1MFfrXj7Oil94hkHp4O5rTrZSBZCySVOh4M7L17L-QRFcv24wmkbvPnnWpIECclc4rTsbMKHVSeuolPXEC6KFXWsoHHQpZrh-1LDdJ_6Dg7xVlcEULtplOtNxtiy7jItDY4IoS3opKSvA7Sb7UNCnxj9tOM"
+      bgUrl: "/assets/images/king.PNG"
+    },
+    {
+      name: "The Spirits",
+      title: "Echoes of the Past",
+      desc: "Shattered remnants of the people who once thrived in Solunaris. They wander the ruins, trapped in a loop of their final, tragic moments.",
+      quote: "Do you remember the sun before it turned cold?",
+      allegiance: "The Departed",
+      themeColor: "border-zinc-500",
+      tagBg: "bg-zinc-800/30 border-zinc-700/50 text-zinc-300",
+      textColor: "text-zinc-300",
+      btnColor: "text-zinc-300 hover:text-zinc-100",
+      bgUrl: "/assets/images/Spirit World NPCs/Female 1.PNG"
+    },
+    {
+      name: "Corrupted Spirits",
+      title: "Hollowed Commoners",
+      desc: "Former farmers and peasants of Solunaris, now consumed by corruption. They wander the blighted fields and ruins, trapped in a mindless frenzy.",
+      quote: "Their silence is more deafening than their screams.",
+      allegiance: "Decay",
+      themeColor: "border-green-900",
+      tagBg: "bg-green-900/20 border-green-800/50 text-green-300",
+      textColor: "text-green-300",
+      btnColor: "text-green-300 hover:text-green-100",
+      bgUrl: "/assets/images/corrupted_farmer_idle.png"
     }
   ];
 
@@ -54,7 +81,7 @@ const Characters = () => {
             className="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary tracking-widest uppercase" 
             style={{ textShadow: "0 4px 24px rgba(233, 193, 118, 0.2)" }}
           >
-            The Architects of Ruin
+            Cast of the Tragedy
           </motion.h1>
           
           <div className="flex items-center justify-center space-x-4 opacity-70">
@@ -69,19 +96,19 @@ const Characters = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-body-lg font-body-lg text-on-surface-variant"
           >
-            Every soul in the Broken Kingdom carries the weight of past sins. Discover the forged destinies of those who command the remaining light, and those who feast in the shadows.
+            The fate of the kingdom rests in the hands of a few brave souls, mad monarchs, and lingering spirits. Explore their dossiers below.
           </motion.p>
         </section>
 
         {/* Characters Grid */}
-        <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter px-4">
+        <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter px-4 justify-center">
           {characters.map((char, index) => (
             <motion.article 
               key={char.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
               className={`group relative bg-surface-container-low border-t ${char.themeColor} rounded-sm overflow-hidden card-reveal h-[450px] shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer`}
             >
               {/* Background Image */}
@@ -105,12 +132,15 @@ const Characters = () => {
               </div>
               
               {/* Hover Reveal Content */}
-              <div className={`absolute inset-0 bg-obsidian-base/90 backdrop-blur-sm content-overlay p-6 flex flex-col justify-end border-t ${char.themeColor}`}>
+              <div className={`absolute inset-0 bg-obsidian-base/95 backdrop-blur-sm content-overlay p-6 flex flex-col justify-end border-t ${char.themeColor}`}>
                 <div className="space-y-4">
                   <h2 className={`text-headline-md font-headline-md ${char.textColor}`}>
                     {char.name}
                   </h2>
-                  <p className="text-body-md font-body-md text-on-surface-variant line-clamp-4">
+                  <p className="text-sm text-etched-gold italic leading-relaxed">
+                    "{char.quote}"
+                  </p>
+                  <p className="text-body-md font-body-md text-on-surface-variant line-clamp-4 leading-relaxed">
                     {char.desc}
                   </p>
                   <div className="pt-4 border-t border-outline-variant/30 flex justify-between items-center">

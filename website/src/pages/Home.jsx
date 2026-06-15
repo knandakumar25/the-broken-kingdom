@@ -115,14 +115,14 @@ const Home = () => {
         {/* WAR SECTION (Bento Grid) */}
         <section className="scroll-mt-32" id="war">
           <div className="text-center mb-16">
-            <h2 className="font-headline-md text-[32px] text-etched-gold uppercase tracking-widest">The Endless War</h2>
+            <h2 className="font-headline-md text-[32px] text-etched-gold uppercase tracking-widest">The Great Divide</h2>
             <p className="font-body-md text-outline mt-4 max-w-xl mx-auto italic">
-              Factions tear at the corpse of the realm, blind to the encroaching dark.
+              Forces collide over the ashes of Solunaris, awaiting the final verdict.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Bento Item 1 */}
+            {/* Bento Item 1 - The Judge */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -133,23 +133,23 @@ const Home = () => {
               <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian-base via-obsidian-base/80 to-transparent z-10"></div>
                 <img 
-                  alt="Battle Armor" 
-                  className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-700" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbocRntIn-W7upDyTUan95SZy7OJ0t-6hoZIL775KKSt9wMjZ9Kn9coUf1rXd4GZuyS5aXJIWwfdYuEpzUhXoYzSZGDmOQxKqoUU6mjuQQzU0QSD6MgDY-BeRbZ5hvvpnSliwqYb50MeLVV41GRPyRk0IB4vkwVW7vIoKA7lU3IFRwfxLONNl_vnLfsc8VDCjGJJtwpNBj_mVcGjzymtnGy0ThvXMrfTu4r2ET7O2WvGRDFK-k-PVYpJgnmx9S8GzmJaFqUZBYmp8"
+                  alt="The Judge" 
+                  className="w-full h-full object-cover opacity-35 group-hover:opacity-45 transition-opacity duration-700 mix-blend-luminosity" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIh2X9smViVfr7LTj_6MaVxRR5Uqp5Jq_CI-mK3vRoyjobQaEFpe60_q0qcEjPeDDvH2mSodW9hVg3PkC5zTcPgKpxxUqy2Xns1AUZn_fZh0Fovpy-1WZOZUqaoVRvht7rsW2qBCs9sJ3BW8pCE5vlwMtVXtSMJkcZ9dyFE2OQcoOeepwpdfGAB3MsXaZQ5hHfG6nl3CsyFYe9763JOOI1NYImWXymUxkqnEk275vbzRXIoccx0Fm3sTN_9OVr7baXDM0p27po3A"
                 />
               </div>
               <div className="relative z-20">
                 <div className="inline-block px-3 py-1 bg-surface-container/80 text-primary font-label-caps text-[10px] uppercase border border-outline/30 mb-4 backdrop-blur-sm">
-                  Dominant Faction
+                  Harbinger of Fate
                 </div>
-                <h3 className="font-headline-md text-on-surface text-2xl mb-2">The Iron Vanguard</h3>
+                <h3 className="font-headline-md text-on-surface text-2xl mb-2">The Judge</h3>
                 <p className="font-body-md text-on-surface-variant text-sm max-w-md">
-                  Holding the northern passes, they believe strength and steel alone can reforge the crown. Their methods are brutal, their discipline absolute.
+                  A being of myth and terror who wields a scythe and the power of the sun and moon. It is said the Judge arrives only when a kingdom has truly fallen.
                 </p>
               </div>
             </motion.div>
 
-            {/* Bento Item 2 */}
+            {/* Bento Item 2 - King Solun */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -158,15 +158,15 @@ const Home = () => {
               className="card-gothic p-8 flex flex-col justify-between min-h-[300px] group border-t-secondary-container cursor-pointer"
             >
               <div>
-                <span className="material-symbols-outlined text-secondary-container text-[32px] mb-4">local_fire_department</span>
-                <h3 className="font-headline-md text-on-surface text-xl mb-2">Zealots of Ash</h3>
+                <span className="material-symbols-outlined text-secondary-container text-[32px] mb-4">crown</span>
+                <h3 className="font-headline-md text-on-surface text-xl mb-2">King Solun</h3>
               </div>
               <p className="font-body-md text-on-surface-variant text-sm">
-                Worshippers of the cinder. They seek not to rule the kingdom, but to cleanse its corruption through eternal flame.
+                Once a beacon of hope, Solun's descent into insanity and desperation shattered his kingdom. His legacy is one of betrayal and dust.
               </p>
             </motion.div>
 
-            {/* Bento Item 3 */}
+            {/* Bento Item 3 - The Ruins */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -175,15 +175,15 @@ const Home = () => {
               className="card-gothic p-8 flex flex-col justify-between min-h-[300px] group cursor-pointer"
             >
               <div>
-                <span className="material-symbols-outlined text-tertiary text-[32px] mb-4">water_drop</span>
-                <h3 className="font-headline-md text-on-surface text-xl mb-2">The Drowned Court</h3>
+                <span className="material-symbols-outlined text-tertiary text-[32px] mb-4">castle</span>
+                <h3 className="font-headline-md text-on-surface text-xl mb-2">Ruins of Solunaris</h3>
               </div>
               <p className="font-body-md text-on-surface-variant text-sm">
-                Exiled to the sunken eastern coast, they trade in secrets and sunken relics, awaiting the tide to turn in their favor.
+                Eight monuments to a fallen age, including the Academy, Prison, and Castle, holding secrets that should remain buried.
               </p>
             </motion.div>
 
-            {/* Bento Item 4 */}
+            {/* Bento Item 4 - The Verdict */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -191,14 +191,14 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="card-gothic p-8 md:col-span-2 flex flex-col justify-center items-center text-center min-h-[300px] border-t-outline-variant bg-surface-container-low"
             >
-              <h3 className="font-display-lg text-[24px] text-outline mb-4 italic">
-                "Blood pays for blood, but who pays for the earth?"
+              <h3 className="font-display-lg text-[20px] md:text-[24px] text-outline mb-4 italic">
+                "Whether to erase the scars of the past or to let the kingdom sleep in its shattered silence."
               </h3>
               <Link 
                 to="/factions" 
                 className="text-etched-gold font-label-caps uppercase text-xs tracking-widest border-b border-etched-gold/30 hover:border-etched-gold pb-1 transition-colors"
               >
-                View Battlefronts
+                Explore the Divide
               </Link>
             </motion.div>
           </div>
