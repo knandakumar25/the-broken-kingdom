@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Globe, Monitor, Terminal, Smartphone, Apple, Eye } from 'lucide-react';
 
 const Join = () => {
   const [formData, setFormData] = useState({
@@ -21,21 +22,45 @@ const Join = () => {
     }));
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
     <div className="content-layer bg-obsidian-base min-h-screen text-on-surface flex flex-col antialiased texture-overlay relative overflow-x-hidden selection:bg-blood-lust selection:text-white">
       {/* Background radial gradient */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_center,rgba(176,0,0,0.05)_0%,transparent_70%)]" />
 
-      <main className="flex-grow flex items-center justify-center py-24 px-margin-mobile md:px-margin-desktop relative z-10 w-full max-w-container-max-width mx-auto">
+      <main className="flex-grow flex flex-col items-center justify-center py-24 px-margin-mobile md:px-margin-desktop relative z-10 w-full max-w-container-max-width mx-auto gap-24">
         {/* Background Castle Image */}
         <div 
           className="fixed inset-0 z-0 opacity-20 pointer-events-none bg-cover bg-center" 
-          alt="A dark fantasy landscape featuring ruins of an ancient gothic castle under a stormy, blood-red moonlit sky."
+          alt="Ruins of the Castle under a crimson sky"
           style={{ 
             backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtFwS4JolWspdwQeyt2bCDd5wjXW6qQcCo8KPb4M62-NrxxejbXjQHnuD47lD9c5MeDh0KMygGRc_W1KBgQiTXp2v-jSxfAK1YiUChYuBlEN5BskWmRSsAbiE6P-RHXiWLEovJPodpCPhvmd6sKi4QU5wIZ_eBVUlUSK2KAK07ToxBj9kmMUpbDE6faguxFR1AScR-LLzIqAq-gaxiD1n1dZx8o_MLaAXI4H6iNhA0iArpTpsmPkE2fgVI1sDCEXL8i_N34Uc_w78')" 
           }}
         />
 
+        {/* Section 1: Sign up oath form */}
         <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10 mt-8">
           {/* Left Column: Brand Context */}
           <div className="flex flex-col justify-center text-center md:text-left space-y-6">
@@ -189,6 +214,155 @@ const Join = () => {
                 </a>
               </div>
             </div>
+          </motion.div>
+        </div>
+
+        {/* Section 2: Downloads & Web Player */}
+        <div className="w-full max-w-5xl flex flex-col items-center gap-12 z-10 mt-12">
+          <div className="text-center space-y-4">
+            <h2 className="font-headline-md text-[28px] text-etched-gold uppercase tracking-widest">
+              Reclaim the Spire: Play & Downloads
+            </h2>
+            <p className="font-body-md text-on-surface-variant text-sm max-w-xl mx-auto">
+              Descend into the trial instantly through your browser, or install the full-fidelity standalone client on your device.
+            </p>
+          </div>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="w-full grid grid-cols-1 md:grid-cols-12 gap-6"
+          >
+            {/* Play in Browser (Featured Card) */}
+            <motion.div 
+              variants={itemVariants}
+              className="md:col-span-12 lg:col-span-6 border border-etched-gold/40 bg-surface-container/60 backdrop-blur-md p-8 flex flex-col justify-between relative overflow-hidden group shadow-heavy-smoky gold-inner-glow rounded-sm"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-etched-gold/5 blur-3xl -z-10 group-hover:bg-etched-gold/10 transition-all"></div>
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-surface-container-highest border border-outline-variant/30 text-etched-gold rounded-sm">
+                    <Globe size={32} />
+                  </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-etched-gold font-label-caps block">Instant Play</span>
+                    <h3 className="font-headline-md text-2xl text-on-surface uppercase">Play in Browser</h3>
+                  </div>
+                </div>
+                <p className="font-body-md text-on-surface-variant text-sm mb-8 leading-relaxed">
+                  No installation required. Jump straight into the darkness of the Broken Kingdom. Requires a desktop browser.
+                </p>
+              </div>
+              <a 
+                href="/web-player/The Broken Kingdom.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-4 bg-etched-gold text-obsidian font-label-caps uppercase tracking-widest font-bold hover:bg-white transition-all duration-300 block shadow-lg shadow-etched-gold/15"
+              >
+                Enter the Browser Realm
+              </a>
+            </motion.div>
+
+            {/* Windows Download */}
+            <motion.div 
+              variants={itemVariants}
+              className="md:col-span-6 lg:col-span-3 bg-surface-container-low/80 backdrop-blur-md p-6 border border-outline-variant/30 hover:border-etched-gold/40 transition-all duration-300 flex flex-col justify-between shadow-heavy-smoky rounded-sm"
+            >
+              <div>
+                <div className="p-3 bg-surface-container-highest border border-outline-variant/30 text-outline-variant w-fit mb-4 rounded-sm">
+                  <Monitor size={24} />
+                </div>
+                <h4 className="font-headline-md uppercase text-base text-on-surface font-bold mb-2">Windows PC</h4>
+                <p className="font-body-md text-xs text-on-surface-variant mb-6 leading-relaxed">
+                  Full performance standalone client with enhanced lighting and custom audio effects.
+                </p>
+              </div>
+              <a 
+                href="/downloads/Windows/The%20Broken%20Kingdom.exe"
+                download
+                className="w-full text-center py-3 bg-surface-container-highest text-on-surface hover:text-obsidian hover:bg-etched-gold font-label-caps text-xs uppercase tracking-widest transition-all duration-300 block border border-outline-variant/30 hover:border-transparent rounded-sm"
+              >
+                Download .EXE
+              </a>
+            </motion.div>
+
+            {/* Linux Download */}
+            <motion.div 
+              variants={itemVariants}
+              className="md:col-span-6 lg:col-span-3 bg-surface-container-low/80 backdrop-blur-md p-6 border border-outline-variant/30 hover:border-etched-gold/40 transition-all duration-300 flex flex-col justify-between shadow-heavy-smoky rounded-sm"
+            >
+              <div>
+                <div className="p-3 bg-surface-container-highest border border-outline-variant/30 text-outline-variant w-fit mb-4 rounded-sm">
+                  <Terminal size={24} />
+                </div>
+                <h4 className="font-headline-md uppercase text-base text-on-surface font-bold mb-2">Linux x86_64</h4>
+                <p className="font-body-md text-xs text-on-surface-variant mb-6 leading-relaxed">
+                  Standalone Linux build compiled for standard desktop environments.
+                </p>
+              </div>
+              <a 
+                href="/downloads/Linux/The%20Broken%20Kingdom.x86_64"
+                download
+                className="w-full text-center py-3 bg-surface-container-highest text-on-surface hover:text-obsidian hover:bg-etched-gold font-label-caps text-xs uppercase tracking-widest transition-all duration-300 block border border-outline-variant/30 hover:border-transparent rounded-sm"
+              >
+                Download Client
+              </a>
+            </motion.div>
+
+            {/* Android Download */}
+            <motion.div 
+              variants={itemVariants}
+              className="md:col-span-12 lg:col-span-6 bg-surface-container-low/80 backdrop-blur-md p-6 border border-outline-variant/30 border-t-blood-lust crimson-inner-glow hover:border-t-blood-lust transition-all duration-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-heavy-smoky rounded-sm"
+            >
+              <div className="flex gap-4">
+                <div className="p-4 bg-surface-container-highest border border-outline-variant/30 text-outline-variant h-fit rounded-sm">
+                  <Smartphone size={28} />
+                </div>
+                <div>
+                  <h4 className="font-headline-md uppercase text-base text-on-surface font-bold mb-1">Android Mobile</h4>
+                  <p className="font-body-md text-xs text-on-surface-variant max-w-md leading-relaxed">
+                    Take the battle on the go. Sideload the APK file directly to your mobile device to play.
+                  </p>
+                </div>
+              </div>
+              <a 
+                href="/downloads/Android/The%20Broken%20Kingdom.apk"
+                download
+                className="w-full md:w-auto text-center px-8 py-3 bg-blood-lust hover:bg-red-700 text-white font-label-caps text-xs uppercase tracking-widest transition-all duration-300 block border border-blood-lust/30 hover:border-transparent rounded-sm whitespace-nowrap"
+              >
+                Download .APK
+              </a>
+            </motion.div>
+
+            {/* Apple Platforms */}
+            <motion.div 
+              variants={itemVariants}
+              className="md:col-span-12 lg:col-span-6 bg-surface-container-low/40 backdrop-blur-md p-6 border border-outline-variant/10 flex flex-col justify-between rounded-sm opacity-60"
+            >
+              <div>
+                <span className="text-[10px] font-label-caps text-outline uppercase tracking-widest block mb-3">En Route</span>
+                <h4 className="font-headline-md text-base text-outline font-bold mb-3 uppercase">Apple Platforms</h4>
+                <div className="grid grid-cols-3 gap-4 text-center mt-2">
+                  <div className="bg-surface-container-low p-4 border border-outline-variant/20 flex flex-col items-center gap-2 rounded-sm">
+                    <Apple size={20} className="text-outline" />
+                    <span className="text-[9px] font-label-caps uppercase tracking-widest text-outline">macOS</span>
+                  </div>
+                  <div className="bg-surface-container-low p-4 border border-outline-variant/20 flex flex-col items-center gap-2 rounded-sm">
+                    <Smartphone size={20} className="text-outline" />
+                    <span className="text-[9px] font-label-caps uppercase tracking-widest text-outline">iOS</span>
+                  </div>
+                  <div className="bg-surface-container-low p-4 border border-outline-variant/20 flex flex-col items-center gap-2 rounded-sm">
+                    <Eye size={20} className="text-outline" />
+                    <span className="text-[9px] font-label-caps uppercase tracking-widest text-outline">visionOS</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-[10px] font-body-md italic text-outline-variant text-center leading-relaxed">
+                Currently undergoing sanctification for the Apple ecosystem. Coming soon.
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </main>

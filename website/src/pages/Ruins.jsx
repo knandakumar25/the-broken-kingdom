@@ -79,7 +79,7 @@ const Ruins = () => {
               <img 
                 alt="A dark fantasy map of the ruins" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-102 transition-transform duration-1000 ease-in-out mix-blend-luminosity" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW4jgW95SXDk5K8HddlW5kyXgKk5LCrTTk87IYEYR9lA4B6wUWMmGvKfczm-6goXlpIcOP2osNcIPPTP8-joBwcdmVCIp2uVrJ_M_MaglnHTCVEd-AtuuNVOpFt0F72S_75klUy_HY9uyL17OqZO91pXjdPqYrwiTpbqVRHNTIR-ac1OCB_MBee-i5Uy7QsrVABnQMZZXSx8Myz3GTkalqwn9F4i5siYwiqCbFVMOoeQvTd0dkggRafF4SoDFPfrktAkTGiXA4KO4"
+                src="/assets/images/solunaris_map.png"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-base via-transparent to-transparent lg:bg-gradient-to-r"></div>
               
