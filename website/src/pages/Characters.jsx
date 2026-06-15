@@ -1,126 +1,133 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Skull, Crown, Ghost, ShieldAlert } from 'lucide-react';
 
 const Characters = () => {
-  const cast = [
+  const characters = [
     {
-      name: "The Scholar",
-      title: "The Chronicler of Ruin",
-      desc: "A former teacher of the Academy, now the last keeper of Solunaris's history. He guides travellers through the wreckage, warning them of the paths they tread.",
-      img: "/assets/images/scholar.PNG",
-      icon: <BookOpen className="text-royal-purple" size={40} />,
-      color: "border-royal-purple",
-      quote: "Perhaps some things are best left forgotten."
+      name: "Kaelen Vance",
+      title: "The Exiled Blade",
+      desc: "Stripped of his titles after the Fall of Aethelgard, Vance wanders the ash wastes seeking a death worthy of his lineage. His blade, forged from the bones of a betrayed king, hums with restless spirits.",
+      allegiance: "None",
+      themeColor: "border-etched-gold",
+      tagBg: "bg-surface-container-highest/80 border-outline-variant/50 text-etched-gold",
+      textColor: "text-primary",
+      btnColor: "text-etched-gold hover:text-primary",
+      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUOB-tgjNIlpj70f7jnT8nCO5RShWOqU930IGBIBZSvhX0-JaKPhbrMJF6kYLKGivB0JYl34TgGj2bBilVyj2JLnvHmIE2VWpW2bfiSg-likFH7OoDLVTtNuMgM9bOyPAOWHg-3otMdAKKS-KFDdL9x7F8hXDuMDfl3MmWZ6viNsUbtAht7CmX6HzhuBT7dKjEdui4utO_jRPlbTJYDeyhPrFaYqhhJ1rogKFVie_DsK7ABBYl4i5AvYBrM1QX9GixNWjo8MDnask"
     },
     {
-      name: "The Judge",
-      title: "The Harbinger of Fate",
-      desc: "A being of myth and terror who wields a scythe and the power of the sun and moon. It is said the Judge arrives only when a kingdom has truly fallen.",
-      img: "/assets/images/judge.png",
-      icon: <Skull className="text-blood-red" size={40} />,
-      color: "border-blood-red",
-      quote: "Judgment is not a choice; it is an inevitability."
+      name: "Morgath",
+      title: "Weaver of Agony",
+      desc: "She does not seek to conquer the kingdom; she seeks to unravel it. Feeding on the collective despair of the surviving factions, Morgath's rituals require sacrifices that even the old gods deemed abhorrent.",
+      allegiance: "The Void",
+      themeColor: "border-blood-lust",
+      tagBg: "bg-blood-lust/20 border-blood-lust/50 text-secondary",
+      textColor: "text-secondary",
+      btnColor: "text-blood-lust hover:text-error",
+      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvIh2X9smViVfr7LTj_6MaVxRR5Uqp5Jq_CI-mK3vRoyjobQaEFpe60_q0qcEjPeDDvH2mSodW9hVg3PkC5zTcPgKpxxUqy2Xns1AUZn_fZh0Fovpy-1WZOZUqaoVRvht7rsW2qBCs9sJ3BW8pCE5vlwMtVXtSMJkcZ9dyFE2OQcoOeepwpdfGAB3MsXaZQ5hHfG6nl3CsyFYe9763JOOI1NYImWXymUxkqnEk275vbzRXIoccx0Fm3sTN_9OVr7baXDM0p27po3A"
     },
     {
-      name: "King Solun",
-      title: "The Fallen Sovereign",
-      desc: "Once a beacon of hope, Solun's descent into insanity and desperation shattered his kingdom. His legacy is one of betrayal and dust.",
-      img: "/assets/images/king.PNG",
-      icon: <Crown className="text-decayed-gold" size={40} />,
-      color: "border-decayed-gold",
-      quote: "The crown is but a gilded cage for the mad."
-    },
-    {
-      name: "The Spirits",
-      title: "Echoes of the Past",
-      desc: "Shattered remnants of the people who once thrived in Solunaris. They wander the ruins, trapped in a loop of their final, tragic moments.",
-      img: "/assets/images/Spirit World NPCs/Female 1.PNG",
-      icon: <Ghost className="text-zinc-400" size={40} />,
-      color: "border-zinc-500",
-      quote: "Do you remember the sun before it turned cold?"
-    },
-    {
-      name: "Corrupted Spirits",
-      title: "Hollowed Commoners",
-      desc: "Former farmers and peasants of Solunaris, now consumed by corruption. They wander the blighted fields and ruins, trapped in a mindless frenzy.",
-      img: "/assets/images/corrupted_farmer_idle.png",
-      icon: <Ghost className="text-green-600" size={40} />,
-      color: "border-green-900",
-      quote: "Their silence is more deafening than their screams."
-    },
+      name: "Elias the Hollow",
+      title: "Keeper of Truths",
+      desc: "Trading his physical eyes for the sight of the Beyond, Elias documents the dying breaths of the kingdom. He holds the lost prophecies, waiting for a champion ruthless enough to enact them.",
+      allegiance: "History",
+      themeColor: "border-etched-gold",
+      tagBg: "bg-surface-container-highest/80 border-outline-variant/50 text-etched-gold",
+      textColor: "text-primary",
+      btnColor: "text-etched-gold hover:text-primary",
+      bgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2G9ox1IFSpue19LmuD4Ga6CkUdho9Ofh78YHRokpO9Kc4AXIfB9SYk1XpPnsQ_jRB7volijHY_IPhhEu4qhZmDN4Jfk0OUI5ZYsEcIo0P_J_m8pbV1MFfrXj7Oil94hkHp4O5rTrZSBZCySVOh4M7L17L-QRFcv24wmkbvPnnWpIECclc4rTsbMKHVSeuolPXEC6KFXWsoHHQpZrh-1LDdJ_6Dg7xVlcEULtplOtNxtiy7jItDY4IoS3opKSvA7Sb7UNCnxj9tOM"
+    }
   ];
 
   return (
-    <div className="py-24 px-8 max-w-7xl mx-auto bg-obsidian text-ghost-white">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="font-gothic text-5xl md:text-7xl text-center text-solar-gold mb-8"
-      >
-        Cast of the Tragedy
-      </motion.h2>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-center text-xl italic text-gray-400 max-w-3xl mx-auto mb-20"
-      >
-        The fate of the kingdom rests in the hands of a few brave souls and cunning schemers.
-      </motion.p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {cast.map((char, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.1 }}
-            className={`p-8 rounded-lg border-2 ${char.color} ${char.color.replace('border-', 'bg-').replace('royal-purple', 'royal-purple/10').replace('blood-red', 'blood-red/10').replace('decayed-gold', 'decayed-gold/10').replace('zinc-500', 'zinc-500/10').replace('green-900', 'green-900/10')} backdrop-blur-sm relative group overflow-hidden`}
+    <div className="content-layer bg-obsidian-base min-h-screen text-on-surface flex flex-col antialiased relative overflow-x-hidden">
+      {/* Background Texture Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')] opacity-5"></div>
+      
+      <main className="flex-grow flex flex-col items-center w-full px-margin-mobile md:px-margin-desktop py-24 max-w-container-max-width mx-auto space-y-16 md:space-y-24 relative z-10">
+        
+        {/* Hero Section */}
+        <section className="w-full text-center space-y-6 max-w-3xl mt-12">
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary tracking-widest uppercase" 
+            style={{ textShadow: "0 4px 24px rgba(233, 193, 118, 0.2)" }}
           >
-            <div className="flex justify-center mb-6">
-              <div className="p-4 rounded-full bg-obsidian border border-shattered-quartz shadow-lg">
-                {char.img ? (
-                  <img src={char.img} alt={char.name} className="w-12 h-12 object-cover rounded-full" />
-                ) : (
-                  char.icon
-                )}
-              </div>
-            </div>
-
-            <h3 className="font-gothic text-4xl text-center mb-2">{char.name}</h3>
-            <p className="font-cinzel text-xs uppercase tracking-widest text-center text-solar-gold mb-6">
-              {char.title}
-            </p>
-            <p className la la="text-center text-lg leading-relaxed text-gray-300 mb-8 font-serif italic">
-              "{char.quote}"
-            </p>
-            <p className="text-center text-base text-ghost-white opacity-80 leading-relaxed">
-              {char.desc}
-            </p>
-
-            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/5 blur-3xl rounded-full group-hover:bg-white/10 transition-all"></div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="mt-24 flex justify-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="relative group"
-        >
-          <img
-            src="/assets/images/stitch/screen7_The_Cast_Characters_of_Solunaris_image.png"
-            alt="Character Concept Art Gallery"
-            className="w-full max-w-4xl rounded-lg gold-border grayscale group-hover:grayscale-0 transition-all duration-500"
-          />
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-obsidian bg-opacity-40">
-             <span className="font-cinzel text-solar-gold text-2xl">Explore the Gallery</span>
+            The Architects of Ruin
+          </motion.h1>
+          
+          <div className="flex items-center justify-center space-x-4 opacity-70">
+            <div className="h-px bg-gradient-to-r from-transparent to-etched-gold w-16 md:w-32"></div>
+            <span className="material-symbols-outlined text-etched-gold" style={{ fontSize: "16px" }}>swords</span>
+            <div className="h-px bg-gradient-to-l from-transparent to-etched-gold w-16 md:w-32"></div>
           </div>
-        </motion.div>
-      </div>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-body-lg font-body-lg text-on-surface-variant"
+          >
+            Every soul in the Broken Kingdom carries the weight of past sins. Discover the forged destinies of those who command the remaining light, and those who feast in the shadows.
+          </motion.p>
+        </section>
+
+        {/* Characters Grid */}
+        <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter px-4">
+          {characters.map((char, index) => (
+            <motion.article 
+              key={char.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group relative bg-surface-container-low border-t ${char.themeColor} rounded-sm overflow-hidden card-reveal h-[450px] shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer`}
+            >
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 image-layer bg-cover bg-center" 
+                style={{ backgroundImage: `url('${char.bgUrl}')` }}
+                alt={`Portrayal of ${char.name}, the ${char.title}`}
+              ></div>
+              
+              {/* Persistent Gradient overlay for legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian-base via-obsidian-base/60 to-transparent"></div>
+              
+              {/* Default State Content */}
+              <div className="absolute bottom-0 left-0 w-full p-6 space-y-2">
+                <span className={`inline-block px-3 py-1 border text-label-caps font-label-caps rounded-sm backdrop-blur-sm ${char.tagBg}`}>
+                  {char.title}
+                </span>
+                <h2 className={`text-headline-md font-headline-md ${char.textColor}`}>
+                  {char.name}
+                </h2>
+              </div>
+              
+              {/* Hover Reveal Content */}
+              <div className={`absolute inset-0 bg-obsidian-base/90 backdrop-blur-sm content-overlay p-6 flex flex-col justify-end border-t ${char.themeColor}`}>
+                <div className="space-y-4">
+                  <h2 className={`text-headline-md font-headline-md ${char.textColor}`}>
+                    {char.name}
+                  </h2>
+                  <p className="text-body-md font-body-md text-on-surface-variant line-clamp-4">
+                    {char.desc}
+                  </p>
+                  <div className="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+                    <span className="text-label-caps font-label-caps text-on-surface">
+                      Allegiance: {char.allegiance}
+                    </span>
+                    <button className={char.btnColor}>
+                      <span className="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </section>
+
+      </main>
     </div>
   );
 };

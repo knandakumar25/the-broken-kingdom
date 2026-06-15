@@ -1,29 +1,29 @@
 import React from 'react';
-import { Crown } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="py-20 bg-obsidian text-center relative overflow-hidden border-t border-solar-gold/20">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-solar-gold to-transparent"></div>
-
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="flex justify-center mb-6">
-          <Crown className="text-solar-gold" size={48} />
+    <footer className="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary full-width bottom-0 border-t border-outline-variant/20 relative z-10 w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max-width mx-auto gap-gutter">
+        <div className="text-label-caps font-label-caps text-etched-gold flex items-center gap-2 mb-4 md:mb-0 uppercase tracking-widest">
+          <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+            castle
+          </span>
+          <span>© 1242 The Broken Kingdom. All souls accounted for.</span>
         </div>
-        <h2 className="font-gothic text-6xl text-solar-gold mb-6">Your Fate Awaits</h2>
-        <p className="font-cinzel text-gray-400 mb-10 italic">
-          Will you be the one to mend the crown, or will you feast on the remains of the Broken Kingdom?
-        </p>
-
-        <div className="flex justify-center gap-6 mb-20">
-          <button className="btn-primary px-10 py-4 text-obsidian font-cinzel uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-solar-gold/15 border border-solar-gold/20">
-            Begin the Descent
-          </button>
-        </div>
-      </div>
-
-      <div className="text-xs text-zinc-600 font-serif tracking-widest uppercase">
-        &copy; 2026 The Broken Kingdom | Devised in the Void
+        <nav className="flex gap-6">
+          <a 
+            className="text-on-surface-variant text-body-md font-body-md hover:text-blood-lust transition-colors opacity-80 hover:opacity-100" 
+            href="#"
+          >
+            Privacy Scroll
+          </a>
+          <a 
+            className="text-on-surface-variant text-body-md font-body-md hover:text-blood-lust transition-colors opacity-80 hover:opacity-100" 
+            href="#"
+          >
+            Terms of Conquest
+          </a>
+        </nav>
       </div>
     </footer>
   );
