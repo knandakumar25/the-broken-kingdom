@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 :root {
+  --solar-gold: #FFD700;
+  --void-indigo: #4B0082;
+  --lunar-silver: #E0E0E0;
+  --shattered-quartz: #C0C0C0;
   --obsidian: #0a0a0f;
   --royal-purple: #3a0a4d;
   --decayed-gold: #c5a059;
@@ -36,6 +40,45 @@ body {
   border: 2px solid var(--decayed-gold);
   box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
 }
+
+.btn-primary {
+  background-color: var(--solar-gold);
+  color: var(--obsidian);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  background-color: var(--lunar-silver);
+  color: var(--obsidian);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.ds-input {
+  background-color: var(--obsidian);
+  color: var(--ghost-white);
+  border: 1px solid var(--shattered-quartz);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
 
 .judge-gradient {
   background: linear-gradient(135deg, #0c1424, #1b2845, #3b0a4d);

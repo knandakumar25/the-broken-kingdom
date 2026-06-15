@@ -52,44 +52,74 @@ const Characters = () => {
   ];
 
   return (
-    <div className="py-24 px-8 max-w-7xl mx-auto">
+    <div className="py-24 px-8 max-w-7xl mx-auto bg-obsidian text-ghost-white">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="font-gothic text-5xl text-center text-decayed-gold mb-16"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="font-gothic text-5xl md:text-7xl text-center text-solar-gold mb-8"
       >
         Cast of the Tragedy
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="text-center text-xl italic text-gray-400 max-w-3xl mx-auto mb-20"
+      >
+        The fate of the kingdom rests in the hands of a few brave souls and cunning schemers.
+      </motion.p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {cast.map((char, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.1 }}
-            className={`group relative p-8 gold-border bg-zinc-900/50 backdrop-blur-sm ${char.color}`}
+            className={`p-8 rounded-lg border-2 ${char.color} ${char.color.replace('border-', 'bg-').replace('royal-purple', 'royal-purple/10').replace('blood-red', 'blood-red/10').replace('decayed-gold', 'decayed-gold/10').replace('zinc-500', 'zinc-500/10').replace('green-900', 'green-900/10')} backdrop-blur-sm relative group overflow-hidden`}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-black rounded-full border border-zinc-700 group-hover:scale-110 transition-transform overflow-hidden w-16 h-16 flex items-center justify-center">
-                {char.img ? <img src={char.img} alt={char.name} className="w-full h-full object-contain" /> : char.icon}
-              </div>
-              <div>
-                <h3 className="font-gothic text-2xl text-white">{char.name}</h3>
-                <p className="font-cinzel text-xs uppercase tracking-widest text-gray-500">{char.title}</p>
+            <div className="flex justify-center mb-6">
+              <div className="p-4 rounded-full bg-obsidian border border-shattered-quartz shadow-lg">
+                {char.img ? (
+                  <img src={char.img} alt={char.name} className="w-12 h-12 object-cover rounded-full" />
+                ) : (
+                  char.icon
+                )}
               </div>
             </div>
-            <p className="text-gray-300 italic leading-relaxed mb-6">
+
+            <h3 className="font-gothic text-4xl text-center mb-2">{char.name}</h3>
+            <p className="font-cinzel text-xs uppercase tracking-widest text-center text-solar-gold mb-6">
+              {char.title}
+            </p>
+            <p className la la="text-center text-lg leading-relaxed text-gray-300 mb-8 font-serif italic">
               "{char.quote}"
             </p>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-center text-base text-ghost-white opacity-80 leading-relaxed">
               {char.desc}
             </p>
-            <div className="absolute bottom-0 right-0 w-12 h-12 opacity-10 group-hover:opacity-30 transition-opacity">
-               <Crown size={48} className="text-decayed-gold -mr-4 -mb-4" />
-            </div>
+
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/5 blur-3xl rounded-full group-hover:bg-white/10 transition-all"></div>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-24 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="relative group"
+        >
+          <img
+            src="/assets/images/stitch/screen7_The_Cast_Characters_of_Solunaris_image.png"
+            alt="Character Concept Art Gallery"
+            className="w-full max-w-4xl rounded-lg gold-border grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-obsidian bg-opacity-40">
+             <span className="font-cinzel text-solar-gold text-2xl">Explore the Gallery</span>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
